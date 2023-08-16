@@ -1,0 +1,11 @@
+query RecentArticles($size: Int = 3) {
+  articles(sort: "publishedAt:desc", pagination: { page: 1, pageSize: $size }) {
+    data {
+      attributes {
+        title
+        publishedAt
+        slug
+      }
+    }
+  }
+}

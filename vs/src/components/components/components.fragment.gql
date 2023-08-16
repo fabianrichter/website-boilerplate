@@ -1,0 +1,15 @@
+#import './accordeon/accordeon.fragment.gql'
+#import './page-title/page-title.fragment.gql'
+#import './text/text.fragment.gql'
+#import './image/image.fragment.gql'
+#import './article-overview/article-overview.fragment.gql'
+
+fragment PageComponents on Page {
+  components {
+    ...ComponentGeneralAccordeon
+    ...ComponentGeneralPageTitle
+    ...ComponentGeneralText
+    ...ComponentGeneralImage
+    ...ComponentConnectArticleOverview
+  }
+}

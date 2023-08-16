@@ -1,0 +1,12 @@
+fragment ComponentGeneralImage on ComponentGeneralImage {
+  __typename
+  image {
+    data {
+      attributes {
+        name
+        alternativeText
+        url
+      }
+    }
+  }
+}

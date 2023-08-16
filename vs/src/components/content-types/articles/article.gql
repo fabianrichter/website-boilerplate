@@ -1,0 +1,29 @@
+query ArticlesQuery {
+  articles {
+    data {
+      id
+      attributes {
+        title
+        text {
+          content
+        }
+      }
+    }
+  }
+}
+
+#import '../../components/components.fragment.gql'
+
+query ArticleQuery($slug: String) {
+  articles(filters: { slug: { eq: $slug } }) {
+    data {
+      id
+      attributes {
+        title
+        text {
+          content
+        }
+      }
+    }
+  }
+}

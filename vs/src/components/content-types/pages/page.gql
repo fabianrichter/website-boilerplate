@@ -1,0 +1,12 @@
+#import '../../components/components.fragment.gql'
+
+query PageQuery($slug: String) {
+  pages(filters: { slug: { eq: $slug } }) {
+    data {
+      id
+      attributes {
+        ...PageComponents
+      }
+    }
+  }
+}

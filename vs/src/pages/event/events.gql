@@ -1,0 +1,13 @@
+query EventsQuery {
+  events {
+    data {
+      id
+      attributes {
+        Title
+        Description
+        Date
+        Location
+      }
+    }
+  }
+}

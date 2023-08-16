@@ -1,0 +1,7 @@
+fragment ComponentGeneralAccordeon on ComponentGeneralAccordeon {
+  title
+  item {
+    title
+    body
+  }
+}

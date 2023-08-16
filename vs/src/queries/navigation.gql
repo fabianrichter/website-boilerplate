@@ -1,0 +1,24 @@
+query Navigation($id: String!) {
+  renderNavigation(navigationIdOrSlug: $id, type: TREE) {
+    ...navigationItemFields
+    items {
+      ...navigationItemFields
+      items {
+        ...navigationItemFields
+      }
+    }
+  }
+}
+
+fragment navigationItemFields on NavigationItem {
+  title
+  path
+  order
+  related {
+    attributes {
+      ...on Page {
+        slug
+      }
+    }
+  }
+}

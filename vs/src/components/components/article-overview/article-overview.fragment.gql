@@ -1,0 +1,20 @@
+fragment ComponentConnectArticleOverview on ComponentConnectArticleOverview {
+  __typename
+  mode
+  manualArticles: articles {
+    data {
+      attributes {
+        title
+        createdAt
+      }
+    }
+  }
+  recentArticles: articles(sort: "createdAt:desc", pagination: { page: 1, pageSize: 3 }) {
+    data {
+      attributes {
+        title
+        createdAt
+      }
+    }
+  }
+}
