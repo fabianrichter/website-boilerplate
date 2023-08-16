@@ -131,11 +131,11 @@ build
 /coverage
 
 # next.js
-/.next/
-/out/
+/vs/.next/
+/vs/out/
 
 # production
-/build
+/vs/build
 
 # misc
 .DS_Store
