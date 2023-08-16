@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_general_texts",
+  "info": {
+    "displayName": "Text",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_accordeon_accordeon_items",
+  "info": {
+    "displayName": "Accordeon Item",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "body": {
+      "type": "richtext"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

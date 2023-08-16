@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_general_section_titles",
+  "info": {
+    "displayName": "Section Title",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "string"
+    }
+  }
+}

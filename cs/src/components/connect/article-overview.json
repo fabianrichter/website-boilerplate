@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_connect_article_overviews",
+  "info": {
+    "displayName": "Article Overview",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    },
+    "mode": {
+      "type": "enumeration",
+      "enum": [
+        "manual",
+        "recent"
+      ]
+    }
+  }
+}
