@@ -1,0 +1,10 @@
+#import '../../components/components.fragment.gql'
+
+fragment PageContent on PageEntityResponseCollection {
+  data {
+    id
+    attributes {
+      ...PageComponents
+    }
+  }
+}

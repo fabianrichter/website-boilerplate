@@ -8,7 +8,7 @@ const NavigationTree = ({ items }) => {
   return <ul>
     {items && items.map((item, index) => (
       <li key={index}>
-        <Link href={item.related.attributes.slug}>{item.title}</Link>
+        <Link href={item.path}>{item.title}</Link>
         {!!item.items.length && (
           <NavigationTree items={item.items} />
         )}

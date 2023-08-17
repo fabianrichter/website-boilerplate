@@ -5,6 +5,7 @@ query PageSlugs {
   pages {
     data {
       attributes {
+        __typename
         slug
       }
     }
@@ -16,6 +17,7 @@ query ArticleSlugs {
   articles {
     data {
       attributes {
+        __typename
         slug
       }
     }

@@ -3,8 +3,8 @@
 import Header from "@/components/header/header";
 import React from "react";
 
-import { PageQuery } from "@/components/content-types/pages/page.gql";
-import { PageSlugs } from "@/queries/slugs.gql";
+import { ContentQuery } from "@/components/content-types/content-query.gql";
+import { PageSlugs, ArticleSlugs } from "@/queries/slugs.gql";
 import { Navigation } from "@/queries/navigation.gql";
 
 import { apolloClient } from "@/app/apollo-client";
@@ -28,7 +28,7 @@ const withLayout = (Component) => {
   return wrappedComponent;
 };
 
-export const getStaticPaths = async () => {
+export const getStaticPagePaths = async () => {
   // initialize apolloClient
   const client = apolloClient;
   // get all pages and their slugs
@@ -38,26 +38,46 @@ export const getStaticPaths = async () => {
 
   // return the resulting paths
   return {
-    paths: data.pages.data.map((page) => ({ params: { slug: page.attributes.slug } })),
+    paths: data.pages.data.map((page) => ({
+      params: { slug: page.attributes.slug },
+    })),
+    fallback: false, // return 404 if none of the specified paths is requested
+  };
+};
+
+export const getStaticArticlePaths = async () => {
+  // initialize apolloClient
+  const client = apolloClient;
+  // get all pages and their slugs
+  const { data } = await client.query({
+    query: ArticleSlugs,
+  });
+
+  // return the resulting paths
+  return {
+    paths: data.articles.data.map((article) => ({
+      params: { slug: article.attributes.slug },
+    })),
     fallback: false, // return 404 if none of the specified paths is requested
   };
 };
 
 export const getStaticProps = async ({ params }) => {
+  console.log("params", params);
   // initialize apollo client
   const client = apolloClient;
-  const props = {}
+  const props = {};
 
   // request data from page requested in params.slug
   // if path does not exist, params is undefined → 404 is returned → no content needed
   if (!!params) {
     const { data } = await client.query({
-      query: PageQuery,
+      query: ContentQuery,
       variables: {
         slug: params.slug,
       },
     });
-    props.content = data.pages.data[0];
+    props.content = data.pages.data[0] || data.articles.data[0];
   }
 
   // request navigation (also on 404)

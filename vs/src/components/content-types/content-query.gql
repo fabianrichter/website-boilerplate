@@ -1,0 +1,11 @@
+#import './pages/page-content.fragment.gql'
+#import './articles/article-content.fragment.gql'
+
+query ContentQuery($slug: String) {
+  pages(filters: { slug: { eq: $slug } }) {
+    ...PageContent
+  }
+  articles(filters: { slug: { eq: $slug } }) {
+    ...ArticleContent
+  }
+}
