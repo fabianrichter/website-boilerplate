@@ -20,7 +20,7 @@ import { apolloClient } from "@/app/apollo-client";
 const withLayout = (Component) => {
   const wrappedComponent = (props) => (
     <>
-      <Header {...props.headerContent } />
+      <Header {...props.headerContent} />
       <Component {...props} />
     </>
   );
@@ -46,26 +46,31 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }) => {
   // initialize apollo client
   const client = apolloClient;
+  const props = {}
+
   // request data from page requested in params.slug
-  const { data } = await client.query({
-    query: PageQuery,
-    variables: {
-      slug: params.slug,
-    },
-  });
-  // request navigation
+  // if path does not exist, params is undefined → 404 is returned → no content needed
+  if (!!params) {
+    const { data } = await client.query({
+      query: PageQuery,
+      variables: {
+        slug: params.slug,
+      },
+    });
+    props.content = data.pages.data[0];
+  }
+
+  // request navigation (also on 404)
   const { data: navigation } = await client.query({
     query: Navigation,
     variables: {
       id: "2",
     },
   });
+  props.headerContent = { navigation };
 
-  // if request returns no result, respond with 404
-  if (!data.pages.data.length) return { notFound: true };
-
-  // else return resulting page data
-  return { props: { content: data.pages.data[0], headerContent: { navigation } } };
+  // return page data (if exists) and header data
+  return { props };
 };
 
 export default withLayout;
