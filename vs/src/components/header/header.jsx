@@ -1,10 +1,10 @@
 import React from 'react'
 import Menu from './menu';
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div>
-        <Menu />
+        <Menu navigation={props.navigation} />
     </div>
   )
 }

@@ -17,19 +17,10 @@ const NavigationTree = ({ items }) => {
   </ul>
 }
 
-const Menu = () => {
-  const { loading, error, data } = useQuery(Navigation, {
-    variables: {
-      id: "2",
-    },
-  });
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error.message}</p>;
-
+const Menu = (props) => {
   return (
     <div>
-      <NavigationTree items={data.renderNavigation} />
+      <NavigationTree items={props.navigation.renderNavigation} />
     </div>
   );
 };

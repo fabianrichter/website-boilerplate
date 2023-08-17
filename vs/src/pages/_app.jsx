@@ -8,7 +8,6 @@ function App({ Component, pageProps, apollo }) {
   const path = usePathname();
   return (
     <ApolloProvider client={apollo}>
-      <Header />
       <Component {...pageProps} />
     </ApolloProvider>
   );
