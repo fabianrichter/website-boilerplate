@@ -1,7 +1,4 @@
-import { useQuery, gql } from "@apollo/client";
-import React, { useEffect, useState } from "react";
-
-import { Navigation } from "@/queries/navigation.gql";
+import React from "react";
 import Link from "next/link";
 
 const NavigationTree = ({ items }) => {

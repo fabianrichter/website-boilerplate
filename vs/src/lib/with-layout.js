@@ -1,5 +1,3 @@
-// https://stackoverflow.com/questions/67640024/how-to-use-getstaticprops-in-app-js-for-showing-data-fetched-from-api-in-every
-
 import Header from "@/components/header/header";
 import React from "react";
 
@@ -12,10 +10,10 @@ import { apolloClient } from "@/app/apollo-client";
 /**
  * A HOC that wraps a page and adds the Header component to it.
  *
- * @function withUsersList
+ * @function withLayout
  * @param Component - a React component (page)
  * @returns {ReactElement}
- * @example withUsersList(Component)
+ * @example withLayout(Component)
  */
 const withLayout = (Component) => {
   const wrappedComponent = (props) => (
@@ -63,7 +61,6 @@ export const getStaticArticlePaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  console.log("params", params);
   // initialize apollo client
   const client = apolloClient;
   const props = {};
