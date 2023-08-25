@@ -6,6 +6,8 @@ import { PageSlugs, ArticleSlugs } from "@/queries/slugs.gql";
 import { Navigation } from "@/queries/navigation.gql";
 
 import { apolloClient } from "@/app/apollo-client";
+import Head from "next/head";
+import StrapiSEO from "@/components/strapi/seo/seo";
 
 /**
  * A HOC that wraps a page and adds the Header component to it.
@@ -18,6 +20,7 @@ import { apolloClient } from "@/app/apollo-client";
 const withLayout = (Component) => {
   const wrappedComponent = (props) => (
     <>
+      <StrapiSEO test="test" data={props.content.attributes.seo} />
       <Header {...props.headerContent} />
       <Component {...props} />
     </>

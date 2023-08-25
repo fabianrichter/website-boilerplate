@@ -1,9 +1,11 @@
 #import '../../components/components.fragment.gql'
+#import '../../strapi/seo/seo.fragment.gql'
 
 fragment PageContent on PageEntityResponseCollection {
   data {
     id
     attributes {
+      ...SEO
       ...PageComponents
     }
   }

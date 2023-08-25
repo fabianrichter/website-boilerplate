@@ -1,0 +1,23 @@
+fragment SEO on Page {
+  seo {
+    metaTitle
+    metaDescription
+    metaImage {
+      data {
+        attributes {
+          name
+        }
+      }
+    }
+    metaSocial {
+      socialNetwork
+      title
+      description
+    }
+    keywords
+    metaRobots
+    structuredData
+    metaViewport
+    canonicalURL
+  }
+}
