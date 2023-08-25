@@ -1,17 +1,3 @@
-query ArticlesQuery {
-  articles {
-    data {
-      id
-      attributes {
-        title
-        text {
-          content
-        }
-      }
-    }
-  }
-}
-
 fragment ArticleContent on ArticleEntityResponseCollection {
   data {
     id

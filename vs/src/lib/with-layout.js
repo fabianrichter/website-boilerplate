@@ -1,13 +1,15 @@
 import Header from "@/components/header/header";
-import React from "react";
+import React, { createContext } from "react";
 
 import { ContentQuery } from "@/components/content-types/content-query.gql";
+import { BasicContent } from "@/components/content-types/basic-content-query.gql";
 import { PageSlugs, ArticleSlugs } from "@/queries/slugs.gql";
 import { Navigation } from "@/queries/navigation.gql";
 
 import { apolloClient } from "@/app/apollo-client";
 import Head from "next/head";
 import StrapiSEO from "@/components/strapi/seo/seo";
+import BasicContentProvider from "@/store/basic-content";
 
 /**
  * A HOC that wraps a page and adds the Header component to it.
@@ -22,7 +24,9 @@ const withLayout = (Component) => {
     <>
       <StrapiSEO test="test" data={props.content.attributes.seo} />
       <Header {...props.headerContent} />
-      <Component {...props} />
+      <BasicContentProvider value={props.basicContent}>
+        <Component {...props} />
+      </BasicContentProvider>
     </>
   );
 
@@ -68,6 +72,15 @@ export const getStaticProps = async ({ params }) => {
   const client = apolloClient;
   const props = {};
 
+  // request navigation (also on 404)
+  const { data: navigation } = await client.query({
+    query: Navigation,
+    variables: {
+      id: "2",
+    },
+  });
+  props.headerContent = { navigation };
+
   // request data from page requested in params.slug
   // if path does not exist, params is undefined → 404 is returned → no content needed
   if (!!params) {
@@ -80,14 +93,13 @@ export const getStaticProps = async ({ params }) => {
     props.content = data.pages.data[0] || data.articles.data[0];
   }
 
-  // request navigation (also on 404)
-  const { data: navigation } = await client.query({
-    query: Navigation,
-    variables: {
-      id: "2",
-    },
-  });
-  props.headerContent = { navigation };
+  // request data for teasers etc.
+  if (!!params) {
+    const { data: basicContentData } = await client.query({
+      query: BasicContent,
+    });
+    props.basicContent = basicContentData;
+  }
 
   // return page data (if exists) and header data
   return { props };
