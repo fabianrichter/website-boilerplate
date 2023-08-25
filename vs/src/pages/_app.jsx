@@ -1,11 +1,8 @@
-import { ApolloClient, ApolloProvider } from '@apollo/react-hooks';
-import { apolloClient } from '@/app/apollo-client';
+import { ApolloProvider } from '@apollo/react-hooks';
 import withApollo from '@/hooks/with-apollo';
-import Header from '@/components/header/header';
-import { usePathname } from 'next/navigation';
+import "../app/globals.css";
 
 function App({ Component, pageProps, apollo }) {
-  const path = usePathname();
   return (
     <ApolloProvider client={apollo}>
       <Component {...pageProps} />

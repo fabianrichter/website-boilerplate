@@ -30,7 +30,7 @@ const ArticleOverview = ({ data }) => {
       {!!articles.length &&
         articles.map((article, index) => (
           <div key={index}>
-            <h3>{article.attributes.title}</h3>
+            <h4>{article.attributes.title}</h4>
             <p>{article.attributes.publishedAt}</p>
             <Link href={"/articles/" + article.attributes.slug}>learn more</Link>
           </div>

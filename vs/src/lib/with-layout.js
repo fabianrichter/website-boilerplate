@@ -24,7 +24,7 @@ const withLayout = (Component) => {
   const wrappedComponent = (props) => (
     <>
       <ConfigsProvider value={props.configs}>
-        <StrapiSEO test="test" data={props.content.attributes.seo} />
+        {props.content.attributes.seo && <StrapiSEO data={props.content.attributes.seo} />}
         <Header {...props.headerContent} />
         <BasicContentProvider value={props.basicContent}>
           <Component {...props} />
