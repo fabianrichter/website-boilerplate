@@ -11,6 +11,7 @@ import { apolloClient } from "@/app/apollo-client";
 import StrapiSEO from "@/components/strapi/seo/seo";
 import BasicContentProvider from "@/store/basic-content";
 import ConfigsProvider from "@/store/configs";
+import Footer from "@/components/footer/footer";
 
 /**
  * A HOC that wraps a page and adds the Header component to it.
@@ -29,6 +30,7 @@ const withLayout = (Component) => {
         <BasicContentProvider value={props.basicContent}>
           <Component {...props} />
         </BasicContentProvider>
+        <Footer />
       </ConfigsProvider>
     </>
   );

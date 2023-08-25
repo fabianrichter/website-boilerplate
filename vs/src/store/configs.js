@@ -1,7 +1,8 @@
 import React, { createContext } from "react";
 
+export const Configs = createContext();
+
 const ConfigsProvider = (props) => {
-  const Configs = createContext(props.value);
   return <Configs.Provider value={props.value}>{props.children}</Configs.Provider>;
 };
 
