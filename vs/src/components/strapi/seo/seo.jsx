@@ -11,7 +11,7 @@ const StrapiSEO = ({ data }) => {
       {/* Basic meta tags */}
       <title>{data.metaTitle}</title>
       <meta property="og:title" content={data.metaTitle} key="title" />
-      <meta name="description" content={data.metaDescription} key="description" />
+      <meta name="description" content={data.metaDescription} key="desc" />
       <meta name="keywords" content={data.keywords} key="keywords" />
       <meta name="robots" content={data.metaRobots} key="robots" />
       {data.metaImage && (
@@ -20,20 +20,20 @@ const StrapiSEO = ({ data }) => {
 
       {/* Facebook meta tags */}
       {data.metaSocial &&
-        data.metaSocial.map((metaSocial) => {
+        data.metaSocial.map((metaSocial, index) => {
           switch (metaSocial.socialNetwork) {
             case "Facebook":
               return (
                 <>
-                  <meta name="og:title" content={metaSocial.title} key="og:title" />
-                  <meta name="og:description" content={metaSocial.description} key="og:description" />
+                  <meta name="og:title" content={metaSocial.title} key={`title${index}`} />
+                  <meta name="og:description" content={metaSocial.description} key={`desc${index}`} />
                 </>
               );
             case "Twitter":
               return (
                 <>
-                  <meta name="twitter:title" content={metaSocial.title} key="twitter:title" />
-                  <meta name="twitter:description" content={metaSocial.description} key="twitter:description" />
+                  <meta name="twitter:title" content={metaSocial.title} key={`title${index}`} />
+                  <meta name="twitter:description" content={metaSocial.description} key={`desc${index}`} />
                 </>
               );
           }

@@ -1,0 +1,9 @@
+fragment ConfigFooter on Query {
+  configFooter {
+    data {
+      attributes {
+        instagramProfileUrl
+      }
+    }
+  }
+}

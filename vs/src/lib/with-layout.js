@@ -1,15 +1,16 @@
 import Header from "@/components/header/header";
 import React, { createContext } from "react";
 
+import { Navigation } from "@/queries/navigation.gql";
+import { ConfigQuery } from "@/components/configs/config-query.gql";
 import { ContentQuery } from "@/components/content-types/content-query.gql";
 import { BasicContent } from "@/components/content-types/basic-content-query.gql";
 import { PageSlugs, ArticleSlugs } from "@/queries/slugs.gql";
-import { Navigation } from "@/queries/navigation.gql";
 
 import { apolloClient } from "@/app/apollo-client";
-import Head from "next/head";
 import StrapiSEO from "@/components/strapi/seo/seo";
 import BasicContentProvider from "@/store/basic-content";
+import ConfigsProvider from "@/store/configs";
 
 /**
  * A HOC that wraps a page and adds the Header component to it.
@@ -22,11 +23,13 @@ import BasicContentProvider from "@/store/basic-content";
 const withLayout = (Component) => {
   const wrappedComponent = (props) => (
     <>
-      <StrapiSEO test="test" data={props.content.attributes.seo} />
-      <Header {...props.headerContent} />
-      <BasicContentProvider value={props.basicContent}>
-        <Component {...props} />
-      </BasicContentProvider>
+      <ConfigsProvider value={props.configs}>
+        <StrapiSEO test="test" data={props.content.attributes.seo} />
+        <Header {...props.headerContent} />
+        <BasicContentProvider value={props.basicContent}>
+          <Component {...props} />
+        </BasicContentProvider>
+      </ConfigsProvider>
     </>
   );
 
@@ -71,6 +74,12 @@ export const getStaticProps = async ({ params }) => {
   // initialize apollo client
   const client = apolloClient;
   const props = {};
+
+  // request general page configs
+  const { data: configs } = await client.query({
+    query: ConfigQuery,
+  });
+  props.configs = { ...configs };
 
   // request navigation (also on 404)
   const { data: navigation } = await client.query({
