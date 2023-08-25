@@ -6,6 +6,7 @@ fragment SEO on Page {
       data {
         attributes {
           name
+          formats
         }
       }
     }
