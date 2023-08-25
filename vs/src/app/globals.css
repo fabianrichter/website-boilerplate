@@ -108,9 +108,14 @@ a {
     url("../assets/fonts/geomanist-regular-webfont.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "Archia";
+  src: url("../assets/fonts/archia-regular-webfont.woff") format("woff"),
+    url("../assets/fonts/archia-regular-webfont.woff2") format("woff2");
+}
+
 body {
-  font-family: "Geomanist";
-  letter-spacing: 1px;
+  font-family: "Archia";
 }
 
 h1,

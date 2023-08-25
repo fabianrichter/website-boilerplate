@@ -3,14 +3,14 @@ import Link from "next/link";
 
 import styles from "./header.module.scss";
 
-const NavigationTree = ({ items }) => {
+const NavigationTree = ({ items, level }) => {
   return (
-    <ul>
+    <ul className={[styles.ul, styles[`lvl-${level}`]].join(" ")}>
       {items &&
         items.map((item, index) => (
           <li key={index}>
-            <Link href={item.path}>{item.title}</Link>
-            {!!item.items.length && <NavigationTree items={item.items} />}
+            <Link href={item.path} className={styles.a}>{item.title}</Link>
+            {!!item.items.length && <NavigationTree items={item.items} level={level + 1} />}
           </li>
         ))}
     </ul>
@@ -20,7 +20,7 @@ const NavigationTree = ({ items }) => {
 const Menu = (props) => {
   return (
     <nav className={styles.mainNav}>
-      <NavigationTree items={props.navigation.renderNavigation} />
+      <NavigationTree items={props.navigation.renderNavigation} level={0} />
     </nav>
   );
 };
