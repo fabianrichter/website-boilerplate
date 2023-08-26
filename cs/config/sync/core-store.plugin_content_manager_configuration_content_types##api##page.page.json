@@ -8,8 +8,8 @@
       "searchable": true,
       "pageSize": 10,
       "mainField": "title",
-      "defaultSortBy": "id",
-      "defaultSortOrder": "ASC"
+      "defaultSortBy": "updatedAt",
+      "defaultSortOrder": "DESC"
     },
     "metadatas": {
       "id": {
@@ -131,10 +131,10 @@
         ]
       ],
       "list": [
+        "title",
         "id",
         "createdAt",
-        "updatedAt",
-        "title"
+        "updatedAt"
       ]
     }
   },

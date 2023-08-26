@@ -7,8 +7,8 @@
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "Title",
-      "defaultSortBy": "Title",
+      "mainField": "title",
+      "defaultSortBy": "updatedAt",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -20,44 +20,16 @@
           "sortable": true
         }
       },
-      "Title": {
+      "title": {
         "edit": {
-          "label": "Title",
+          "label": "title",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "Title",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "Content": {
-        "edit": {
-          "label": "Content",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "Content",
-          "searchable": false,
-          "sortable": false
-        }
-      },
-      "Category": {
-        "edit": {
-          "label": "Category",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "Category",
+          "label": "title",
           "searchable": true,
           "sortable": true
         }
@@ -90,6 +62,48 @@
           "sortable": true
         }
       },
+      "articleOverview": {
+        "edit": {
+          "label": "articleOverview",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "articleOverview",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "pageTitle": {
+        "edit": {
+          "label": "pageTitle",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "pageTitle",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "text": {
+        "edit": {
+          "label": "text",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "text",
+          "searchable": false,
+          "sortable": false
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -120,16 +134,13 @@
       }
     },
     "layouts": {
+      "list": [
+        "id",
+        "createdAt",
+        "title"
+      ],
       "edit": [
         [
-          {
-            "name": "Title",
-            "size": 4
-          },
-          {
-            "name": "Category",
-            "size": 4
-          },
           {
             "name": "slug",
             "size": 4
@@ -143,16 +154,28 @@
         ],
         [
           {
-            "name": "Content",
+            "name": "articleOverview",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "title",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "pageTitle",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "text",
             "size": 12
           }
         ]
-      ],
-      "list": [
-        "id",
-        "Title",
-        "Category",
-        "createdAt"
       ]
     }
   },

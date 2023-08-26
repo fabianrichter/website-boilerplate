@@ -8,9 +8,7 @@
       "subject": "api::article.article",
       "properties": {
         "fields": [
-          "Title",
-          "Content",
-          "Category",
+          "title",
           "seo.metaTitle",
           "seo.metaDescription",
           "seo.metaImage",
@@ -23,7 +21,15 @@
           "seo.structuredData",
           "seo.metaViewport",
           "seo.canonicalURL",
-          "slug"
+          "slug",
+          "articleOverview.articles",
+          "articleOverview.mode",
+          "pageTitle.content",
+          "text.content"
+        ],
+        "locales": [
+          "en",
+          "de"
         ]
       },
       "conditions": []
@@ -31,13 +37,23 @@
     {
       "action": "plugin::content-manager.explorer.delete",
       "subject": "api::article.article",
-      "properties": {},
+      "properties": {
+        "locales": [
+          "en",
+          "de"
+        ]
+      },
       "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.publish",
       "subject": "api::article.article",
-      "properties": {},
+      "properties": {
+        "locales": [
+          "en",
+          "de"
+        ]
+      },
       "conditions": []
     },
     {
@@ -45,9 +61,7 @@
       "subject": "api::article.article",
       "properties": {
         "fields": [
-          "Title",
-          "Content",
-          "Category",
+          "title",
           "seo.metaTitle",
           "seo.metaDescription",
           "seo.metaImage",
@@ -60,7 +74,15 @@
           "seo.structuredData",
           "seo.metaViewport",
           "seo.canonicalURL",
-          "slug"
+          "slug",
+          "articleOverview.articles",
+          "articleOverview.mode",
+          "pageTitle.content",
+          "text.content"
+        ],
+        "locales": [
+          "en",
+          "de"
         ]
       },
       "conditions": []
@@ -70,9 +92,7 @@
       "subject": "api::article.article",
       "properties": {
         "fields": [
-          "Title",
-          "Content",
-          "Category",
+          "title",
           "seo.metaTitle",
           "seo.metaDescription",
           "seo.metaImage",
@@ -85,7 +105,57 @@
           "seo.structuredData",
           "seo.metaViewport",
           "seo.canonicalURL",
-          "slug"
+          "slug",
+          "articleOverview.articles",
+          "articleOverview.mode",
+          "pageTitle.content",
+          "text.content"
+        ],
+        "locales": [
+          "en",
+          "de"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::config-footer.config-footer",
+      "properties": {
+        "fields": [
+          "instagramProfileUrl"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::config-footer.config-footer",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::config-footer.config-footer",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::config-footer.config-footer",
+      "properties": {
+        "fields": [
+          "instagramProfileUrl"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::config-footer.config-footer",
+      "properties": {
+        "fields": [
+          "instagramProfileUrl"
         ]
       },
       "conditions": []
@@ -209,6 +279,10 @@
           "seo.structuredData",
           "seo.metaViewport",
           "seo.canonicalURL"
+        ],
+        "locales": [
+          "en",
+          "de"
         ]
       },
       "conditions": []
@@ -216,13 +290,23 @@
     {
       "action": "plugin::content-manager.explorer.delete",
       "subject": "api::page.page",
-      "properties": {},
+      "properties": {
+        "locales": [
+          "en",
+          "de"
+        ]
+      },
       "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.publish",
       "subject": "api::page.page",
-      "properties": {},
+      "properties": {
+        "locales": [
+          "en",
+          "de"
+        ]
+      },
       "conditions": []
     },
     {
@@ -245,6 +329,10 @@
           "seo.structuredData",
           "seo.metaViewport",
           "seo.canonicalURL"
+        ],
+        "locales": [
+          "en",
+          "de"
         ]
       },
       "conditions": []
@@ -269,6 +357,10 @@
           "seo.structuredData",
           "seo.metaViewport",
           "seo.canonicalURL"
+        ],
+        "locales": [
+          "en",
+          "de"
         ]
       },
       "conditions": []
@@ -457,6 +549,90 @@
       "action": "plugin::content-manager.components.configure-layout",
       "subject": null,
       "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "plugin::ezforms.recipient",
+      "properties": {
+        "fields": [
+          "name",
+          "email",
+          "number"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "plugin::ezforms.recipient",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "plugin::ezforms.recipient",
+      "properties": {
+        "fields": [
+          "name",
+          "email",
+          "number"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "plugin::ezforms.recipient",
+      "properties": {
+        "fields": [
+          "name",
+          "email",
+          "number"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "plugin::ezforms.submission",
+      "properties": {
+        "fields": [
+          "score",
+          "formName",
+          "data"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "plugin::ezforms.submission",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "plugin::ezforms.submission",
+      "properties": {
+        "fields": [
+          "score",
+          "formName",
+          "data"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "plugin::ezforms.submission",
+      "properties": {
+        "fields": [
+          "score",
+          "formName",
+          "data"
+        ]
+      },
       "conditions": []
     },
     {

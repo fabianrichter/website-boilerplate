@@ -10,6 +10,9 @@
       "action": "api::article.article.findOne"
     },
     {
+      "action": "api::config-footer.config-footer.find"
+    },
+    {
       "action": "api::event.event.find"
     },
     {
@@ -23,6 +26,9 @@
     },
     {
       "action": "api::page.page.findOne"
+    },
+    {
+      "action": "plugin::ezforms.submitController.index"
     },
     {
       "action": "plugin::navigation.client.render"

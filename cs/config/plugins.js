@@ -8,6 +8,15 @@ module.exports = {
       },
     },
   },
+  // EZ Forms
+  ezforms: {
+    config: {
+      captchaProvider: {
+        name: "none",
+      },
+      notificationProviders: [],
+    },
+  },
   // GraphQL
   graphql: {
     config: {

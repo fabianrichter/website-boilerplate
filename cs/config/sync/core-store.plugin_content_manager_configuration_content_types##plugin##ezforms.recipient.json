@@ -1,14 +1,14 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::api::home.home",
+  "key": "plugin_content_manager_configuration_content_types::plugin::ezforms.recipient",
   "value": {
-    "uid": "api::home.home",
+    "uid": "plugin::ezforms.recipient",
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "id",
-      "defaultSortBy": "id",
+      "mainField": "name",
+      "defaultSortBy": "name",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -20,33 +20,46 @@
           "sortable": true
         }
       },
-      "Default": {
+      "name": {
         "edit": {
-          "label": "Default",
+          "label": "name",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "Default",
-          "searchable": false,
-          "sortable": false
+          "label": "name",
+          "searchable": true,
+          "sortable": true
         }
       },
-      "articles": {
+      "email": {
         "edit": {
-          "label": "articles",
+          "label": "email",
           "description": "",
           "placeholder": "",
           "visible": true,
-          "editable": true,
-          "mainField": "title"
+          "editable": true
         },
         "list": {
-          "label": "articles",
-          "searchable": false,
-          "sortable": false
+          "label": "email",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "number": {
+        "edit": {
+          "label": "number",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "number",
+          "searchable": true,
+          "sortable": true
         }
       },
       "createdAt": {
@@ -81,20 +94,24 @@
     "layouts": {
       "list": [
         "id",
-        "createdAt",
-        "updatedAt",
-        "articles"
+        "name",
+        "email",
+        "number"
       ],
       "edit": [
         [
           {
-            "name": "Default",
-            "size": 12
+            "name": "name",
+            "size": 6
+          },
+          {
+            "name": "email",
+            "size": 6
           }
         ],
         [
           {
-            "name": "articles",
+            "name": "number",
             "size": 6
           }
         ]

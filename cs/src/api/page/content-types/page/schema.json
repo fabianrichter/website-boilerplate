@@ -24,7 +24,8 @@
         "general.section-title",
         "general.text",
         "general.image",
-        "connect.article-overview"
+        "connect.article-overview",
+        "forms.contact-form"
       ],
       "pluginOptions": {
         "i18n": {
@@ -43,12 +44,13 @@
     "slug": {
       "type": "string",
       "regex": "[a-z0-9\\-\\/]",
-      "required": true,
+      "required": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "unique": true
     },
     "seo": {
       "type": "component",

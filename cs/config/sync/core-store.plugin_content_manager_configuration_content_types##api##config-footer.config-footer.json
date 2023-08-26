@@ -1,14 +1,14 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::api::home.home",
+  "key": "plugin_content_manager_configuration_content_types::api::config-footer.config-footer",
   "value": {
-    "uid": "api::home.home",
+    "uid": "api::config-footer.config-footer",
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "id",
-      "defaultSortBy": "id",
+      "mainField": "instagramProfileUrl",
+      "defaultSortBy": "instagramProfileUrl",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -20,33 +20,18 @@
           "sortable": true
         }
       },
-      "Default": {
+      "instagramProfileUrl": {
         "edit": {
-          "label": "Default",
+          "label": "instagramProfileUrl",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "Default",
-          "searchable": false,
-          "sortable": false
-        }
-      },
-      "articles": {
-        "edit": {
-          "label": "articles",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "title"
-        },
-        "list": {
-          "label": "articles",
-          "searchable": false,
-          "sortable": false
+          "label": "instagramProfileUrl",
+          "searchable": true,
+          "sortable": true
         }
       },
       "createdAt": {
@@ -81,20 +66,14 @@
     "layouts": {
       "list": [
         "id",
+        "instagramProfileUrl",
         "createdAt",
-        "updatedAt",
-        "articles"
+        "updatedAt"
       ],
       "edit": [
         [
           {
-            "name": "Default",
-            "size": 12
-          }
-        ],
-        [
-          {
-            "name": "articles",
+            "name": "instagramProfileUrl",
             "size": 6
           }
         ]

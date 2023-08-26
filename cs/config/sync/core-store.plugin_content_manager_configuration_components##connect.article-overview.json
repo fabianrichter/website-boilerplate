@@ -1,13 +1,13 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::api::home.home",
+  "key": "plugin_content_manager_configuration_components::connect.article-overview",
   "value": {
-    "uid": "api::home.home",
+    "uid": "connect.article-overview",
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "id",
+      "mainField": "mode",
       "defaultSortBy": "id",
       "defaultSortOrder": "ASC"
     },
@@ -16,20 +16,6 @@
         "edit": {},
         "list": {
           "label": "id",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "Default": {
-        "edit": {
-          "label": "Default",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "Default",
           "searchable": false,
           "sortable": false
         }
@@ -49,30 +35,16 @@
           "sortable": false
         }
       },
-      "createdAt": {
+      "mode": {
         "edit": {
-          "label": "createdAt",
-          "description": "",
+          "label": "Mode",
+          "description": "Select the mode of this component.",
           "placeholder": "",
-          "visible": false,
+          "visible": true,
           "editable": true
         },
         "list": {
-          "label": "createdAt",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "updatedAt": {
-        "edit": {
-          "label": "updatedAt",
-          "description": "",
-          "placeholder": "",
-          "visible": false,
-          "editable": true
-        },
-        "list": {
-          "label": "updatedAt",
+          "label": "mode",
           "searchable": true,
           "sortable": true
         }
@@ -81,25 +53,23 @@
     "layouts": {
       "list": [
         "id",
-        "createdAt",
-        "updatedAt",
+        "mode",
         "articles"
       ],
       "edit": [
         [
           {
-            "name": "Default",
-            "size": 12
-          }
-        ],
-        [
+            "name": "mode",
+            "size": 6
+          },
           {
             "name": "articles",
             "size": 6
           }
         ]
       ]
-    }
+    },
+    "isComponent": true
   },
   "type": "object",
   "environment": null,
