@@ -1,6 +1,6 @@
 import { ApolloProvider } from '@apollo/react-hooks';
 import withApollo from '@/hooks/with-apollo';
-import "../app/globals.css";
+import "../app/globals.scss";
 
 function App({ Component, pageProps, apollo }) {
   return (

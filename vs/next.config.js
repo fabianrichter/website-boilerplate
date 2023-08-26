@@ -21,7 +21,7 @@ const nextConfig = {
           loader: "css-loader",
           options: {
             modules: {
-              getLocalIdent,
+              localIdentName: "_[hash:base64:5]",
             },
           },
         },

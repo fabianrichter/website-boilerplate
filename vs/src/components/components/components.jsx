@@ -3,6 +3,7 @@ import PageTitle from "./page-title/page-title";
 import Text from "./text/text";
 import Image from "./image/image";
 import ArticleOverview from "./article-overview/article-overview";
+import ContactForm from "./contact-form/contact-form";
 
 const renderComponents = (componentData) => {
   // check for components data typename to render the correct component
@@ -15,6 +16,8 @@ const renderComponents = (componentData) => {
       return <Image data={componentData} />;
     case "ComponentConnectArticleOverview":
       return <ArticleOverview data={componentData} />
+    case "ComponentFormsContactForm":
+      return <ContactForm />
     default:
       return <div>Something went wrong</div>;
   }

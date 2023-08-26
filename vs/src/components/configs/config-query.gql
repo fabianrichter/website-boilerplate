@@ -1,5 +1,5 @@
 #import './config-footer.fragment.gql'
 
 query ConfigQuery {
-    ...ConfigFooter
+  ...ConfigFooter
 }

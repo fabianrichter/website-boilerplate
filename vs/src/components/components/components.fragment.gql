@@ -3,6 +3,7 @@
 #import './text/text.fragment.gql'
 #import './image/image.fragment.gql'
 #import './article-overview/article-overview.fragment.gql'
+#import './contact-form/contact-form.fragment.gql'
 
 fragment PageComponents on Page {
   components {
@@ -11,5 +12,6 @@ fragment PageComponents on Page {
     ...ComponentGeneralText
     ...ComponentGeneralImage
     ...ComponentConnectArticleOverview
+    ...ComponentFormsContactForm
   }
 }
