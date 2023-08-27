@@ -1,4 +1,4 @@
-fragment SEO on Page {
+fragment StrapiSEO on Page {
   seo {
     metaTitle
     metaDescription

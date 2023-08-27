@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_general_text_and_images",
+  "info": {
+    "displayName": "Text & Image",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "direction": {
+      "type": "enumeration",
+      "enum": [
+        "text-image",
+        "image-text"
+      ]
+    },
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "internal.image",
+      "required": false
+    },
+    "text": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.text"
+    }
+  }
+}

@@ -5,4 +5,5 @@ export const apolloClient = new ApolloClient({
   uri: graphqlEndpoint,
   cache: new InMemoryCache(),
   ssrMode: typeof window === "undefined",
+  connectToDevTools: true
 });

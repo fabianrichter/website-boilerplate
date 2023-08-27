@@ -25,7 +25,8 @@
         "general.text",
         "general.image",
         "connect.article-overview",
-        "forms.contact-form"
+        "forms.contact-form",
+        "general.text-and-image"
       ],
       "pluginOptions": {
         "i18n": {

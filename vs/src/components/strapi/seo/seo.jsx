@@ -24,17 +24,17 @@ const StrapiSEO = ({ data }) => {
           switch (metaSocial.socialNetwork) {
             case "Facebook":
               return (
-                <>
+                <React.Fragment key={index}>
                   <meta name="og:title" content={metaSocial.title} key={`title${index}`} />
                   <meta name="og:description" content={metaSocial.description} key={`desc${index}`} />
-                </>
+                </React.Fragment>
               );
             case "Twitter":
               return (
-                <>
+                <React.Fragment key={index}>
                   <meta name="twitter:title" content={metaSocial.title} key={`title${index}`} />
                   <meta name="twitter:description" content={metaSocial.description} key={`desc${index}`} />
-                </>
+                </React.Fragment>
               );
           }
         })}

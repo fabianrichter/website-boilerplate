@@ -4,6 +4,7 @@
 #import './image/image.fragment.gql'
 #import './article-overview/article-overview.fragment.gql'
 #import './contact-form/contact-form.fragment.gql'
+#import './text-and-image/text-and-image.fragment.gql'
 
 fragment PageComponents on Page {
   components {
@@ -11,6 +12,7 @@ fragment PageComponents on Page {
     ...ComponentGeneralPageTitle
     ...ComponentGeneralText
     ...ComponentGeneralImage
+    ...ComponentGeneralTextAndImage
     ...ComponentConnectArticleOverview
     ...ComponentFormsContactForm
   }

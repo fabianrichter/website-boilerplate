@@ -1,13 +1,29 @@
-import { strapiUrl } from '@/config';
-import React from 'react'
+import { strapiUrl } from "@/config";
+import React from "react";
 
-const StrapiImage = ({ data }) => {
+import styles from "./image.module.scss";
+
+const StrapiImage = ({ data, format }) => {
+  // destructure basic image data
+  const {
+    data: {
+      attributes: { alternativeText, caption, url, formats },
+    },
+  } = data;
+
+  // get default image url
+  let src = strapiUrl + url;
+  // if format is specified, rewrite the default image url
+  if (!!format) {
+    src = strapiUrl + formats[format].url;
+  }
+
   return (
-    <img 
-        src={strapiUrl + data.attributes.url}
-        alt={data.attributes.alternativeText ? data.attributes.alternativeText : null}
-    />
-  )
-}
+    <div className={styles["image-wrapper"]}>
+      <img className={styles.image} src={src} alt={alternativeText ? alternativeText : null} />
+      {caption && <span className={styles.caption}>{caption}</span>}
+    </div>
+  );
+};
 
-export default StrapiImage
+export default StrapiImage;

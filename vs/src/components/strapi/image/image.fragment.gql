@@ -1,0 +1,13 @@
+fragment StrapiImage on ComponentInternalImage {
+  image {
+    data {
+      attributes {
+        name
+        alternativeText
+        caption
+        formats
+        url
+      }
+    }
+  }
+}

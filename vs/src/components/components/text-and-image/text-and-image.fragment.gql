@@ -1,0 +1,12 @@
+#import '../../strapi/image/image.fragment.gql'
+
+fragment ComponentGeneralTextAndImage on ComponentGeneralTextAndImage {
+  __typename
+  text {
+    content
+  }
+  direction
+  image {
+    ...StrapiImage
+  }
+}

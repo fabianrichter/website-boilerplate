@@ -1,11 +1,4 @@
 /** @type {import('next').NextConfig} */
-
-// Import class name generator factory
-const { getLocalIdentName } = require("css-loader-shorter-classnames");
-
-// Create generator
-const getLocalIdent = getLocalIdentName();
-
 const nextConfig = {
   webpack: (config) => {
     config.module.rules.push({

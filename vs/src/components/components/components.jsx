@@ -4,6 +4,7 @@ import Text from "./text/text";
 import Image from "./image/image";
 import ArticleOverview from "./article-overview/article-overview";
 import ContactForm from "./contact-form/contact-form";
+import TextAndImage from "./text-and-image/text-and-image";
 
 const renderComponents = (componentData) => {
   // check for components data typename to render the correct component
@@ -14,12 +15,14 @@ const renderComponents = (componentData) => {
       return <Text data={componentData} />;
     case "ComponentGeneralImage":
       return <Image data={componentData} />;
+    case "ComponentGeneralTextAndImage":
+      return <TextAndImage data={componentData} />
     case "ComponentConnectArticleOverview":
       return <ArticleOverview data={componentData} />
     case "ComponentFormsContactForm":
       return <ContactForm />
     default:
-      return <div>Something went wrong</div>;
+      return <div>Module not found.</div>;
   }
 };
 

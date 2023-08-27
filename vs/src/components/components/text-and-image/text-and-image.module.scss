@@ -1,0 +1,29 @@
+.section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.outer-wrapper {
+  display: flex;
+  align-items: center;
+
+  &.direction-text_image {
+    flex-direction: row;
+  }
+
+  &.direction-image_text {
+    flex-direction: row-reverse;
+  }
+
+  .image-wrapper,
+  .text-wrapper {
+    flex-basis: 50%;
+    width: 50%;
+  }
+
+  .text-wrapper {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+}

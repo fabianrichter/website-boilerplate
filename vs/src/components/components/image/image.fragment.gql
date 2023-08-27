@@ -1,12 +1,8 @@
+#import '../../strapi/image/image.fragment.gql'
+
 fragment ComponentGeneralImage on ComponentGeneralImage {
   __typename
-  image {
-    data {
-      attributes {
-        name
-        alternativeText
-        url
-      }
-    }
+  images {
+    ...StrapiImage
   }
 }

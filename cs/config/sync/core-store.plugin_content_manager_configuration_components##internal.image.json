@@ -1,7 +1,7 @@
 {
-  "key": "plugin_content_manager_configuration_components::general.image",
+  "key": "plugin_content_manager_configuration_components::internal.image",
   "value": {
-    "uid": "general.image",
+    "uid": "internal.image",
     "settings": {
       "bulkable": true,
       "filterable": true,
@@ -20,16 +20,16 @@
           "sortable": false
         }
       },
-      "images": {
+      "image": {
         "edit": {
-          "label": "images",
+          "label": "image",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "images",
+          "label": "image",
           "searchable": false,
           "sortable": false
         }
@@ -38,13 +38,13 @@
     "layouts": {
       "list": [
         "id",
-        "images"
+        "image"
       ],
       "edit": [
         [
           {
-            "name": "images",
-            "size": 12
+            "name": "image",
+            "size": 6
           }
         ]
       ]
