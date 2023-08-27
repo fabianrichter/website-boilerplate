@@ -14,7 +14,7 @@ const StrapiSEO = ({ data }) => {
       <meta name="description" content={data.metaDescription} key="desc" />
       <meta name="keywords" content={data.keywords} key="keywords" />
       <meta name="robots" content={data.metaRobots} key="robots" />
-      {data.metaImage && (
+      {data.metaImage?.data && (
         <meta name="image" content={strapiUrl + data.metaImage.data.attributes.formats.medium.url} key="image" />
       )}
 

@@ -10,6 +10,25 @@
   align-items: center;
 }
 
+.footer-line {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  margin-top: 25px;
+
+  a {
+    padding: 5px 25px;
+    position: relative;
+  }
+
+  > a ~ a::before {
+    content: "|";
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%);
+  }
+}
+
 .copyright {
   display: flex;
   justify-content: center;

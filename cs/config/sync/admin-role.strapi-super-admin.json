@@ -123,7 +123,9 @@
       "subject": "api::config-footer.config-footer",
       "properties": {
         "fields": [
-          "instagramProfileUrl"
+          "instagramProfileUrl",
+          "imprintAlias",
+          "privacyAlias"
         ]
       },
       "conditions": []
@@ -145,7 +147,9 @@
       "subject": "api::config-footer.config-footer",
       "properties": {
         "fields": [
-          "instagramProfileUrl"
+          "instagramProfileUrl",
+          "imprintAlias",
+          "privacyAlias"
         ]
       },
       "conditions": []
@@ -155,7 +159,9 @@
       "subject": "api::config-footer.config-footer",
       "properties": {
         "fields": [
-          "instagramProfileUrl"
+          "instagramProfileUrl",
+          "imprintAlias",
+          "privacyAlias"
         ]
       },
       "conditions": []
@@ -210,51 +216,6 @@
           "Date",
           "Location",
           "Components"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
-      "subject": "api::home.home",
-      "properties": {
-        "fields": [
-          "Default",
-          "articles"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.delete",
-      "subject": "api::home.home",
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.publish",
-      "subject": "api::home.home",
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "api::home.home",
-      "properties": {
-        "fields": [
-          "Default",
-          "articles"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "api::home.home",
-      "properties": {
-        "fields": [
-          "Default",
-          "articles"
         ]
       },
       "conditions": []

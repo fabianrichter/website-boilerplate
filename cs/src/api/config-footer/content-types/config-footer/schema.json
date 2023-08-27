@@ -4,7 +4,8 @@
   "info": {
     "singularName": "config-footer",
     "pluralName": "config-footers",
-    "displayName": "Config: Footer"
+    "displayName": "Config: Footer",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,6 +13,12 @@
   "pluginOptions": {},
   "attributes": {
     "instagramProfileUrl": {
+      "type": "string"
+    },
+    "imprintAlias": {
+      "type": "string"
+    },
+    "privacyAlias": {
       "type": "string"
     }
   }

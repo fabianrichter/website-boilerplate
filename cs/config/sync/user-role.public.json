@@ -19,9 +19,6 @@
       "action": "api::event.event.findOne"
     },
     {
-      "action": "api::home.home.find"
-    },
-    {
       "action": "api::page.page.find"
     },
     {

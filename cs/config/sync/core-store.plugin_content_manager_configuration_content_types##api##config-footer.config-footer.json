@@ -34,6 +34,34 @@
           "sortable": true
         }
       },
+      "imprintAlias": {
+        "edit": {
+          "label": "imprintAlias",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "imprintAlias",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "privacyAlias": {
+        "edit": {
+          "label": "privacyAlias",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "privacyAlias",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -64,19 +92,29 @@
       }
     },
     "layouts": {
+      "edit": [
+        [
+          {
+            "name": "instagramProfileUrl",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "privacyAlias",
+            "size": 4
+          },
+          {
+            "name": "imprintAlias",
+            "size": 4
+          }
+        ]
+      ],
       "list": [
         "id",
         "instagramProfileUrl",
         "createdAt",
         "updatedAt"
-      ],
-      "edit": [
-        [
-          {
-            "name": "instagramProfileUrl",
-            "size": 6
-          }
-        ]
       ]
     }
   },
