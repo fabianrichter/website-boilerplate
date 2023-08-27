@@ -9,20 +9,23 @@ export default async function handler(req, res) {
 
   try {
     const client = apolloClient;
-    await client.cache.reset();
+
+    // request all article and page slugs
     const { data: articleData } = await client.query({
       query: ArticleSlugs,
     });
     const { data: pageData } = await client.query({
       query: PageSlugs,
     });
+
+    // gather the result in one array
     const paths = [
       ...pageData.pages.data.map((page) => "/" + page.attributes.slug),
       ...articleData.articles.data.map((page) => "/articles/" + page.attributes.slug),
     ];
 
+    // pass paths into revalidate function
     await Promise.all(paths.map(async (path) => await res.revalidate(path)));
-    console.log("revalidated.")
     return res.json({ revalidated: true, paths });
   } catch (err) {
     // If there was an error, Next.js will continue

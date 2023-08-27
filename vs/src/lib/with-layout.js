@@ -79,7 +79,9 @@ export const getStaticArticlePaths = async () => {
 export const getStaticProps = async ({ params }) => {
   // initialize apollo client
   const client = apolloClient;
-  client.cache.reset();
+  // clear cache before fetching
+  await client.cache.reset();
+
   const props = {};
 
   // request general page configs
