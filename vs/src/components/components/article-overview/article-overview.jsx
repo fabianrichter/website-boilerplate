@@ -16,7 +16,7 @@ const ArticleOverview = ({ data }) => {
     if (data.mode === "manual") {
       setArticles(data.manualArticles);
     }
-  }, [recentArticles]);
+  }, [recentArticles, data.manualArticles]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error.message}</p>;

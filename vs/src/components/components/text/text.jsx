@@ -11,7 +11,7 @@ const Text = (props) => {
         <Row>
           <Col col="8">
             <div className={styles["text-wrapper"]}>
-              <ReactMarkdown children={props.data.content} />
+              <ReactMarkdown>{props.data.content}</ReactMarkdown>
             </div>
           </Col>
         </Row>

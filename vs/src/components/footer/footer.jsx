@@ -29,8 +29,8 @@ const Footer = () => {
         <a href={footer.instagramProfileUrl}>Instagram</a>
       </div>
       <div className={styles["footer-line"]}>
-        {footerLine.map(link => (
-          <Link href={link.url}>{link.label}</Link>
+        {footerLine.map((link, index) => (
+          <Link href={link.url} key={index}>{link.label}</Link>
         ))}
       </div>
       <div className={styles.copyright}>(c) 2023</div>

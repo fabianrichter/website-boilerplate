@@ -25,11 +25,15 @@ const withLayout = (Component) => {
   const wrappedComponent = (props) => (
     <>
       <ConfigsProvider value={props.configs}>
-        {props.content.attributes.seo && <StrapiSEO data={props.content.attributes.seo} />}
+        {props.content?.attributes?.seo && <StrapiSEO data={props.content.attributes.seo} />}
         <Header {...props.headerContent} />
-        <BasicContentProvider value={props.basicContent}>
+        {props.basicContent ? (
+          <BasicContentProvider value={props.basicContent}>
+            <Component {...props} />
+          </BasicContentProvider>
+        ) : (
           <Component {...props} />
-        </BasicContentProvider>
+        )}
         <Footer />
       </ConfigsProvider>
     </>
@@ -51,7 +55,7 @@ export const getStaticPagePaths = async () => {
     paths: data.pages.data.map((page) => ({
       params: { slug: page.attributes.slug },
     })),
-    fallback: false, // return 404 if none of the specified paths is requested
+    fallback: "blocking", // return 404 if none of the specified paths is requested
   };
 };
 
@@ -68,13 +72,14 @@ export const getStaticArticlePaths = async () => {
     paths: data.articles.data.map((article) => ({
       params: { slug: article.attributes.slug },
     })),
-    fallback: false, // return 404 if none of the specified paths is requested
+    fallback: "blocking", // return 404 if none of the specified paths is requested
   };
 };
 
 export const getStaticProps = async ({ params }) => {
   // initialize apollo client
   const client = apolloClient;
+  client.cache.reset();
   const props = {};
 
   // request general page configs
@@ -89,6 +94,7 @@ export const getStaticProps = async ({ params }) => {
     variables: {
       id: "2",
     },
+    fetchPolicy: "network-only"
   });
   props.headerContent = { navigation };
 
