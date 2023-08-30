@@ -76,7 +76,7 @@ export const getStaticArticlePaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params, locale }) => {
   // initialize apollo client
   const client = apolloClient;
   // clear cache before fetching
