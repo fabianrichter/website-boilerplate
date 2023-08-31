@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = ({ env }) => ({
   connection: {
-    client: "postgres",
+    client: "mysql",
     connection: {
       uri: env("DATABASE_URL"),
       host: env("DATABASE_HOST"),
