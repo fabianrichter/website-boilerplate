@@ -7,7 +7,7 @@ import { ContentQuery } from "@/components/content-types/content-query.gql";
 import { BasicContent } from "@/components/content-types/basic-content-query.gql";
 import { PageSlugs, ArticleSlugs } from "@/queries/slugs.gql";
 
-import { apolloClient } from "@/app/apollo-client";
+import { apolloClientServer as apolloClient } from "@/app/apollo-client";
 import StrapiSEO from "@/components/strapi/seo/seo";
 import BasicContentProvider from "@/store/basic-content";
 import ConfigsProvider from "@/store/configs";
@@ -94,7 +94,7 @@ export const getStaticProps = async ({ params, locale }) => {
   const { data: navigation } = await client.query({
     query: Navigation,
     variables: {
-      id: "2",
+      id: "3",
     },
     fetchPolicy: "network-only"
   });
