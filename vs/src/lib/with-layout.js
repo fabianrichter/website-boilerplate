@@ -12,6 +12,7 @@ import StrapiSEO from "@/components/strapi/seo/seo";
 import BasicContentProvider from "@/store/basic-content";
 import ConfigsProvider from "@/store/configs";
 import Footer from "@/components/footer/footer";
+import { graphqlEndpoint } from "@/config";
 
 /**
  * A HOC that wraps a page and adds the Header component to it.

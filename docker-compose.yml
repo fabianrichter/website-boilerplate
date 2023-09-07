@@ -73,10 +73,9 @@ services:
       context: ./vs
       dockerfile: ./Dockerfile
       network: host
+      args:
+        STRAPI_URL: ${STRAPI_URL}
     env_file: .env
-    environment:
-      CS_HOST: ${CS_HOST}
-      CS_PORT: ${CS_PORT}
     image: ${PROJECT_NAME}-vs:latest
     ports:
       - "3000:3000"
