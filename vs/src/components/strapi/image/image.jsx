@@ -4,6 +4,8 @@ import React from "react";
 import styles from "./image.module.scss";
 import Image from "next/image";
 
+
+
 const StrapiImage = ({ data, format }) => {
   // destructure basic image data
   const {

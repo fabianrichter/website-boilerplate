@@ -38,7 +38,12 @@ const nextConfig = {
         hostname: "localhost",
         port: "1337"
       },
+      {
+        protocol: "http",
+        hostname: "api.boilerplate.local"
+      }
     ],
+    formats: ["image/webp"]
   },
   // i18n: {
   //   locales: ['en', 'de'],
