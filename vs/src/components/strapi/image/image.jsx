@@ -1,8 +1,10 @@
-import { strapiUrl } from "@/config";
+import { strapiUrl, strapiUrlServer } from "@/config";
 import React from "react";
 
 import styles from "./image.module.scss";
 import Image from "next/image";
+
+
 
 const StrapiImage = ({ data, format }) => {
   // destructure basic image data
@@ -13,7 +15,8 @@ const StrapiImage = ({ data, format }) => {
   } = data;
 
   // get default image url
-  let src = strapiUrl + url;
+  let src;
+  typeof window === "undefined" ? (src = strapiUrlServer + url) : (src = strapiUrl + url);
   let imgWidth = width;
   let imgHeight = height;
   // if format is specified, rewrite the default image url
