@@ -40,7 +40,7 @@ const nextConfig = {
       },
       {
         protocol: "http",
-        hostname: "api.boilerplate.local"
+        hostname: `${process.env.STRAPI_SUBDOMAIN}.${process.env.PROJECT_DOMAIN}`
       }
     ],
     formats: ["image/webp"]
