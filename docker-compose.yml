@@ -74,7 +74,8 @@ services:
       dockerfile: ./Dockerfile
       network: host
       args:
-        STRAPI_URL: ${STRAPI_URL}
+        STRAPI_SUBDOMAIN: ${STRAPI_SUBDOMAIN}
+        PROJECT_DOMAIN: ${PROJECT_DOMAIN}
     env_file: .env
     image: ${PROJECT_NAME}-vs:latest
     extra_hosts:
@@ -92,15 +93,25 @@ services:
     ports:
       - 80:80
       - 443:443
+    env_file: .env
+    environment:
+      PROJECT_NAME: ${PROJECT_NAME}
+      PROJECT_DOMAIN: ${PROJECT_DOMAIN}
+      STRAPI_SUBDOMAIN: ${STRAPI_SUBDOMAIN}
+      STRAPI_PORT: ${STRAPI_PORT}
+      NEXT_SUBDOMAIN: ${NEXT_SUBDOMAIN}
+      DOLLAR: "$"
     networks:
       - boilerplate
     volumes:
-      - ./config/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./config/nginx/default.conf.template:/etc/nginx/conf.d/default.conf.template
       - ./logs/nginx/:/var/log/nginx
       - /etc/localtime:/etc/localtime:ro
+      - ./scripts:/scripts:rw
     depends_on:
       - cs
       - vs
+    command: /bin/bash -c "envsubst < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
 
 networks:
   boilerplate:

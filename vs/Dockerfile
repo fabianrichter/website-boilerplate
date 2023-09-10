@@ -22,8 +22,11 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-ARG STRAPI_URL
-ENV NEXT_PUBLIC_STRAPI_URL $STRAPI_URL
+ARG STRAPI_SUBDOMAIN
+ARG PROJECT_DOMAIN
+ENV STRAPI_SUBDOMAIN ${STRAPI_SUBDOMAIN}
+ENV PROJECT_DOMAIN ${PROJECT_DOMAIN}
+ENV NEXT_PUBLIC_STRAPI_URL http://$STRAPI_SUBDOMAIN.$PROJECT_DOMAIN
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
