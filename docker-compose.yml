@@ -10,7 +10,7 @@ services:
     env_file: .env
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
-      DATABASE_HOST: boilerplate-db
+      DATABASE_HOST: ${PROJECT_NAME}-db
       DATABASE_NAME: ${DATABASE_NAME}
       DATABASE_USERNAME: ${DATABASE_USERNAME}
       DATABASE_PORT: ${DATABASE_PORT}
@@ -30,7 +30,7 @@ services:
     ports:
       - "1337:1337"
     networks:
-      - boilerplate
+      - internal
     depends_on:
       - db
 
@@ -49,7 +49,7 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - boilerplate
+      - internal
 
   adminer:
     container_name: ${PROJECT_NAME}-adminer
@@ -60,7 +60,7 @@ services:
     environment:
       - ADMINER_DEFAULT_SERVER=db
     networks:
-      - boilerplate
+      - internal
     depends_on:
       - db
 
@@ -72,18 +72,18 @@ services:
     build: 
       context: ./vs
       dockerfile: ./Dockerfile
-      network: host
+      network: host # host network to access strapi during build
       args:
         STRAPI_SUBDOMAIN: ${STRAPI_SUBDOMAIN}
         PROJECT_DOMAIN: ${PROJECT_DOMAIN}
     env_file: .env
     image: ${PROJECT_NAME}-vs:latest
     extra_hosts:
-      - "api.boilerplate.local:host-gateway"
+      - "${STRAPI_SUBDOMAIN}.${PROJECT_DOMAIN}:host-gateway" # use host gateway to access backend (e.g. for images)
     ports:
       - "3000:3000"
     networks:
-      - boilerplate
+      - internal
     restart: unless-stopped
 
   nginx:
@@ -100,20 +100,20 @@ services:
       STRAPI_SUBDOMAIN: ${STRAPI_SUBDOMAIN}
       STRAPI_PORT: ${STRAPI_PORT}
       NEXT_SUBDOMAIN: ${NEXT_SUBDOMAIN}
-      DOLLAR: "$"
     networks:
-      - boilerplate
+      - internal
     volumes:
       - ./config/nginx/default.conf.template:/etc/nginx/conf.d/default.conf.template
       - ./logs/nginx/:/var/log/nginx
       - /etc/localtime:/etc/localtime:ro
-      - ./scripts:/scripts:rw
+      - ./scripts:/scripts
     depends_on:
       - cs
       - vs
-    command: /bin/bash -c "envsubst < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+    # inject variables into nginx config to make it dynamic
+    command: bash ./scripts/init_nginx.sh
 
 networks:
-  boilerplate:
-    name: boilerplate
+  internal:
+    name: ${PROJECT_NAME}-network
     driver: bridge

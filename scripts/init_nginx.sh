@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 export DOLLAR='$'
-envsubst < /env/nginx/default.conf.template > /etc/nginx/default.conf
+envsubst < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf
 nginx -g "daemon off;"
