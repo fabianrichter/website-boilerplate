@@ -1,0 +1,108 @@
+version: "3.9"
+services:
+  cs:
+    container_name: ${PROJECT_NAME}-cs
+    build:
+      context: ./cs
+      dockerfile: ./Dockerfile
+    image: ${PROJECT_NAME}-cs:latest
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_HOST: boilerplate-db
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PORT: ${DATABASE_PORT}
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      NODE_ENV: ${NODE_ENV}
+    volumes:
+      - ./cs/config:/opt/app/config
+      - ./cs/src:/opt/app/src
+      - ./cs/package.json:/opt/package.json
+      - ./cs/yarn.lock:/opt/yarn.lock
+      - ./.docker/transfer:/opt/app/transfer
+
+      - .env:/opt/app/.env
+      - ./cs/public:/opt/app/public
+    ports:
+      - "1337:1337"
+    networks:
+      - boilerplate
+    depends_on:
+      - db
+
+  db:
+    container_name: ${PROJECT_NAME}-db
+    platform: linux/amd64 #for platform error on Apple M1 chips
+    restart: unless-stopped
+    env_file: .env
+    image: postgres:14.5-alpine
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    volumes:
+      - ./.docker/data:/var/lib/postgresql/data/ # if you want to use a bind folder
+    ports:
+      - "5432:5432"
+    networks:
+      - boilerplate
+
+  adminer:
+    container_name: ${PROJECT_NAME}-adminer
+    image: adminer
+    restart: unless-stopped
+    ports:
+      - "9090:8080"
+    environment:
+      - ADMINER_DEFAULT_SERVER=db
+    networks:
+      - boilerplate
+    depends_on:
+      - db
+
+  vs:
+    container_name: ${PROJECT_NAME}-vs
+    depends_on: 
+      - cs
+      - db
+    build: 
+      context: ./vs
+      dockerfile: ./Dockerfile
+      network: host
+      args:
+        STRAPI_URL: ${STRAPI_URL}
+    env_file: .env
+    image: ${PROJECT_NAME}-vs:latest
+    extra_hosts:
+      - "api.boilerplate.local:host-gateway"
+    ports:
+      - "3000:3000"
+    networks:
+      - boilerplate
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:latest
+    restart: unless-stopped
+    container_name: ${PROJECT_NAME}-nginx
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - boilerplate
+    volumes:
+      - ./config/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./logs/nginx/:/var/log/nginx
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - cs
+      - vs
+
+networks:
+  boilerplate:
+    name: boilerplate
+    driver: bridge
