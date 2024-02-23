@@ -8,6 +8,7 @@
       "subject": "api::article.article",
       "properties": {
         "fields": [
+          "title",
           "seo.metaTitle",
           "seo.metaDescription",
           "seo.metaImage",
@@ -20,7 +21,37 @@
           "seo.structuredData",
           "seo.metaViewport",
           "seo.canonicalURL",
-          "slug"
+          "slug",
+          "teaserImage.image",
+          "components",
+          "teaserText",
+          "tags"
+        ],
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::article.article",
+      "properties": {
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::article.article",
+      "properties": {
+        "locales": [
+          "de",
+          "en"
         ]
       },
       "conditions": []
@@ -30,6 +61,7 @@
       "subject": "api::article.article",
       "properties": {
         "fields": [
+          "title",
           "seo.metaTitle",
           "seo.metaDescription",
           "seo.metaImage",
@@ -42,7 +74,15 @@
           "seo.structuredData",
           "seo.metaViewport",
           "seo.canonicalURL",
-          "slug"
+          "slug",
+          "teaserImage.image",
+          "components",
+          "teaserText",
+          "tags"
+        ],
+        "locales": [
+          "de",
+          "en"
         ]
       },
       "conditions": []
@@ -52,6 +92,7 @@
       "subject": "api::article.article",
       "properties": {
         "fields": [
+          "title",
           "seo.metaTitle",
           "seo.metaDescription",
           "seo.metaImage",
@@ -64,7 +105,129 @@
           "seo.structuredData",
           "seo.metaViewport",
           "seo.canonicalURL",
-          "slug"
+          "slug",
+          "teaserImage.image",
+          "components",
+          "teaserText",
+          "tags"
+        ],
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::config-footer.config-footer",
+      "properties": {
+        "fields": [
+          "instagramProfileUrl",
+          "imprintAlias",
+          "privacyAlias"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::config-footer.config-footer",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::config-footer.config-footer",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::config-footer.config-footer",
+      "properties": {
+        "fields": [
+          "instagramProfileUrl",
+          "imprintAlias",
+          "privacyAlias"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::config-footer.config-footer",
+      "properties": {
+        "fields": [
+          "instagramProfileUrl",
+          "imprintAlias",
+          "privacyAlias"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::config-header.config-header",
+      "properties": {
+        "fields": [
+          "phone",
+          "contactPage",
+          "email"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::config-header.config-header",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::config-header.config-header",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::config-header.config-header",
+      "properties": {
+        "fields": [
+          "phone",
+          "contactPage",
+          "email"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::config-header.config-header",
+      "properties": {
+        "fields": [
+          "phone",
+          "contactPage",
+          "email"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::contact-submission.contact-submission",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::contact-submission.contact-submission",
+      "properties": {
+        "fields": [
+          "msgBody",
+          "contactName",
+          "emailAddress"
         ]
       },
       "conditions": []
@@ -89,6 +252,32 @@
           "seo.structuredData",
           "seo.metaViewport",
           "seo.canonicalURL"
+        ],
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::page.page",
+      "properties": {
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::page.page",
+      "properties": {
+        "locales": [
+          "de",
+          "en"
         ]
       },
       "conditions": []
@@ -113,6 +302,10 @@
           "seo.structuredData",
           "seo.metaViewport",
           "seo.canonicalURL"
+        ],
+        "locales": [
+          "de",
+          "en"
         ]
       },
       "conditions": []
@@ -137,6 +330,77 @@
           "seo.structuredData",
           "seo.metaViewport",
           "seo.canonicalURL"
+        ],
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::tag.tag",
+      "properties": {
+        "fields": [
+          "name",
+          "articles"
+        ],
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::tag.tag",
+      "properties": {
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::tag.tag",
+      "properties": {
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::tag.tag",
+      "properties": {
+        "fields": [
+          "name",
+          "articles"
+        ],
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::tag.tag",
+      "properties": {
+        "fields": [
+          "name",
+          "articles"
+        ],
+        "locales": [
+          "de",
+          "en"
         ]
       },
       "conditions": []

@@ -15,8 +15,18 @@
       "type": "enumeration",
       "enum": [
         "manual",
-        "recent"
+        "recent",
+        "tag-based"
       ]
+    },
+    "maxAmount": {
+      "type": "integer",
+      "default": 6
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
     }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_general_hero_texts",
+  "info": {
+    "displayName": "Hero Text",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    },
+    "small": {
+      "type": "string"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.cta"
+    }
+  }
+}

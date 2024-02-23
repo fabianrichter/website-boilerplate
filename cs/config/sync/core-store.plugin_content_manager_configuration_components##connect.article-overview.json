@@ -22,8 +22,8 @@
       },
       "articles": {
         "edit": {
-          "label": "articles",
-          "description": "",
+          "label": "Articles",
+          "description": "Manually select articles. Only works if mode is set to \"manual\".",
           "placeholder": "",
           "visible": true,
           "editable": true,
@@ -48,22 +48,64 @@
           "searchable": true,
           "sortable": true
         }
+      },
+      "maxAmount": {
+        "edit": {
+          "label": "Maximum Amount",
+          "description": "Maximum amount of teasers to display. Only applies to mode \"recent\" and \"tag-based\".",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "maxAmount",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "tags": {
+        "edit": {
+          "label": "Tags",
+          "description": "Set mode to \"tag-based\" to show articles by given tags.",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "tags",
+          "searchable": false,
+          "sortable": false
+        }
       }
     },
     "layouts": {
       "list": [
         "id",
         "mode",
-        "articles"
+        "articles",
+        "maxAmount"
       ],
       "edit": [
         [
           {
             "name": "mode",
             "size": 6
-          },
+          }
+        ],
+        [
           {
             "name": "articles",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "tags",
+            "size": 6
+          },
+          {
+            "name": "maxAmount",
             "size": 6
           }
         ]

@@ -2,11 +2,11 @@
 
 fragment ComponentGeneralTextAndImage on ComponentGeneralTextAndImage {
   __typename
-  text {
-    content
+  textComponent {
+    text
   }
   direction
-  image {
+  imageComponent {
     ...StrapiImage
   }
 }

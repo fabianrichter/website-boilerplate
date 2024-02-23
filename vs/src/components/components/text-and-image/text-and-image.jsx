@@ -4,8 +4,8 @@ import React from "react";
 import styles from "./text-and-image.module.scss";
 
 const TextAndImage = (props) => {
-  const imageData = props.data.image?.image;
-  const textData = props.data.text?.content;
+  const imageData = props.data.imageComponent?.image;
+  const textData = props.data.textComponent?.content;
 
   const directionalClass = styles["direction-" + props.data.direction]
 

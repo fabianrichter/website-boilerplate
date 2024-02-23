@@ -52,11 +52,11 @@
         "metaTitle": true,
         "metaDescription": true,
         "metaRobots": true,
-        "metaSocial": true,
+        "metaSocial": false,
         "wordCount": true,
-        "canonicalUrl": true,
+        "canonicalUrl": false,
         "keywordDensity": true,
-        "structuredData": true,
+        "structuredData": false,
         "alternativeText": true,
         "lastUpdatedAt": true
       }

@@ -34,30 +34,30 @@
           "sortable": true
         }
       },
-      "image": {
+      "imageComponent": {
         "edit": {
-          "label": "image",
+          "label": "imageComponent",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "image",
+          "label": "imageComponent",
           "searchable": false,
           "sortable": false
         }
       },
-      "text": {
+      "textComponent": {
         "edit": {
-          "label": "text",
+          "label": "textComponent",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "text",
+          "label": "textComponent",
           "searchable": false,
           "sortable": false
         }
@@ -66,9 +66,9 @@
     "layouts": {
       "list": [
         "id",
-        "image",
         "direction",
-        "text"
+        "imageComponent",
+        "textComponent"
       ],
       "edit": [
         [
@@ -79,13 +79,13 @@
         ],
         [
           {
-            "name": "image",
+            "name": "imageComponent",
             "size": 12
           }
         ],
         [
           {
-            "name": "text",
+            "name": "textComponent",
             "size": 12
           }
         ]

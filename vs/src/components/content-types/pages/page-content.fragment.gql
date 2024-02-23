@@ -5,7 +5,17 @@ fragment PageContent on PageEntityResponseCollection {
   data {
     id
     attributes {
-      ...StrapiSEO
+      localizations {
+        data {
+          attributes {
+            locale
+            slug
+          }
+        }
+      }
+      seo {
+        ...StrapiSEO
+      }
       ...PageComponents
     }
   }

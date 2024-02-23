@@ -22,8 +22,8 @@
       },
       "metaTitle": {
         "edit": {
-          "label": "metaTitle",
-          "description": "",
+          "label": "Meta Title",
+          "description": "Shows the Title at various points (e.g. in browser tab).",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -36,8 +36,8 @@
       },
       "metaDescription": {
         "edit": {
-          "label": "metaDescription",
-          "description": "",
+          "label": "Meta Description",
+          "description": "Shows a short description below the entry in the search engine results.",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -50,8 +50,8 @@
       },
       "metaImage": {
         "edit": {
-          "label": "metaImage",
-          "description": "",
+          "label": "Meta Image",
+          "description": "Shows a featured preview image for social sharing purposes.",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -78,7 +78,7 @@
       },
       "keywords": {
         "edit": {
-          "label": "keywords",
+          "label": "Keywords",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -92,8 +92,8 @@
       },
       "metaRobots": {
         "edit": {
-          "label": "metaRobots",
-          "description": "",
+          "label": "Meta Robots",
+          "description": "Robots meta tag to do things like excluding the page from being indexed in search engines.",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -168,12 +168,6 @@
         [
           {
             "name": "metaImage",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "metaSocial",
             "size": 12
           }
         ],
@@ -184,22 +178,6 @@
           },
           {
             "name": "metaRobots",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "structuredData",
-            "size": 12
-          }
-        ],
-        [
-          {
-            "name": "metaViewport",
-            "size": 6
-          },
-          {
-            "name": "canonicalURL",
             "size": 6
           }
         ]

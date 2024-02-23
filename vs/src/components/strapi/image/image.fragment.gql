@@ -5,10 +5,10 @@ fragment StrapiImage on ComponentInternalImage {
         name
         alternativeText
         caption
-        formats
         url
         width
         height
+        formats
       }
     }
   }

@@ -1,37 +1,76 @@
+@import "@/scss/fonts.scss";
+
 .footer {
-  background-color: #111;
+  background-color: #babbbf;
   padding: 50px 0;
   margin-top: 50px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: auto;
 }
 
-.social {
+.logo {
+  @include headline(h6);
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  align-items: flex-end;
 
-.footer-line {
-  display: flex;
-  justify-content: center;
-  align-items:center;
-  margin-top: 25px;
-
-  a {
-    padding: 5px 25px;
-    position: relative;
-  }
-
-  > a ~ a::before {
-    content: "|";
-    position: absolute;
-    left: 0;
-    transform: translateX(-50%);
+  @include media-breakpoint-max(md) {
+    @include headline(h3);
+    margin-top: 50px;
+    order: 2;
   }
 }
 
 .copyright {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
+  align-items: flex-end;
+
+  @include media-breakpoint-min(md) {
+    justify-content: center;
+  }
+
+  @include media-breakpoint-max(md) {
+    margin-top: 20px;
+    order: 3;
+  }
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+
+  @include media-breakpoint-max(md) {
+    flex-direction: column;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .social,
+  .footer-line {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include media-breakpoint-min(md) {
+    justify-content: flex-end;
+
+    .social,
+    .footer-line {
+      margin-left: 0;
+    }
+  }
+
+  @include media-breakpoint-max(md) {
+    margin-top: 20px;
+
+    .social,
+    .footer-line {
+      margin-left: 0;
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
 }

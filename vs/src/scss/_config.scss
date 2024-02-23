@@ -1,0 +1,26 @@
+$grid-columns: 12;
+$grid-gutter-width: 2rem;
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 576px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1200px,
+
+  xxl: 1600px
+);
+
+$container-max-widths: (
+  xs: 85%,
+  sm: 90%,
+  md: 90%,
+  lg: 95%,
+  xl: 95%,
+  xxl: 95%
+);

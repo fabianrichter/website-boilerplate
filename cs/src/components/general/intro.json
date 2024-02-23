@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_general_intros",
+  "info": {
+    "displayName": "Intro",
+    "icon": "alien",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "background": {
+      "type": "component",
+      "repeatable": false,
+      "component": "internal.image"
+    },
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

@@ -26,7 +26,12 @@
         "general.image",
         "connect.article-overview",
         "forms.contact-form",
-        "general.text-and-image"
+        "general.text-and-image",
+        "general.gallery",
+        "general.intro",
+        "general.portfolio",
+        "general.hero-text",
+        "general.cta"
       ],
       "pluginOptions": {
         "i18n": {
@@ -51,7 +56,7 @@
           "localized": true
         }
       },
-      "unique": true
+      "unique": false
     },
     "seo": {
       "type": "component",

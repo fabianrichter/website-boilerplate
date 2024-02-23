@@ -1,8 +1,10 @@
-import { Configs } from "@/store/configs";
-import React, { useContext } from "react";
+import { Configs } from '@/store/configs';
+import React, { useContext } from 'react';
 
-import styles from "./footer.module.scss";
-import Link from "next/link";
+import styles from './footer.module.scss';
+import Link from 'next/link';
+import { Col, Container, Row } from '../layout';
+import { t } from 'i18next';
 
 const Footer = () => {
   // destructure footer config data
@@ -14,26 +16,39 @@ const Footer = () => {
 
   const footerLine = [
     {
-      label: "Imprint",
-      url: footer.imprintAlias || "/"
+      label: 'Impressum',
+      url: footer.imprintAlias || '/',
     },
     {
-      label: "Privacy",
-      url: footer.privacyAlias || "/"
-    }
-  ]
+      label: 'Datenschutz',
+      url: footer.privacyAlias || '/',
+    },
+  ];
 
   return (
     <footer className={styles.footer}>
-      <div className={styles.social}>
-        <a href={footer.instagramProfileUrl}>Instagram</a>
-      </div>
-      <div className={styles["footer-line"]}>
-        {footerLine.map((link, index) => (
-          <Link href={link.url} key={index}>{link.label}</Link>
-        ))}
-      </div>
-      <div className={styles.copyright}>(c) 2023</div>
+      <Container>
+        <Row>
+          <Col col={12} md={4} className={styles.logo}>
+            Website Boilerplate
+          </Col>
+          <Col col={12} md={4} className={styles.copyright}>
+            copyright 2023
+          </Col>
+          <Col col={12} md={4} className={styles.links}>
+            <div className={styles.social}>
+              <a href={footer.instagramProfileUrl}>Instagram</a>
+            </div>
+            <div className={styles['footer-line']}>
+              {footerLine.map((link, index) => (
+                <Link scroll={false} href={link.url} key={index}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </footer>
   );
 };

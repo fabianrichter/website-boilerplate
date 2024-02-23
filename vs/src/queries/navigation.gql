@@ -1,5 +1,5 @@
-query Navigation($id: String!) {
-  renderNavigation(navigationIdOrSlug: $id, type: TREE) {
+query Navigation($slug: String!) {
+  renderNavigation(navigationIdOrSlug: $slug, type: TREE) {
     ...navigationItemFields
     items {
       ...navigationItemFields

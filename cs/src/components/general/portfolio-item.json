@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_general_portfolio_items",
+  "info": {
+    "displayName": "Portfolio Item",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "teaserImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "internal.image",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "link": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    }
+  }
+}

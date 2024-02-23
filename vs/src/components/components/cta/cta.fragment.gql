@@ -1,0 +1,11 @@
+fragment ComponentGeneralCta on ComponentGeneralCta {
+  __typename
+  label
+  page {
+    data {
+      attributes {
+        slug
+      }
+    }
+  }
+}

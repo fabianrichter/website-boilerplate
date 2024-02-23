@@ -1,25 +1,155 @@
+@import "@/scss/fonts";
+
+.header-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  padding: 15px 2.5%;
+  z-index: 99;
+  top: 0;
+  color: #dedede;
+  mix-blend-mode: difference;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscaled;
+
+  width: 85%;
+
+  @include media-breakpoint-min(sm) {
+    width: 90%;
+  }
+
+  @include media-breakpoint-min(md) {
+    width: 95%;
+  }
+}
+
+.logo {
+  padding: 0;
+  @include headline(h4);
+
+  a {
+    text-decoration: none;
+    transition: 0.3s letter-spacing;
+
+    &:hover {
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.fullscreen {
+  position: fixed;
+  background-color: black;
+  left: 0;
+  right: 0;
+  height: 100svh;
+  z-index: 98;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.toggle {
+  cursor: pointer;
+  @include headline(h4);
+}
+
+.contact-desktop {
+  display: flex;
+  gap: 3svw;
+  margin-right: 3svw;
+  margin-left: auto;
+
+  @include media-breakpoint-max(md) {
+    display: none;
+  }
+}
+
+.contact-mobile {
+  display: none;
+  color: white;
+  margin-top: auto;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 2.5%;
+
+  .contact-sub {
+    margin-bottom: 20px;
+  }
+
+  @include media-breakpoint-max(md) {
+    display: flex;
+  }
+}
+
+.contact-sub {
+  text-decoration: none;
+}
+
 .mainNav {
-  padding: 10px 0px;
+  padding: 10svh 0px;
 
   .ul {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     list-style: none;
     margin: 0;
     padding: 0;
 
     .a {
-      padding: 10px 25px 10px 0;
+      padding: 20px 0 0 25px;
       text-decoration: none;
+      text-transform: lowercase;
+      color: white;
     }
   }
 }
 
+.ul.lvl-0 {
+  @include headline(h4);
 
-.lvl-0 {
-  flex-direction: row;
+  > li {
+    margin: 20px;
+  }
+  > li > .a {
+    padding: 20px;
+  }
 }
 
-.lvl-1 {
+.ul.lvl-1 {
   flex-direction: column;
+  @include headline(h5);
+
+  > li {
+    margin: 10px;
+  }
+  > li > .a {
+    padding: 10px;
+  }
+}
+
+.footer {
+  padding: 15px 2.5%;
+  color: white;
+
+  @include media-breakpoint-max(md) {
+    display: flex;
+    justify-content: center;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 5svw;
+  }
 }

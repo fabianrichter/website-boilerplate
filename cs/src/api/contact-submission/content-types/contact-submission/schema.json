@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_submissions",
+  "info": {
+    "singularName": "contact-submission",
+    "pluralName": "contact-submissions",
+    "displayName": "Contact Submission",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "msgBody": {
+      "type": "text",
+      "required": true
+    },
+    "contactName": {
+      "type": "string",
+      "required": false
+    },
+    "emailAddress": {
+      "type": "email",
+      "required": true
+    }
+  }
+}

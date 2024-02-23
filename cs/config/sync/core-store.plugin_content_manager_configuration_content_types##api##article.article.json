@@ -22,7 +22,7 @@
       },
       "title": {
         "edit": {
-          "label": "title",
+          "label": "Title",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -62,44 +62,59 @@
           "sortable": true
         }
       },
-      "articleOverview": {
+      "teaserImage": {
         "edit": {
-          "label": "articleOverview",
+          "label": "Teaser Image",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "articleOverview",
+          "label": "teaserImage",
           "searchable": false,
           "sortable": false
         }
       },
-      "pageTitle": {
+      "components": {
         "edit": {
-          "label": "pageTitle",
+          "label": "Components",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "pageTitle",
+          "label": "components",
           "searchable": false,
           "sortable": false
         }
       },
-      "text": {
+      "teaserText": {
         "edit": {
-          "label": "text",
-          "description": "",
+          "label": "Teaser Text",
+          "description": "A short teaser text that will show below the title inside the article overview.",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "text",
+          "label": "teaserText",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "tags": {
+        "edit": {
+          "label": "Tags",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "tags",
           "searchable": false,
           "sortable": false
         }
@@ -134,15 +149,18 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "createdAt",
-        "title"
-      ],
       "edit": [
         [
           {
+            "name": "title",
+            "size": 4
+          },
+          {
             "name": "slug",
+            "size": 4
+          },
+          {
+            "name": "tags",
             "size": 4
           }
         ],
@@ -154,28 +172,28 @@
         ],
         [
           {
-            "name": "articleOverview",
-            "size": 12
-          }
-        ],
-        [
-          {
-            "name": "title",
+            "name": "teaserText",
             "size": 6
           }
         ],
         [
           {
-            "name": "pageTitle",
+            "name": "teaserImage",
             "size": 12
           }
         ],
         [
           {
-            "name": "text",
+            "name": "components",
             "size": 12
           }
         ]
+      ],
+      "list": [
+        "title",
+        "teaserImage",
+        "id",
+        "createdAt"
       ]
     }
   },

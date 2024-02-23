@@ -37,7 +37,7 @@
       "title": {
         "edit": {
           "label": "Title",
-          "description": "",
+          "description": "Internal title to identify the page.",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -51,7 +51,7 @@
       "slug": {
         "edit": {
           "label": "URL Alias",
-          "description": "",
+          "description": "The path for the URL (e.g. \"some-page/details\").",
           "placeholder": "",
           "visible": true,
           "editable": true

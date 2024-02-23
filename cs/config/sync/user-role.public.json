@@ -13,6 +13,12 @@
       "action": "api::config-footer.config-footer.find"
     },
     {
+      "action": "api::config-header.config-header.find"
+    },
+    {
+      "action": "api::contact-submission.contact-submission.create"
+    },
+    {
       "action": "api::event.event.find"
     },
     {
@@ -25,7 +31,10 @@
       "action": "api::page.page.findOne"
     },
     {
-      "action": "plugin::ezforms.submitController.index"
+      "action": "api::tag.tag.find"
+    },
+    {
+      "action": "api::tag.tag.findOne"
     },
     {
       "action": "plugin::navigation.client.render"

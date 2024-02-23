@@ -1,11 +1,11 @@
 #import './pages/page-content.fragment.gql'
 #import './articles/article-content.fragment.gql'
 
-query ContentQuery($slug: String) {
-  pages(filters: { slug: { eq: $slug } }) {
+query ContentQuery($slug: String, $locale: I18NLocaleCode = "de") {
+  pages(filters: { slug: { eq: $slug } }, locale: $locale) {
     ...PageContent
   }
-  articles(filters: { slug: { eq: $slug } }) {
+  articles(filters: { slug: { eq: $slug } }, locale: $locale) {
     ...ArticleContent
   }
 }

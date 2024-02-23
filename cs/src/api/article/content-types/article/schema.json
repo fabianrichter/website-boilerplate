@@ -43,35 +43,45 @@
         }
       }
     },
-    "articleOverview": {
+    "teaserImage": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
-      "component": "connect.article-overview"
+      "component": "internal.image",
+      "required": true
     },
-    "pageTitle": {
-      "type": "component",
-      "repeatable": false,
+    "components": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "general.page-title"
+      "type": "dynamiczone",
+      "components": [
+        "general.gallery",
+        "general.text",
+        "general.hero-text",
+        "general.cta",
+        "general.section-title"
+      ]
     },
-    "text": {
-      "type": "component",
-      "repeatable": false,
+    "teaserText": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "general.text"
+      "type": "text"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "articles"
     }
   }
 }

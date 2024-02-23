@@ -1,0 +1,124 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::contact-submission.contact-submission",
+  "value": {
+    "uid": "api::contact-submission.contact-submission",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "contactName",
+      "defaultSortBy": "contactName",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "msgBody": {
+        "edit": {
+          "label": "msgBody",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "msgBody",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "contactName": {
+        "edit": {
+          "label": "contactName",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "contactName",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "emailAddress": {
+        "edit": {
+          "label": "emailAddress",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "emailAddress",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "msgBody",
+        "emailAddress",
+        "contactName"
+      ],
+      "edit": [
+        [
+          {
+            "name": "msgBody",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "emailAddress",
+            "size": 6
+          },
+          {
+            "name": "contactName",
+            "size": 6
+          }
+        ]
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}
