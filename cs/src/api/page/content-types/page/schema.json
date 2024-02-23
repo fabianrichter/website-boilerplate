@@ -31,7 +31,8 @@
         "general.intro",
         "general.portfolio",
         "general.hero-text",
-        "general.cta"
+        "general.cta",
+        "general.download-overview"
       ],
       "pluginOptions": {
         "i18n": {

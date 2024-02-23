@@ -59,7 +59,6 @@ export interface GeneralAccordeon extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.String;
     item: Attribute.Component<'general.accordeon-item', true>;
   };
 }
@@ -73,6 +72,30 @@ export interface GeneralCta extends Schema.Component {
   attributes: {
     label: Attribute.String;
     page: Attribute.Relation<'general.cta', 'oneToOne', 'api::page.page'>;
+  };
+}
+
+export interface GeneralDownloadOverview extends Schema.Component {
+  collectionName: 'components_general_download_overviews';
+  info: {
+    displayName: 'Download Overview';
+    icon: 'arrowDown';
+    description: '';
+  };
+  attributes: {
+    item: Attribute.Component<'general.download', true>;
+  };
+}
+
+export interface GeneralDownload extends Schema.Component {
+  collectionName: 'components_general_downloads';
+  info: {
+    displayName: 'Download';
+    icon: 'arrowDown';
+  };
+  attributes: {
+    media: Attribute.Media;
+    text: Attribute.String;
   };
 }
 
@@ -95,9 +118,9 @@ export interface GeneralHeroText extends Schema.Component {
     description: '';
   };
   attributes: {
-    text: Attribute.Text;
     small: Attribute.String;
     cta: Attribute.Component<'general.cta'>;
+    text: Attribute.Text;
   };
 }
 
@@ -304,6 +327,8 @@ declare module '@strapi/types' {
       'general.accordeon-item': GeneralAccordeonItem;
       'general.accordeon': GeneralAccordeon;
       'general.cta': GeneralCta;
+      'general.download-overview': GeneralDownloadOverview;
+      'general.download': GeneralDownload;
       'general.gallery': GeneralGallery;
       'general.hero-text': GeneralHeroText;
       'general.image': GeneralImage;

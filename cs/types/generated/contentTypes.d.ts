@@ -1297,7 +1297,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'general.intro',
         'general.portfolio',
         'general.hero-text',
-        'general.cta'
+        'general.cta',
+        'general.download-overview'
       ]
     > &
       Attribute.SetPluginOptions<{

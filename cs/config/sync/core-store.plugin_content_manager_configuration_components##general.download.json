@@ -1,14 +1,13 @@
 {
-  "key": "plugin_content_manager_configuration_components::general.hero-text",
+  "key": "plugin_content_manager_configuration_components::general.download",
   "value": {
-    "uid": "general.hero-text",
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "small",
-      "defaultSortBy": "small",
+      "mainField": "text",
+      "defaultSortBy": "text",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -20,30 +19,16 @@
           "sortable": false
         }
       },
-      "small": {
+      "media": {
         "edit": {
-          "label": "Small Text",
-          "description": "Some optional small headline over the main content to give more context.",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "small",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "cta": {
-        "edit": {
-          "label": "CTA",
+          "label": "Media",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "cta",
+          "label": "media",
           "searchable": false,
           "sortable": false
         }
@@ -58,21 +43,21 @@
         },
         "list": {
           "label": "text",
-          "searchable": false,
-          "sortable": false
+          "searchable": true,
+          "sortable": true
         }
       }
     },
     "layouts": {
       "list": [
         "id",
-        "small",
-        "cta"
+        "media",
+        "text"
       ],
       "edit": [
         [
           {
-            "name": "small",
+            "name": "media",
             "size": 6
           }
         ],
@@ -81,15 +66,10 @@
             "name": "text",
             "size": 12
           }
-        ],
-        [
-          {
-            "name": "cta",
-            "size": 12
-          }
         ]
       ]
     },
+    "uid": "general.download",
     "isComponent": true
   },
   "type": "object",

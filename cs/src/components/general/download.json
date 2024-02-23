@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_general_downloads",
+  "info": {
+    "displayName": "Download",
+    "icon": "arrowDown"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "text": {
+      "type": "string"
+    }
+  }
+}
