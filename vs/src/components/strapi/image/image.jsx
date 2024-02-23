@@ -1,12 +1,44 @@
-import { strapiUrl, strapiUrlServer } from "@/config";
-import React from "react";
+import { strapiUrl, strapiUrlServer } from '@/config';
+import React from 'react';
 
-import styles from "./image.module.scss";
-import Image from "next/image";
+import styles from './image.module.scss';
+import Image from 'next/image';
+import classNames from 'classnames';
+import Link from 'next/link';
 
+const customLoader = ({ src, width, quality }) => {
+  const prefix = (() => {
+    switch (width) {
+      case 640:
+        return 'small_';
+      case 1024:
+        return 'medium_';
+      case 1600:
+        return 'large_';
+      default:
+        return "";
+    }
+  })();
 
+  const path = "/uploads/" + prefix + src.replace("/uploads/", "")
+  let url;
+  typeof window === 'undefined' ? (url = strapiUrlServer + path) : (url = strapiUrl + path);
+  return url;
+};
 
-const StrapiImage = ({ data, format }) => {
+const StrapiImage = ({
+  data,
+  format,
+  fill = false,
+  w,
+  h,
+  className,
+  outerClassName,
+  enableCaption = false,
+  clickable,
+}) => {
+  if (!data.data) return;
+
   // destructure basic image data
   const {
     data: {
@@ -15,29 +47,51 @@ const StrapiImage = ({ data, format }) => {
   } = data;
 
   // get default image url
-  let src;
-  typeof window === "undefined" ? (src = strapiUrlServer + url) : (src = strapiUrl + url);
-  let imgWidth = width;
-  let imgHeight = height;
-  // if format is specified, rewrite the default image url
-  if (!!format) {
-    src = strapiUrl + formats[format].url;
-    imgWidth = formats[format].width;
-    imgHeight = formats[format].height;
-  }
 
-  return (
-    <div className={styles["image-wrapper"]}>
+  const src = formats[format]?.url || url;
+  let imgWidth = w || formats[format]?.width || width;
+  let imgHeight = h || formats[format]?.height || height;
+
+  const originalPath =
+    typeof window === 'undefined' ? (strapiUrlServer + url) : (strapiUrl + url);
+
+  const classes = classNames({
+    [styles.image]: true,
+    [className]: !!className,
+  });
+
+  const outerClasses = classNames({
+    [styles['image-wrapper']]: true,
+    [outerClassName]: !!outerClassName,
+  });
+
+  const renderImage = (
+    <>
       <Image
-        className={styles.image}
+        loader={customLoader}
+        className={classes}
         src={src}
-        width={imgWidth}
-        height={imgHeight}
-        alt={alternativeText ? alternativeText : null}
+        fill={fill ? true : false}
+        width={fill ? undefined : imgWidth}
+        height={fill ? undefined : imgHeight}
+        alt={alternativeText ? alternativeText : ''}
       />
-      {caption && <span className={styles.caption}>{caption}</span>}
-    </div>
+      {caption && enableCaption && (
+        <div className={styles.caption}>
+          <span className={styles.captionInner}>{caption}</span>
+        </div>
+      )}
+    </>
   );
+
+  if (clickable)
+    return (
+      <Link href={originalPath} target="blank" className={outerClasses}>
+        {renderImage}
+      </Link>
+    );
+
+  return <div className={outerClasses}>{renderImage}</div>;
 };
 
 export default StrapiImage;

@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "config_headers",
+  "info": {
+    "singularName": "config-header",
+    "pluralName": "config-headers",
+    "displayName": "Config: Header",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "phone": {
+      "type": "string"
+    },
+    "contactPage": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}

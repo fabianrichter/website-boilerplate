@@ -1,0 +1,8 @@
+#import '../../strapi/gallery/gallery.fragment.gql'
+
+fragment ComponentGeneralGallery on ComponentGeneralGallery {
+  __typename
+  gallery {
+    ...StrapiGallery
+  }
+}

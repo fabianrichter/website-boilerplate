@@ -37,7 +37,7 @@
       "title": {
         "edit": {
           "label": "Title",
-          "description": "",
+          "description": "Internal title to identify the page.",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -51,7 +51,7 @@
       "slug": {
         "edit": {
           "label": "URL Alias",
-          "description": "",
+          "description": "The path for the URL (e.g. \"some-page/details\").",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -103,9 +103,45 @@
           "searchable": true,
           "sortable": true
         }
+      },
+      "createdBy": {
+        "edit": {
+          "label": "createdBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "createdBy",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedBy": {
+        "edit": {
+          "label": "updatedBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "updatedBy",
+          "searchable": true,
+          "sortable": true
+        }
       }
     },
     "layouts": {
+      "list": [
+        "title",
+        "id",
+        "createdAt",
+        "updatedAt"
+      ],
       "edit": [
         [
           {
@@ -129,12 +165,6 @@
             "size": 12
           }
         ]
-      ],
-      "list": [
-        "title",
-        "id",
-        "createdAt",
-        "updatedAt"
       ]
     }
   },

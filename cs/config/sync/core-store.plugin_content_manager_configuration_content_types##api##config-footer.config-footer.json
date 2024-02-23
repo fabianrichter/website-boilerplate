@@ -22,8 +22,8 @@
       },
       "instagramProfileUrl": {
         "edit": {
-          "label": "instagramProfileUrl",
-          "description": "",
+          "label": "Instagram Profile URL",
+          "description": "Link to your instagram account.",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -36,8 +36,8 @@
       },
       "imprintAlias": {
         "edit": {
-          "label": "imprintAlias",
-          "description": "",
+          "label": "Imprint Alias",
+          "description": "Link to Imprint.",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -50,8 +50,8 @@
       },
       "privacyAlias": {
         "edit": {
-          "label": "privacyAlias",
-          "description": "",
+          "label": "Privacy Alias",
+          "description": "Link to privacy policy.",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -89,9 +89,45 @@
           "searchable": true,
           "sortable": true
         }
+      },
+      "createdBy": {
+        "edit": {
+          "label": "createdBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "createdBy",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedBy": {
+        "edit": {
+          "label": "updatedBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "updatedBy",
+          "searchable": true,
+          "sortable": true
+        }
       }
     },
     "layouts": {
+      "list": [
+        "id",
+        "instagramProfileUrl",
+        "createdAt",
+        "updatedAt"
+      ],
       "edit": [
         [
           {
@@ -109,12 +145,6 @@
             "size": 4
           }
         ]
-      ],
-      "list": [
-        "id",
-        "instagramProfileUrl",
-        "createdAt",
-        "updatedAt"
       ]
     }
   },

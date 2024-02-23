@@ -22,8 +22,8 @@
       },
       "image": {
         "edit": {
-          "label": "image",
-          "description": "",
+          "label": "Image",
+          "description": "Select an image file.",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -44,7 +44,7 @@
         [
           {
             "name": "image",
-            "size": 6
+            "size": 12
           }
         ]
       ]

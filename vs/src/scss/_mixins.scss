@@ -1,0 +1,58 @@
+@use "sass:map";
+@import "config";
+
+@mixin link() {
+  text-decoration: none;
+
+  &::after {
+    content: "↗";
+    font-size: inherit;
+    transform: translate(0);
+    position: relative;
+    display: inline-block;
+    transition: 0.3s ease;
+  }
+
+  &:hover {
+    text-decoration: underline;
+
+    &::after {
+      transform: translate(3px, -3px);
+    }
+  }
+}
+
+@mixin cta() {
+  font: inherit;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 15px;
+  text-decoration: none;
+  background-color: var(--black);
+  color: var(--white);
+  cursor: pointer;
+
+  &::after {
+    content: "↗";
+    font-size: inherit;
+    transform: translate(0);
+    position: relative;
+    display: inline-block;
+  }
+}
+
+@mixin media-breakpoint-max($name) {
+  $max: map.get($grid-breakpoints, $name);
+
+  @media (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-min($name) {
+  $min: map.get($grid-breakpoints, $name);
+
+  @media (min-width: $min) {
+    @content;
+  }
+}

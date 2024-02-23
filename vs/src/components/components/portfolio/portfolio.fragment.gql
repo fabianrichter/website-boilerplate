@@ -1,0 +1,20 @@
+#import '../../strapi/image/image.fragment.gql'
+
+fragment ComponentGeneralPortfolio on ComponentGeneralPortfolio {
+  portfolioItem {
+    title
+    description
+    link {
+      data {
+        attributes {
+          __typename
+          slug
+        }
+      }
+    }
+    teaserImage {
+      ...StrapiImage
+    }
+  }
+  title
+}

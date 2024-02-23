@@ -1,0 +1,110 @@
+@import 'mixins';
+
+@mixin body($type: normal) {
+  font-family: var(--font-family-body);
+  line-height: 1.4;
+
+  @if ($type == small) {
+    font-size: 0.7rem;
+
+    @include media-breakpoint-min(sm) {
+      font-size: 0.8rem;
+    }
+
+    @include media-breakpoint-min(lg) {
+      font-size: 1rem;
+    }
+  }
+
+  @if ($type == normal) {
+    font-size: 0.8rem;
+    
+    @include media-breakpoint-min(sm) {
+      font-size: 1rem;
+    }
+
+    @include media-breakpoint-min(lg) {
+      font-size: 1.5rem;
+    }
+  }
+
+  @if ($type == big) {
+    font-size: 1.2rem;
+
+    @include media-breakpoint-min(sm) {
+      font-size: 1.4rem;
+    }
+
+    @include media-breakpoint-min(lg) {
+      font-size: 2rem;
+    }
+  }
+}
+
+@mixin headline($h: all) {
+  font-family: var(--font-family-heading);
+  font-weight: normal;
+  line-height: 1.2;
+  font-feature-settings: 'ss02' on;
+  word-break: break-word;
+
+  @if ($h == h1) {
+    font-size: 2rem;
+
+    @include media-breakpoint-min(sm) {
+      font-size: 3.05rem;
+    }
+
+    @include media-breakpoint-min(lg) {
+      font-size: 6rem;
+    }
+  }
+
+  @if ($h == h2) {
+    font-size: 1.7rem;
+
+    @include media-breakpoint-min(sm) {
+      font-size: 2.45rem;
+    }
+
+    @include media-breakpoint-min(lg) {
+      font-size: 4rem;
+    }
+  }
+
+  @if ($h == h3) {
+    font-size: 1.4rem;
+
+    @include media-breakpoint-min(sm) {
+      font-size: 1.95rem;
+    }
+
+    @include media-breakpoint-min(lg) {
+      font-size: 2.5rem;
+    }
+  }
+
+  @if ($h == h4) {
+    font-size: 1.2rem;
+
+    @include media-breakpoint-min(sm) {
+      font-size: 1.55rem;
+    }
+
+    @include media-breakpoint-min(lg) {
+      font-size: 1.5rem;
+    }
+  }
+
+  @if ($h == h5) {
+    font-size: 1rem;
+
+    @include media-breakpoint-min(sm) {
+      font-size: 1.25rem;
+    }
+
+    @include media-breakpoint-min(lg) {
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,4 +1,4 @@
 fragment ComponentGeneralText on ComponentGeneralText {
   __typename
-  content
+  text
 }

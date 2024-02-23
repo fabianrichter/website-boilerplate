@@ -22,7 +22,7 @@
       },
       "body": {
         "edit": {
-          "label": "body",
+          "label": "Content",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -36,7 +36,7 @@
       },
       "title": {
         "edit": {
-          "label": "title",
+          "label": "Title",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -57,14 +57,14 @@
       "edit": [
         [
           {
-            "name": "body",
-            "size": 12
+            "name": "title",
+            "size": 6
           }
         ],
         [
           {
-            "name": "title",
-            "size": 6
+            "name": "body",
+            "size": 12
           }
         ]
       ]

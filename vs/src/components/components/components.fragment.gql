@@ -1,19 +1,38 @@
 #import './accordeon/accordeon.fragment.gql'
 #import './page-title/page-title.fragment.gql'
+#import './section-title/section-title.fragment.gql'
 #import './text/text.fragment.gql'
 #import './image/image.fragment.gql'
+#import './intro/intro.fragment.gql'
+#import './portfolio/portfolio.fragment.gql'
+#import './gallery/gallery.fragment.gql'
 #import './article-overview/article-overview.fragment.gql'
 #import './contact-form/contact-form.fragment.gql'
 #import './text-and-image/text-and-image.fragment.gql'
+#import './hero-text/hero-text.fragment.gql'
+#import './cta/cta.fragment.gql'
 
 fragment PageComponents on Page {
   components {
     ...ComponentGeneralAccordeon
     ...ComponentGeneralPageTitle
+    ...ComponentGeneralSectionTitle
     ...ComponentGeneralText
     ...ComponentGeneralImage
+    ...ComponentGeneralIntro
+    ...ComponentGeneralPortfolio
     ...ComponentGeneralTextAndImage
+    ...ComponentGeneralGallery
+    ...ComponentGeneralHeroText
+    ...ComponentGeneralCta
     ...ComponentConnectArticleOverview
     ...ComponentFormsContactForm
+  }
+}
+
+fragment ArticleComponents on Article {
+  components {
+    ...ComponentGeneralText
+    ...ComponentGeneralGallery
   }
 }

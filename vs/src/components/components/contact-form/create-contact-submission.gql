@@ -1,0 +1,18 @@
+mutation CreateContactSubmission(
+  $contactName: String, 
+  $msgBody: String, 
+  $emailAddress: String
+) {
+  createContactSubmission(
+    data: { 
+      contactName: $contactName, 
+      msgBody: $msgBody, 
+      emailAddress: $emailAddress 
+    }) {
+    data {
+      attributes {
+        createdAt
+      }
+    }
+  }
+}

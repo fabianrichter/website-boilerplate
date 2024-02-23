@@ -1,19 +1,24 @@
+#import '../../strapi/image/image.fragment.gql'
+
 fragment ComponentConnectArticleOverview on ComponentConnectArticleOverview {
   __typename
   mode
+  maxAmount
+  tags {
+    data {
+      id
+    }
+  }
   manualArticles: articles {
     data {
       attributes {
         title
-        createdAt
-      }
-    }
-  }
-  recentArticles: articles(sort: "createdAt:desc", pagination: { page: 1, pageSize: 3 }) {
-    data {
-      attributes {
-        title
-        createdAt
+        publishedAt
+        slug
+        teaserText
+        teaserImage {
+          ...StrapiImage
+        }
       }
     }
   }

@@ -1,0 +1,53 @@
+@import '@/scss/config';
+@import '@/scss/mixins';
+
+.grid {
+  display: grid;
+  width: 100%;
+  gap: $grid-gutter-width;
+  grid-template-columns: repeat(3, calc(100% / 3 - 1.5rem));
+  grid-auto-rows: var(--row-height);
+  grid-auto-flow: dense;
+  overflow: hidden;
+  --row-height: calc(11vw - #{$grid-gutter-width});
+
+  @include media-breakpoint-max(lg) {
+    grid-template-columns: repeat(2, 50%);
+    --row-height: calc(16.6vw - #{$grid-gutter-width});
+  }
+
+  @include media-breakpoint-max(md) {
+    grid-template-columns: 100%;
+    grid-auto-rows: initial;
+  }
+}
+
+.cell {
+  display: block;
+  height: 100%;
+  grid-column: span 1;
+
+  > * {
+    height: 100%;
+  }
+}
+
+.span-1 {
+  grid-row: span 1;
+}
+
+.span-2 {
+  grid-row: span 2;
+}
+
+.span-3 {
+  grid-row: span 3;
+}
+
+.span-4 {
+  grid-row: span 4;
+}
+
+.span-5 {
+  grid-row: span 5;
+}

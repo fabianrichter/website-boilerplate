@@ -2,11 +2,12 @@
 
 # get all page slugs
 query PageSlugs {
-  pages {
+  pages(locale: "all") {
     data {
       attributes {
         __typename
         slug
+        updatedAt
       }
     }
   }
@@ -14,11 +15,12 @@ query PageSlugs {
 
 # get all article-slugs
 query ArticleSlugs {
-  articles {
+  articles(locale: "all") {
     data {
       attributes {
         __typename
         slug
+        updatedAt
       }
     }
   }

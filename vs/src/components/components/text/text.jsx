@@ -1,7 +1,5 @@
 import { Col, Container, Row } from "@/components/layout";
 import React from "react";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-
 import styles from "./text.module.scss";
 
 const Text = (props) => {
@@ -9,9 +7,9 @@ const Text = (props) => {
     <section className={styles.section}>
       <Container>
         <Row>
-          <Col col="8">
+          <Col xs="12" lg="8" shiftLg={2}>
             <div className={styles["text-wrapper"]}>
-              <ReactMarkdown>{props.data.content}</ReactMarkdown>
+              <div dangerouslySetInnerHTML={{ __html: props.data.text }} />
             </div>
           </Col>
         </Row>

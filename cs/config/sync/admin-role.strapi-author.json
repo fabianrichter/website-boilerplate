@@ -4,22 +4,378 @@
   "description": "Authors can manage the content they have created.",
   "permissions": [
     {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::article.article",
+      "properties": {
+        "fields": [
+          "title",
+          "seo.metaTitle",
+          "seo.metaDescription",
+          "seo.metaImage",
+          "seo.metaSocial.socialNetwork",
+          "seo.metaSocial.title",
+          "seo.metaSocial.description",
+          "seo.metaSocial.image",
+          "seo.keywords",
+          "seo.metaRobots",
+          "seo.structuredData",
+          "seo.metaViewport",
+          "seo.canonicalURL",
+          "slug",
+          "teaserImage"
+        ],
+        "locales": []
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::article.article",
+      "properties": {
+        "fields": [
+          "title",
+          "seo.metaTitle",
+          "seo.metaDescription",
+          "seo.metaImage",
+          "seo.metaSocial.socialNetwork",
+          "seo.metaSocial.title",
+          "seo.metaSocial.description",
+          "seo.metaSocial.image",
+          "seo.keywords",
+          "seo.metaRobots",
+          "seo.structuredData",
+          "seo.metaViewport",
+          "seo.canonicalURL",
+          "slug",
+          "teaserImage"
+        ],
+        "locales": []
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::article.article",
+      "properties": {
+        "fields": [
+          "title",
+          "seo.metaTitle",
+          "seo.metaDescription",
+          "seo.metaImage",
+          "seo.metaSocial.socialNetwork",
+          "seo.metaSocial.title",
+          "seo.metaSocial.description",
+          "seo.metaSocial.image",
+          "seo.keywords",
+          "seo.metaRobots",
+          "seo.structuredData",
+          "seo.metaViewport",
+          "seo.canonicalURL",
+          "slug",
+          "teaserImage"
+        ],
+        "locales": []
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::config-footer.config-footer",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::config-footer.config-footer",
+      "properties": {
+        "fields": [
+          "instagramProfileUrl",
+          "imprintAlias",
+          "privacyAlias"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::config-footer.config-footer",
+      "properties": {
+        "fields": [
+          "instagramProfileUrl",
+          "imprintAlias",
+          "privacyAlias"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::contact-submission.contact-submission",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::contact-submission.contact-submission",
+      "properties": {
+        "fields": [
+          "msgBody",
+          "contactName",
+          "emailAddress"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::event.event",
+      "properties": {
+        "fields": [
+          "Title",
+          "Description",
+          "Date",
+          "Location",
+          "Components"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::event.event",
+      "properties": {},
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::event.event",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::event.event",
+      "properties": {
+        "fields": [
+          "Title",
+          "Description",
+          "Date",
+          "Location",
+          "Components"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::event.event",
+      "properties": {
+        "fields": [
+          "Title",
+          "Description",
+          "Date",
+          "Location",
+          "Components"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::page.page",
+      "properties": {
+        "fields": [
+          "components",
+          "title",
+          "slug",
+          "seo.metaTitle",
+          "seo.metaDescription",
+          "seo.metaImage",
+          "seo.metaSocial.socialNetwork",
+          "seo.metaSocial.title",
+          "seo.metaSocial.description",
+          "seo.metaSocial.image",
+          "seo.keywords",
+          "seo.metaRobots",
+          "seo.structuredData",
+          "seo.metaViewport",
+          "seo.canonicalURL"
+        ],
+        "locales": [
+          "en",
+          "de"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::page.page",
+      "properties": {
+        "locales": [
+          "en",
+          "de"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::page.page",
+      "properties": {
+        "locales": [
+          "en",
+          "de"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::page.page",
+      "properties": {
+        "fields": [
+          "components",
+          "title",
+          "slug",
+          "seo.metaTitle",
+          "seo.metaDescription",
+          "seo.metaImage",
+          "seo.metaSocial.socialNetwork",
+          "seo.metaSocial.title",
+          "seo.metaSocial.description",
+          "seo.metaSocial.image",
+          "seo.keywords",
+          "seo.metaRobots",
+          "seo.structuredData",
+          "seo.metaViewport",
+          "seo.canonicalURL"
+        ],
+        "locales": [
+          "en",
+          "de"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::page.page",
+      "properties": {
+        "fields": [
+          "components",
+          "title",
+          "slug",
+          "seo.metaTitle",
+          "seo.metaDescription",
+          "seo.metaImage",
+          "seo.metaSocial.socialNetwork",
+          "seo.metaSocial.title",
+          "seo.metaSocial.description",
+          "seo.metaSocial.image",
+          "seo.keywords",
+          "seo.metaRobots",
+          "seo.structuredData",
+          "seo.metaViewport",
+          "seo.canonicalURL"
+        ],
+        "locales": [
+          "en",
+          "de"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "actionParameters": null
+    },
+    {
+      "action": "admin::webhooks.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::i18n.locale.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::navigation.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::navigation.update",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
       "action": "plugin::upload.assets.copy-link",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::upload.assets.create",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::upload.assets.download",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::upload.assets.update",
@@ -27,13 +383,15 @@
       "properties": {},
       "conditions": [
         "admin::is-creator"
-      ]
+      ],
+      "actionParameters": null
     },
     {
       "action": "plugin::upload.configure-view",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::upload.read",
@@ -41,7 +399,8 @@
       "properties": {},
       "conditions": [
         "admin::is-creator"
-      ]
+      ],
+      "actionParameters": null
     }
   ]
 }

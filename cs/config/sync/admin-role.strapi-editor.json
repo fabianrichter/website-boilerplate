@@ -8,6 +8,7 @@
       "subject": "api::article.article",
       "properties": {
         "fields": [
+          "title",
           "seo.metaTitle",
           "seo.metaDescription",
           "seo.metaImage",
@@ -20,16 +21,50 @@
           "seo.structuredData",
           "seo.metaViewport",
           "seo.canonicalURL",
-          "slug"
+          "slug",
+          "teaserImage.image",
+          "components",
+          "teaserText",
+          "tags"
+        ],
+        "locales": [
+          "de",
+          "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::article.article",
+      "properties": {
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::article.article",
+      "properties": {
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.read",
       "subject": "api::article.article",
       "properties": {
         "fields": [
+          "title",
           "seo.metaTitle",
           "seo.metaDescription",
           "seo.metaImage",
@@ -42,16 +77,26 @@
           "seo.structuredData",
           "seo.metaViewport",
           "seo.canonicalURL",
-          "slug"
+          "slug",
+          "teaserImage.image",
+          "components",
+          "teaserText",
+          "tags"
+        ],
+        "locales": [
+          "de",
+          "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.update",
       "subject": "api::article.article",
       "properties": {
         "fields": [
+          "title",
           "seo.metaTitle",
           "seo.metaDescription",
           "seo.metaImage",
@@ -64,10 +109,145 @@
           "seo.structuredData",
           "seo.metaViewport",
           "seo.canonicalURL",
-          "slug"
+          "slug",
+          "teaserImage.image",
+          "components",
+          "teaserText",
+          "tags"
+        ],
+        "locales": [
+          "de",
+          "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::config-footer.config-footer",
+      "properties": {
+        "fields": [
+          "instagramProfileUrl",
+          "imprintAlias",
+          "privacyAlias"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::config-footer.config-footer",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::config-footer.config-footer",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::config-footer.config-footer",
+      "properties": {
+        "fields": [
+          "instagramProfileUrl",
+          "imprintAlias",
+          "privacyAlias"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::config-footer.config-footer",
+      "properties": {
+        "fields": [
+          "instagramProfileUrl",
+          "imprintAlias",
+          "privacyAlias"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::config-header.config-header",
+      "properties": {
+        "fields": [
+          "phone",
+          "contactPage",
+          "email"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::config-header.config-header",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::config-header.config-header",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::config-header.config-header",
+      "properties": {
+        "fields": [
+          "phone",
+          "contactPage",
+          "email"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::config-header.config-header",
+      "properties": {
+        "fields": [
+          "phone",
+          "contactPage",
+          "email"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::contact-submission.contact-submission",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::contact-submission.contact-submission",
+      "properties": {
+        "fields": [
+          "msgBody",
+          "contactName",
+          "emailAddress"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.create",
@@ -89,9 +269,38 @@
           "seo.structuredData",
           "seo.metaViewport",
           "seo.canonicalURL"
+        ],
+        "locales": [
+          "de",
+          "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::page.page",
+      "properties": {
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::page.page",
+      "properties": {
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.read",
@@ -113,9 +322,14 @@
           "seo.structuredData",
           "seo.metaViewport",
           "seo.canonicalURL"
+        ],
+        "locales": [
+          "de",
+          "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.update",
@@ -137,57 +351,142 @@
           "seo.structuredData",
           "seo.metaViewport",
           "seo.canonicalURL"
+        ],
+        "locales": [
+          "de",
+          "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::tag.tag",
+      "properties": {
+        "fields": [
+          "name",
+          "articles"
+        ],
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::tag.tag",
+      "properties": {
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::tag.tag",
+      "properties": {
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::tag.tag",
+      "properties": {
+        "fields": [
+          "name",
+          "articles"
+        ],
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::tag.tag",
+      "properties": {
+        "fields": [
+          "name",
+          "articles"
+        ],
+        "locales": [
+          "de",
+          "en"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::navigation.read",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::navigation.update",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::upload.assets.copy-link",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::upload.assets.create",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::upload.assets.download",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::upload.assets.update",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::upload.configure-view",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::upload.read",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     }
   ]
 }

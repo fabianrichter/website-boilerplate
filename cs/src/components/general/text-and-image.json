@@ -13,13 +13,13 @@
         "image-text"
       ]
     },
-    "image": {
+    "imageComponent": {
       "type": "component",
       "repeatable": false,
       "component": "internal.image",
       "required": false
     },
-    "text": {
+    "textComponent": {
       "type": "component",
       "repeatable": false,
       "component": "general.text"

@@ -1,0 +1,22 @@
+.langSwitch {
+  display: flex;
+  margin: 0;
+  gap: 5px;
+}
+
+.langList {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 5px;
+}
+
+.active {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.link {
+  text-decoration: none;
+}

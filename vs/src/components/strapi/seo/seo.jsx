@@ -9,7 +9,7 @@ const StrapiSEO = ({ data }) => {
   return (
     <Head>
       {/* Basic meta tags */}
-      <title>{data.metaTitle}</title>
+      <title>Website Boilerplate | {data.metaTitle}</title>
       <meta property="og:title" content={data.metaTitle} key="title" />
       <meta name="description" content={data.metaDescription} key="desc" />
       <meta name="keywords" content={data.keywords} key="keywords" />

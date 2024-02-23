@@ -1,0 +1,90 @@
+@import "@/scss/config";
+@import "@/scss/mixins";
+
+.grid {
+  display: grid;
+  width: 100%;
+  gap: $grid-gutter-width;
+  grid-template-columns: repeat(3, calc(100% / 3 - 1.5rem));
+  grid-auto-rows: var(--row-height);
+  grid-auto-flow: dense;
+  overflow: hidden;
+  --row-height: 40vw;
+
+  @include media-breakpoint-max(lg) {
+    grid-template-columns: repeat(2, 50%);
+    --row-height: 55vw;
+  }
+
+  @include media-breakpoint-max(md) {
+    grid-template-columns: 100%;    
+    grid-auto-rows: initial;
+  }
+
+  &.auto .cell {
+    &:nth-child(4n) {
+      grid-column: span 2;
+    }
+
+    &:nth-child(3n) {
+      grid-row: span 2;
+    }
+  }
+}
+
+.cell {
+  display: block;
+  height: 100%;
+
+  > * {
+    height: 100%;
+  }
+}
+
+.col-1 {
+  grid-column: span 1;
+}
+
+.col-2 {
+  grid-column: span 2;
+
+  @include media-breakpoint-max(md) {
+    grid-column: span 1;
+  }
+}
+
+.col-3 {
+  grid-column: span 3;
+
+  @include media-breakpoint-max(md) {
+    grid-column: span 2;
+  }
+
+  @include media-breakpoint-max(lg) {
+    grid-column: span 1;
+  }
+}
+
+.row-1 {
+  grid-row: span 1;
+}
+
+.row-2 {
+  grid-row: span 2;
+
+  @include media-breakpoint-max(md) {
+    grid-row: span 1;
+  }
+}
+
+.row-3 {
+  grid-row: span 3;
+
+  @include media-breakpoint-max(lg) {
+    grid-row: span 2;
+  }
+
+  @include media-breakpoint-max(md) {
+    grid-row: span 1;
+  }
+}

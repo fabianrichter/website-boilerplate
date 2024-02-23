@@ -5,9 +5,6 @@ query BasicContent {
       attributes {
         title
         publishedAt
-        text {
-          content
-        }
       }
     }
   }
