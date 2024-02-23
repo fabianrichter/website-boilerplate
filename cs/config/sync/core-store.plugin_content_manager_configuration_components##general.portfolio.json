@@ -7,8 +7,8 @@
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "id",
-      "defaultSortBy": "id",
+      "mainField": "title",
+      "defaultSortBy": "title",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -33,18 +33,39 @@
           "searchable": false,
           "sortable": false
         }
+      },
+      "title": {
+        "edit": {
+          "label": "title",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "title",
+          "searchable": true,
+          "sortable": true
+        }
       }
     },
     "layouts": {
       "list": [
         "id",
-        "portfolioItem"
+        "portfolioItem",
+        "title"
       ],
       "edit": [
         [
           {
             "name": "portfolioItem",
             "size": 12
+          }
+        ],
+        [
+          {
+            "name": "title",
+            "size": 6
           }
         ]
       ]

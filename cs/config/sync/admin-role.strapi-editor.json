@@ -32,7 +32,8 @@
           "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.delete",
@@ -43,7 +44,8 @@
           "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.publish",
@@ -54,7 +56,8 @@
           "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.read",
@@ -85,7 +88,8 @@
           "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.update",
@@ -116,7 +120,8 @@
           "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.create",
@@ -128,19 +133,22 @@
           "privacyAlias"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.delete",
       "subject": "api::config-footer.config-footer",
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.publish",
       "subject": "api::config-footer.config-footer",
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.read",
@@ -152,7 +160,8 @@
           "privacyAlias"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.update",
@@ -164,7 +173,8 @@
           "privacyAlias"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.create",
@@ -176,19 +186,22 @@
           "email"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.delete",
       "subject": "api::config-header.config-header",
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.publish",
       "subject": "api::config-header.config-header",
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.read",
@@ -200,7 +213,8 @@
           "email"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.update",
@@ -212,13 +226,15 @@
           "email"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.delete",
       "subject": "api::contact-submission.contact-submission",
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.read",
@@ -230,7 +246,8 @@
           "emailAddress"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.create",
@@ -258,7 +275,8 @@
           "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.delete",
@@ -269,7 +287,8 @@
           "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.publish",
@@ -280,7 +299,8 @@
           "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.read",
@@ -308,7 +328,8 @@
           "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.update",
@@ -336,7 +357,8 @@
           "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.create",
@@ -351,7 +373,8 @@
           "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.delete",
@@ -362,7 +385,8 @@
           "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.publish",
@@ -373,7 +397,8 @@
           "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.read",
@@ -388,7 +413,8 @@
           "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::content-manager.explorer.update",
@@ -403,55 +429,64 @@
           "en"
         ]
       },
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::navigation.read",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::navigation.update",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::upload.assets.copy-link",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::upload.assets.create",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::upload.assets.download",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::upload.assets.update",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::upload.configure-view",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     },
     {
       "action": "plugin::upload.read",
       "subject": null,
       "properties": {},
-      "conditions": []
+      "conditions": [],
+      "actionParameters": null
     }
   ]
 }

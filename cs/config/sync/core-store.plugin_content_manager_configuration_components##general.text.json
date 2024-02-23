@@ -20,16 +20,16 @@
           "sortable": false
         }
       },
-      "content": {
+      "text": {
         "edit": {
-          "label": "Content",
+          "label": "text",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "content",
+          "label": "text",
           "searchable": false,
           "sortable": false
         }
@@ -42,7 +42,7 @@
       "edit": [
         [
           {
-            "name": "content",
+            "name": "text",
             "size": 12
           }
         ]
