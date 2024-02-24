@@ -17,6 +17,22 @@ module.exports = ({ env }) => ({
       notificationProviders: [],
     },
   },
+  // Slugify
+  slugify: {
+    enabled: true,
+    config: {
+      contentTypes: {
+        page: {
+          field: 'slug',
+          references: 'title',
+        },
+        article: {
+          field: 'slug',
+          references: 'title'
+        }
+      },
+    },
+  },
   // GraphQL
   graphql: {
     config: {
@@ -30,18 +46,6 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  // Slugify
-/*   slugify: {
-    enabled: true,
-    config: {
-      contentTypes: {
-        article: {
-          field: 'slug',
-          references: 'title',
-        },
-      },
-    },
-  }, */
   // Nodemailer
   email: {
     config: {
