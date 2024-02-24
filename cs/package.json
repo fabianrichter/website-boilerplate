@@ -11,6 +11,7 @@
     "strapi": "strapi",
     "cs": "config-sync",
     "cex": "config-sync export",
+    "cim": "config-sync import",
     "dockerize": "npx @strapi-community/dockerize new --projectname=boilerplate-cs --dbpassword=StrapiAdmin1 --usecompose=true --env=development"
   },
   "devDependencies": {},
