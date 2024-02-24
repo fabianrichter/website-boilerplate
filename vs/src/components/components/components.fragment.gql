@@ -1,4 +1,5 @@
 #import './accordeon/accordeon.fragment.gql'
+#import './download-overview/download-overview.fragment.gql'
 #import './page-title/page-title.fragment.gql'
 #import './section-title/section-title.fragment.gql'
 #import './text/text.fragment.gql'
@@ -27,6 +28,7 @@ fragment PageComponents on Page {
     ...ComponentCta
     ...ComponentArticleOverview
     ...ComponentContactForm
+    ...ComponentDownloadOverview
   }
 }
 

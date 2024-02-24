@@ -19,16 +19,16 @@
           "sortable": false
         }
       },
-      "item": {
+      "items": {
         "edit": {
-          "label": "item",
+          "label": "Items",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "item",
+          "label": "items",
           "searchable": false,
           "sortable": false
         }
@@ -37,12 +37,12 @@
     "layouts": {
       "list": [
         "id",
-        "item"
+        "items"
       ],
       "edit": [
         [
           {
-            "name": "item",
+            "name": "items",
             "size": 12
           }
         ]

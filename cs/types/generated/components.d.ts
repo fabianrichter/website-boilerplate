@@ -132,7 +132,7 @@ export interface LinksDownloadOverview extends Schema.Component {
     description: '';
   };
   attributes: {
-    item: Attribute.Component<'links.download', true>;
+    items: Attribute.Component<'links.download', true>;
   };
 }
 

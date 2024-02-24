@@ -21,7 +21,7 @@
       },
       "media": {
         "edit": {
-          "label": "media",
+          "label": "Media",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -35,8 +35,8 @@
       },
       "text": {
         "edit": {
-          "label": "text",
-          "description": "",
+          "label": "Text",
+          "description": "Der hier eingegebene Text wird als Link angezeigt. Lassen Sie das Feld leer, um den originalen Dateinamen zu verwenden.",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -57,12 +57,14 @@
       "edit": [
         [
           {
-            "name": "media",
-            "size": 6
-          },
-          {
             "name": "text",
             "size": 6
+          }
+        ],
+        [
+          {
+            "name": "media",
+            "size": 12
           }
         ]
       ]

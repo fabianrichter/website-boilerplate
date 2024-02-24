@@ -13,6 +13,7 @@ import Portfolio from "./portfolio/portfolio";
 import CTA from "./cta/cta";
 import ErrorBoundary from "@/lib/error-boundary/error-boundary";
 import Accordeon from "./accordeon/accordeon";
+import DownloadOverview from "./download-overview/download-overview";
 
 const renderComponents = (componentData) => {
   // check for components data typename to render the correct component
@@ -29,6 +30,8 @@ const renderComponents = (componentData) => {
       return <HeroText data={componentData} />;
     case "ComponentTextAccordeon":
       return <Accordeon data={componentData} />;
+    case "ComponentLinksDownloadOverview":
+      return <DownloadOverview data={componentData} />;
     case "ComponentLinksCta":
       return <CTA data={componentData} />;
     case "ComponentGeneralPortfolio":
