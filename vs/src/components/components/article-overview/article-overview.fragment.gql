@@ -1,6 +1,6 @@
 #import '../../strapi/image/image.fragment.gql'
 
-fragment ComponentConnectArticleOverview on ComponentConnectArticleOverview {
+fragment ComponentArticleOverview on ComponentConnectArticleOverview {
   __typename
   mode
   maxAmount

@@ -22,7 +22,7 @@
     "textComponent": {
       "type": "component",
       "repeatable": false,
-      "component": "general.text"
+      "component": "text.text"
     }
   }
 }

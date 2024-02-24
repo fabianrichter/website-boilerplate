@@ -33,109 +33,6 @@ export interface FormsContactForm extends Schema.Component {
   };
 }
 
-export interface GeneralAccordeonItem extends Schema.Component {
-  collectionName: 'components_accordeon_accordeon_items';
-  info: {
-    displayName: 'Accordeon Item';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    body: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'custom';
-        }
-      >;
-  };
-}
-
-export interface GeneralAccordeon extends Schema.Component {
-  collectionName: 'components_accordeon_accordeons';
-  info: {
-    displayName: 'Accordeon';
-    icon: 'bulletList';
-    description: '';
-  };
-  attributes: {
-    item: Attribute.Component<'general.accordeon-item', true>;
-  };
-}
-
-export interface GeneralCta extends Schema.Component {
-  collectionName: 'components_general_ctas';
-  info: {
-    displayName: 'CTA';
-    icon: 'cursor';
-  };
-  attributes: {
-    label: Attribute.String;
-    page: Attribute.Relation<'general.cta', 'oneToOne', 'api::page.page'>;
-  };
-}
-
-export interface GeneralDownloadOverview extends Schema.Component {
-  collectionName: 'components_general_download_overviews';
-  info: {
-    displayName: 'Download Overview';
-    icon: 'arrowDown';
-    description: '';
-  };
-  attributes: {
-    item: Attribute.Component<'general.download', true>;
-  };
-}
-
-export interface GeneralDownload extends Schema.Component {
-  collectionName: 'components_general_downloads';
-  info: {
-    displayName: 'Download';
-    icon: 'arrowDown';
-  };
-  attributes: {
-    media: Attribute.Media;
-    text: Attribute.String;
-  };
-}
-
-export interface GeneralGallery extends Schema.Component {
-  collectionName: 'components_general_galleries';
-  info: {
-    displayName: 'Gallery';
-    icon: 'dashboard';
-    description: '';
-  };
-  attributes: {
-    gallery: Attribute.Component<'internal.gallery'>;
-  };
-}
-
-export interface GeneralHeroText extends Schema.Component {
-  collectionName: 'components_general_hero_texts';
-  info: {
-    displayName: 'Hero Text';
-    description: '';
-  };
-  attributes: {
-    small: Attribute.String;
-    cta: Attribute.Component<'general.cta'>;
-    text: Attribute.Text;
-  };
-}
-
-export interface GeneralImage extends Schema.Component {
-  collectionName: 'components_general_images';
-  info: {
-    displayName: 'Image';
-    icon: 'emotionHappy';
-    description: '';
-  };
-  attributes: {
-    images: Attribute.Component<'internal.image', true>;
-  };
-}
-
 export interface GeneralIntro extends Schema.Component {
   collectionName: 'components_general_intros';
   info: {
@@ -147,18 +44,6 @@ export interface GeneralIntro extends Schema.Component {
     title: Attribute.String;
     background: Attribute.Component<'internal.image'>;
     text: Attribute.RichText;
-  };
-}
-
-export interface GeneralPageTitle extends Schema.Component {
-  collectionName: 'components_general_page_titles';
-  info: {
-    displayName: 'Page Title';
-    icon: 'layer';
-    description: '';
-  };
-  attributes: {
-    content: Attribute.String;
   };
 }
 
@@ -188,49 +73,6 @@ export interface GeneralPortfolio extends Schema.Component {
   attributes: {
     portfolioItem: Attribute.Component<'general.portfolio-item', true>;
     title: Attribute.String;
-  };
-}
-
-export interface GeneralSectionTitle extends Schema.Component {
-  collectionName: 'components_general_section_titles';
-  info: {
-    displayName: 'Section Title';
-    icon: 'layer';
-    description: '';
-  };
-  attributes: {
-    content: Attribute.String;
-  };
-}
-
-export interface GeneralTextAndImage extends Schema.Component {
-  collectionName: 'components_general_text_and_images';
-  info: {
-    displayName: 'Text & Image';
-    description: '';
-  };
-  attributes: {
-    direction: Attribute.Enumeration<['text-image', 'image-text']>;
-    imageComponent: Attribute.Component<'internal.image'>;
-    textComponent: Attribute.Component<'general.text'>;
-  };
-}
-
-export interface GeneralText extends Schema.Component {
-  collectionName: 'components_general_texts';
-  info: {
-    displayName: 'Text';
-    icon: 'layer';
-    description: '';
-  };
-  attributes: {
-    text: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'custom';
-        }
-      >;
   };
 }
 
@@ -266,6 +108,68 @@ export interface InternalVideo extends Schema.Component {
   };
   attributes: {
     video: Attribute.Media;
+  };
+}
+
+export interface LinksCta extends Schema.Component {
+  collectionName: 'components_general_ctas';
+  info: {
+    displayName: 'CTA';
+    icon: 'cursor';
+    description: '';
+  };
+  attributes: {
+    label: Attribute.String;
+    page: Attribute.Relation<'links.cta', 'oneToOne', 'api::page.page'>;
+  };
+}
+
+export interface LinksDownloadOverview extends Schema.Component {
+  collectionName: 'components_general_download_overviews';
+  info: {
+    displayName: 'Download Overview';
+    icon: 'arrowDown';
+    description: '';
+  };
+  attributes: {
+    item: Attribute.Component<'links.download', true>;
+  };
+}
+
+export interface LinksDownload extends Schema.Component {
+  collectionName: 'components_general_downloads';
+  info: {
+    displayName: 'Download';
+    icon: 'arrowDown';
+    description: '';
+  };
+  attributes: {
+    media: Attribute.Media;
+    text: Attribute.String;
+  };
+}
+
+export interface MediaGallery extends Schema.Component {
+  collectionName: 'components_general_galleries';
+  info: {
+    displayName: 'Gallery';
+    icon: 'dashboard';
+    description: '';
+  };
+  attributes: {
+    gallery: Attribute.Component<'internal.gallery'>;
+  };
+}
+
+export interface MediaImage extends Schema.Component {
+  collectionName: 'components_general_images';
+  info: {
+    displayName: 'Image';
+    icon: 'emotionHappy';
+    description: '';
+  };
+  attributes: {
+    images: Attribute.Component<'internal.image', true>;
   };
 }
 
@@ -319,31 +223,129 @@ export interface SharedSeo extends Schema.Component {
   };
 }
 
+export interface TextAccordeonItem extends Schema.Component {
+  collectionName: 'components_accordeon_accordeon_items';
+  info: {
+    displayName: 'Accordeon Item';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    body: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'custom';
+        }
+      >;
+  };
+}
+
+export interface TextAccordeon extends Schema.Component {
+  collectionName: 'components_accordeon_accordeons';
+  info: {
+    displayName: 'Accordeon';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    items: Attribute.Component<'text.accordeon-item', true>;
+  };
+}
+
+export interface TextHeroText extends Schema.Component {
+  collectionName: 'components_general_hero_texts';
+  info: {
+    displayName: 'Hero Text';
+    description: '';
+  };
+  attributes: {
+    small: Attribute.String;
+    cta: Attribute.Component<'links.cta'>;
+    text: Attribute.Text;
+  };
+}
+
+export interface TextPageTitle extends Schema.Component {
+  collectionName: 'components_general_page_titles';
+  info: {
+    displayName: 'Page Title';
+    icon: 'layer';
+    description: '';
+  };
+  attributes: {
+    content: Attribute.String;
+  };
+}
+
+export interface TextSectionTitle extends Schema.Component {
+  collectionName: 'components_general_section_titles';
+  info: {
+    displayName: 'Section Title';
+    icon: 'layer';
+    description: '';
+  };
+  attributes: {
+    content: Attribute.String;
+  };
+}
+
+export interface TextTextAndImage extends Schema.Component {
+  collectionName: 'components_general_text_and_images';
+  info: {
+    displayName: 'Text & Image';
+    description: '';
+  };
+  attributes: {
+    direction: Attribute.Enumeration<['text-image', 'image-text']>;
+    imageComponent: Attribute.Component<'internal.image'>;
+    textComponent: Attribute.Component<'text.text'>;
+  };
+}
+
+export interface TextText extends Schema.Component {
+  collectionName: 'components_general_texts';
+  info: {
+    displayName: 'Text';
+    icon: 'layer';
+    description: '';
+  };
+  attributes: {
+    text: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'custom';
+        }
+      >;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'connect.article-overview': ConnectArticleOverview;
       'forms.contact-form': FormsContactForm;
-      'general.accordeon-item': GeneralAccordeonItem;
-      'general.accordeon': GeneralAccordeon;
-      'general.cta': GeneralCta;
-      'general.download-overview': GeneralDownloadOverview;
-      'general.download': GeneralDownload;
-      'general.gallery': GeneralGallery;
-      'general.hero-text': GeneralHeroText;
-      'general.image': GeneralImage;
       'general.intro': GeneralIntro;
-      'general.page-title': GeneralPageTitle;
       'general.portfolio-item': GeneralPortfolioItem;
       'general.portfolio': GeneralPortfolio;
-      'general.section-title': GeneralSectionTitle;
-      'general.text-and-image': GeneralTextAndImage;
-      'general.text': GeneralText;
       'internal.gallery': InternalGallery;
       'internal.image': InternalImage;
       'internal.video': InternalVideo;
+      'links.cta': LinksCta;
+      'links.download-overview': LinksDownloadOverview;
+      'links.download': LinksDownload;
+      'media.gallery': MediaGallery;
+      'media.image': MediaImage;
       'shared.meta-social': SharedMetaSocial;
       'shared.seo': SharedSeo;
+      'text.accordeon-item': TextAccordeonItem;
+      'text.accordeon': TextAccordeon;
+      'text.hero-text': TextHeroText;
+      'text.page-title': TextPageTitle;
+      'text.section-title': TextSectionTitle;
+      'text.text-and-image': TextTextAndImage;
+      'text.text': TextText;
     }
   }
 }

@@ -1,6 +1,6 @@
 #import '../../strapi/image/image.fragment.gql'
 
-fragment ComponentGeneralImage on ComponentGeneralImage {
+fragment ComponentImage on ComponentMediaImage {
   __typename
   images {
     ...StrapiImage

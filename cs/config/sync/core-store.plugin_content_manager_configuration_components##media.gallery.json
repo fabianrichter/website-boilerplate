@@ -1,7 +1,6 @@
 {
-  "key": "plugin_content_manager_configuration_components::general.gallery",
+  "key": "plugin_content_manager_configuration_components::media.gallery",
   "value": {
-    "uid": "general.gallery",
     "settings": {
       "bulkable": true,
       "filterable": true,
@@ -49,6 +48,7 @@
         ]
       ]
     },
+    "uid": "media.gallery",
     "isComponent": true
   },
   "type": "object",

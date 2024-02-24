@@ -12,29 +12,32 @@ import HeroText from "./hero-text/hero-text";
 import Portfolio from "./portfolio/portfolio";
 import CTA from "./cta/cta";
 import ErrorBoundary from "@/lib/error-boundary/error-boundary";
+import Accordeon from "./accordeon/accordeon";
 
 const renderComponents = (componentData) => {
   // check for components data typename to render the correct component
   switch (componentData.__typename) {
     case "ComponentGeneralIntro":
       return <Intro data={componentData} />;
-    case "ComponentGeneralPageTitle":
+    case "ComponentTextPageTitle":
       return <PageTitle data={componentData} />;
-    case "ComponentGeneralSectionTitle":
+    case "ComponentTextSectionTitle":
       return <SectionTitle data={componentData} />;
-    case "ComponentGeneralText":
+    case "ComponentTextText":
       return <Text data={componentData} />;
-    case "ComponentGeneralHeroText":
+    case "ComponentTextHeroText":
       return <HeroText data={componentData} />;
-    case "ComponentGeneralCta":
+    case "ComponentTextAccordeon":
+      return <Accordeon data={componentData} />;
+    case "ComponentLinksCta":
       return <CTA data={componentData} />;
     case "ComponentGeneralPortfolio":
       return <Portfolio data={componentData} />;
-    case "ComponentGeneralImage":
+    case "ComponentMediaImage":
       return <Image data={componentData} />;
-    case "ComponentGeneralGallery":
+    case "ComponentMediaGallery":
       return <Gallery data={componentData} />;
-    case "ComponentGeneralTextAndImage":
+    case "ComponentTextTextAndImage":
       return <TextAndImage data={componentData} />;
     case "ComponentConnectArticleOverview":
       return <ArticleOverview data={componentData} />;

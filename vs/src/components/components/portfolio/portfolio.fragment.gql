@@ -1,6 +1,6 @@
 #import '../../strapi/image/image.fragment.gql'
 
-fragment ComponentGeneralPortfolio on ComponentGeneralPortfolio {
+fragment ComponentPortfolio on ComponentGeneralPortfolio {
   portfolioItem {
     title
     description

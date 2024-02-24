@@ -1,14 +1,13 @@
 {
-  "key": "plugin_content_manager_configuration_components::general.image",
+  "key": "plugin_content_manager_configuration_components::text.accordeon-item",
   "value": {
-    "uid": "general.image",
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "id",
-      "defaultSortBy": "id",
+      "mainField": "title",
+      "defaultSortBy": "title",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -20,16 +19,30 @@
           "sortable": false
         }
       },
-      "images": {
+      "title": {
         "edit": {
-          "label": "images",
+          "label": "title",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "images",
+          "label": "title",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "body": {
+        "edit": {
+          "label": "body",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "body",
           "searchable": false,
           "sortable": false
         }
@@ -38,17 +51,24 @@
     "layouts": {
       "list": [
         "id",
-        "images"
+        "title"
       ],
       "edit": [
         [
           {
-            "name": "images",
+            "name": "title",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "body",
             "size": 12
           }
         ]
       ]
     },
+    "uid": "text.accordeon-item",
     "isComponent": true
   },
   "type": "object",

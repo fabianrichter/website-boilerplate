@@ -14,25 +14,25 @@
 
 fragment PageComponents on Page {
   components {
-    ...ComponentGeneralAccordeon
-    ...ComponentGeneralPageTitle
-    ...ComponentGeneralSectionTitle
-    ...ComponentGeneralText
-    ...ComponentGeneralImage
-    ...ComponentGeneralIntro
-    ...ComponentGeneralPortfolio
-    ...ComponentGeneralTextAndImage
-    ...ComponentGeneralGallery
-    ...ComponentGeneralHeroText
-    ...ComponentGeneralCta
-    ...ComponentConnectArticleOverview
-    ...ComponentFormsContactForm
+    ...ComponentAccordeon
+    ...ComponentPageTitle
+    ...ComponentSectionTitle
+    ...ComponentText
+    ...ComponentImage
+    ...ComponentIntro
+    ...ComponentPortfolio
+    ...ComponentTextAndImage
+    ...ComponentGallery
+    ...ComponentHeroText
+    ...ComponentCta
+    ...ComponentArticleOverview
+    ...ComponentContactForm
   }
 }
 
 fragment ArticleComponents on Article {
   components {
-    ...ComponentGeneralText
-    ...ComponentGeneralGallery
+    ...ComponentText
+    ...ComponentGallery
   }
 }

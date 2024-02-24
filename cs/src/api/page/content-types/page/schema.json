@@ -19,20 +19,20 @@
     "components": {
       "type": "dynamiczone",
       "components": [
-        "general.accordeon",
-        "general.page-title",
-        "general.section-title",
-        "general.text",
-        "general.image",
+        "text.page-title",
+        "text.section-title",
+        "text.text",
+        "media.image",
         "connect.article-overview",
         "forms.contact-form",
-        "general.text-and-image",
-        "general.gallery",
+        "text.text-and-image",
+        "media.gallery",
         "general.intro",
         "general.portfolio",
-        "general.hero-text",
-        "general.cta",
-        "general.download-overview"
+        "text.hero-text",
+        "links.cta",
+        "links.download-overview",
+        "text.accordeon"
       ],
       "pluginOptions": {
         "i18n": {

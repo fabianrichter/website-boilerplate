@@ -1,13 +1,13 @@
 {
-  "key": "plugin_content_manager_configuration_components::general.download",
+  "key": "plugin_content_manager_configuration_components::text.text-and-image",
   "value": {
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "text",
-      "defaultSortBy": "text",
+      "mainField": "id",
+      "defaultSortBy": "id",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -19,57 +19,78 @@
           "sortable": false
         }
       },
-      "media": {
+      "direction": {
         "edit": {
-          "label": "Media",
+          "label": "direction",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "media",
+          "label": "direction",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "imageComponent": {
+        "edit": {
+          "label": "imageComponent",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "imageComponent",
           "searchable": false,
           "sortable": false
         }
       },
-      "text": {
+      "textComponent": {
         "edit": {
-          "label": "Text",
+          "label": "textComponent",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "text",
-          "searchable": true,
-          "sortable": true
+          "label": "textComponent",
+          "searchable": false,
+          "sortable": false
         }
       }
     },
     "layouts": {
       "list": [
         "id",
-        "media",
-        "text"
+        "direction",
+        "imageComponent",
+        "textComponent"
       ],
       "edit": [
         [
           {
-            "name": "media",
+            "name": "direction",
             "size": 6
           }
         ],
         [
           {
-            "name": "text",
+            "name": "imageComponent",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "textComponent",
             "size": 12
           }
         ]
       ]
     },
-    "uid": "general.download",
+    "uid": "text.text-and-image",
     "isComponent": true
   },
   "type": "object",

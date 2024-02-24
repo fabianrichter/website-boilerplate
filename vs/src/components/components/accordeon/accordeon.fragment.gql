@@ -1,5 +1,6 @@
-fragment ComponentGeneralAccordeon on ComponentGeneralAccordeon {
-  item {
+fragment ComponentAccordeon on ComponentTextAccordeon {
+  items {
+    id
     title
     body
   }

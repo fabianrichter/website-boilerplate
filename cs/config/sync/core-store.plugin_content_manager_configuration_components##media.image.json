@@ -1,7 +1,6 @@
 {
-  "key": "plugin_content_manager_configuration_components::general.accordeon",
+  "key": "plugin_content_manager_configuration_components::media.image",
   "value": {
-    "uid": "general.accordeon",
     "settings": {
       "bulkable": true,
       "filterable": true,
@@ -20,16 +19,16 @@
           "sortable": false
         }
       },
-      "item": {
+      "images": {
         "edit": {
-          "label": "Items",
+          "label": "images",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "item",
+          "label": "images",
           "searchable": false,
           "sortable": false
         }
@@ -38,17 +37,18 @@
     "layouts": {
       "list": [
         "id",
-        "item"
+        "images"
       ],
       "edit": [
         [
           {
-            "name": "item",
+            "name": "images",
             "size": 12
           }
         ]
       ]
     },
+    "uid": "media.image",
     "isComponent": true
   },
   "type": "object",

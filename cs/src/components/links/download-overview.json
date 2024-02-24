@@ -10,7 +10,7 @@
     "item": {
       "type": "component",
       "repeatable": true,
-      "component": "general.download"
+      "component": "links.download"
     }
   }
 }

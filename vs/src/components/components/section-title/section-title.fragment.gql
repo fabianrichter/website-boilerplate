@@ -1,4 +1,4 @@
-fragment ComponentGeneralSectionTitle on ComponentGeneralSectionTitle {
+fragment ComponentSectionTitle on ComponentTextSectionTitle {
   __typename
   content
 }

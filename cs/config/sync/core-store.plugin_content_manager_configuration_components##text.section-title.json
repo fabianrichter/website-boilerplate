@@ -1,13 +1,13 @@
 {
-  "key": "plugin_content_manager_configuration_components::general.download-overview",
+  "key": "plugin_content_manager_configuration_components::text.section-title",
   "value": {
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "id",
-      "defaultSortBy": "id",
+      "mainField": "content",
+      "defaultSortBy": "content",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -19,36 +19,36 @@
           "sortable": false
         }
       },
-      "item": {
+      "content": {
         "edit": {
-          "label": "Items",
+          "label": "content",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "item",
-          "searchable": false,
-          "sortable": false
+          "label": "content",
+          "searchable": true,
+          "sortable": true
         }
       }
     },
     "layouts": {
       "list": [
         "id",
-        "item"
+        "content"
       ],
       "edit": [
         [
           {
-            "name": "item",
-            "size": 12
+            "name": "content",
+            "size": 6
           }
         ]
       ]
     },
-    "uid": "general.download-overview",
+    "uid": "text.section-title",
     "isComponent": true
   },
   "type": "object",

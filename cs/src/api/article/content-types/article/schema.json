@@ -62,11 +62,11 @@
       },
       "type": "dynamiczone",
       "components": [
-        "general.gallery",
-        "general.text",
-        "general.hero-text",
-        "general.cta",
-        "general.section-title"
+        "media.gallery",
+        "text.text",
+        "text.hero-text",
+        "links.cta",
+        "text.section-title"
       ]
     },
     "teaserText": {

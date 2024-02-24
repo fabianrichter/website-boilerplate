@@ -7,10 +7,10 @@
   },
   "options": {},
   "attributes": {
-    "item": {
+    "items": {
       "type": "component",
       "repeatable": true,
-      "component": "general.accordeon-item"
+      "component": "text.accordeon-item"
     }
   }
 }

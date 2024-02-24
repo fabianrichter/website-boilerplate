@@ -1078,11 +1078,11 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       }>;
     components: Attribute.DynamicZone<
       [
-        'general.gallery',
-        'general.text',
-        'general.hero-text',
-        'general.cta',
-        'general.section-title'
+        'media.gallery',
+        'text.text',
+        'text.hero-text',
+        'links.cta',
+        'text.section-title'
       ]
     > &
       Attribute.SetPluginOptions<{
@@ -1246,7 +1246,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     Date: Attribute.DateTime;
     Location: Attribute.String;
     Components: Attribute.DynamicZone<
-      ['general.accordeon-item', 'general.accordeon']
+      ['text.accordeon-item', 'text.accordeon']
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1285,20 +1285,20 @@ export interface ApiPagePage extends Schema.CollectionType {
   attributes: {
     components: Attribute.DynamicZone<
       [
-        'general.accordeon',
-        'general.page-title',
-        'general.section-title',
-        'general.text',
-        'general.image',
+        'text.page-title',
+        'text.section-title',
+        'text.text',
+        'media.image',
         'connect.article-overview',
         'forms.contact-form',
-        'general.text-and-image',
-        'general.gallery',
+        'text.text-and-image',
+        'media.gallery',
         'general.intro',
         'general.portfolio',
-        'general.hero-text',
-        'general.cta',
-        'general.download-overview'
+        'text.hero-text',
+        'links.cta',
+        'links.download-overview',
+        'text.accordeon'
       ]
     > &
       Attribute.SetPluginOptions<{

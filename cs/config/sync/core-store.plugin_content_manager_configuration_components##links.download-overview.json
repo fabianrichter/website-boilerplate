@@ -1,7 +1,6 @@
 {
-  "key": "plugin_content_manager_configuration_components::general.text",
+  "key": "plugin_content_manager_configuration_components::links.download-overview",
   "value": {
-    "uid": "general.text",
     "settings": {
       "bulkable": true,
       "filterable": true,
@@ -20,16 +19,16 @@
           "sortable": false
         }
       },
-      "text": {
+      "item": {
         "edit": {
-          "label": "text",
+          "label": "item",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "text",
+          "label": "item",
           "searchable": false,
           "sortable": false
         }
@@ -37,17 +36,19 @@
     },
     "layouts": {
       "list": [
-        "id"
+        "id",
+        "item"
       ],
       "edit": [
         [
           {
-            "name": "text",
+            "name": "item",
             "size": 12
           }
         ]
       ]
     },
+    "uid": "links.download-overview",
     "isComponent": true
   },
   "type": "object",

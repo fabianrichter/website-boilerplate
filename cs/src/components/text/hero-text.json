@@ -12,7 +12,7 @@
     "cta": {
       "type": "component",
       "repeatable": false,
-      "component": "general.cta"
+      "component": "links.cta"
     },
     "text": {
       "type": "text"

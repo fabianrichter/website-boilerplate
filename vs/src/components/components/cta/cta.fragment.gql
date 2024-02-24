@@ -1,4 +1,4 @@
-fragment ComponentGeneralCta on ComponentGeneralCta {
+fragment ComponentCta on ComponentLinksCta {
   __typename
   label
   page {
