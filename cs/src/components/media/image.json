@@ -12,6 +12,18 @@
       "repeatable": true,
       "component": "internal.image",
       "required": false
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "center",
+        "right",
+        "text-aligned",
+        "full-width"
+      ],
+      "default": "text-aligned",
+      "required": true
     }
   }
 }

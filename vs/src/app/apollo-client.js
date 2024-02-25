@@ -1,5 +1,5 @@
-import { graphqlEndpoint, graphqlEndpointServer } from "@/config";
-import { ApolloClient, ApolloLink, ApolloProvider, HttpLink, InMemoryCache } from "@apollo/client";
+import { graphqlEndpoint } from "@/config";
+import { ApolloClient, ApolloLink, HttpLink, InMemoryCache } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
 
 export const apolloClient = new ApolloClient({
@@ -16,7 +16,7 @@ export const apolloClient = new ApolloClient({
 });
 
 export const apolloClientServer = new ApolloClient({
-  uri: graphqlEndpointServer,
+  uri: graphqlEndpoint,
   cache: new InMemoryCache(),
   ssrMode: typeof window === "undefined",
   connectToDevTools: true,

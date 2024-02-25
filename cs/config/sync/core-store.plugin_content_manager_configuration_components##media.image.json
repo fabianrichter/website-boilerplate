@@ -21,7 +21,7 @@
       },
       "images": {
         "edit": {
-          "label": "images",
+          "label": "Images",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -32,18 +32,39 @@
           "searchable": false,
           "sortable": false
         }
+      },
+      "position": {
+        "edit": {
+          "label": "Position",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "position",
+          "searchable": true,
+          "sortable": true
+        }
       }
     },
     "layouts": {
       "list": [
         "id",
-        "images"
+        "images",
+        "position"
       ],
       "edit": [
         [
           {
             "name": "images",
             "size": 12
+          }
+        ],
+        [
+          {
+            "name": "position",
+            "size": 6
           }
         ]
       ]

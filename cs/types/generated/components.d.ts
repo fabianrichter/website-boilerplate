@@ -170,6 +170,11 @@ export interface MediaImage extends Schema.Component {
   };
   attributes: {
     images: Attribute.Component<'internal.image', true>;
+    position: Attribute.Enumeration<
+      ['left', 'center', 'right', 'text-aligned', 'full-width']
+    > &
+      Attribute.Required &
+      Attribute.DefaultTo<'text-aligned'>;
   };
 }
 

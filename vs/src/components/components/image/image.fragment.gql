@@ -2,6 +2,7 @@
 
 fragment ComponentImage on ComponentMediaImage {
   __typename
+  position
   images {
     ...StrapiImage
   }

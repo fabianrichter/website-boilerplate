@@ -1,4 +1,4 @@
-import { strapiUrl, strapiUrlServer } from '@/config';
+import { strapiUrl } from '@/config';
 import React from 'react';
 
 import styles from './image.module.scss';
@@ -21,9 +21,7 @@ const customLoader = ({ src, width, quality }) => {
   })();
 
   const path = "/uploads/" + prefix + src.replace("/uploads/", "")
-  let url;
-  typeof window === 'undefined' ? (url = strapiUrlServer + path) : (url = strapiUrl + path);
-  return url;
+  return strapiUrl + path;
 };
 
 const StrapiImage = ({
@@ -52,8 +50,7 @@ const StrapiImage = ({
   let imgWidth = w || formats[format]?.width || width;
   let imgHeight = h || formats[format]?.height || height;
 
-  const originalPath =
-    typeof window === 'undefined' ? (strapiUrlServer + url) : (strapiUrl + url);
+  const originalPath = strapiUrl + url;
 
   const classes = classNames({
     [styles.image]: true,

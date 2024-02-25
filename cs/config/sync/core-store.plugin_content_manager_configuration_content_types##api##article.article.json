@@ -179,12 +179,6 @@
       }
     },
     "layouts": {
-      "list": [
-        "title",
-        "teaserImage",
-        "id",
-        "createdAt"
-      ],
       "edit": [
         [
           {
@@ -209,7 +203,7 @@
         [
           {
             "name": "teaserText",
-            "size": 6
+            "size": 12
           }
         ],
         [
@@ -224,6 +218,12 @@
             "size": 12
           }
         ]
+      ],
+      "list": [
+        "title",
+        "teaserImage",
+        "id",
+        "createdAt"
       ]
     }
   },
