@@ -1,10 +1,10 @@
-import { Configs } from '@/store/configs';
-import React, { useContext } from 'react';
+import { Configs } from "@/store/configs";
+import React, { useContext } from "react";
 
-import styles from './footer.module.scss';
-import Link from 'next/link';
-import { Col, Container, Row } from '../layout';
-import { t } from 'i18next';
+import styles from "./footer.module.scss";
+import Link from "next/link";
+import { Col, Container, Row } from "../layout";
+import { t } from "i18next";
 
 const Footer = () => {
   // destructure footer config data
@@ -16,12 +16,12 @@ const Footer = () => {
 
   const footerLine = [
     {
-      label: 'Impressum',
-      url: footer.imprintAlias || '/',
+      label: "Impressum",
+      url: footer.imprintAlias || "/",
     },
     {
-      label: 'Datenschutz',
-      url: footer.privacyAlias || '/',
+      label: "Datenschutz",
+      url: footer.privacyAlias || "/",
     },
   ];
 
@@ -29,22 +29,27 @@ const Footer = () => {
     <footer className={styles.footer}>
       <Container>
         <Row>
-          <Col col={12} md={4} className={styles.logo}>
-            Website Boilerplate
+          <Col col={12} className={styles.logo}>
+            <p>
+              <b>Website Boilerplate</b>
+            </p>
+            <p>Copyright 2023</p>
           </Col>
-          <Col col={12} md={4} className={styles.copyright}>
-            copyright 2023
-          </Col>
-          <Col col={12} md={4} className={styles.links}>
-            <div className={styles.social}>
-              <a href={footer.instagramProfileUrl}>Instagram</a>
-            </div>
-            <div className={styles['footer-line']}>
-              {footerLine.map((link, index) => (
+        </Row>
+
+        <Row>
+          <Col col={12} lg={2}>
+            {footerLine.map((link, index) => (
+              <div>
                 <Link scroll={false} href={link.url} key={index}>
                   {link.label}
                 </Link>
-              ))}
+              </div>
+            ))}
+          </Col>
+          <Col col={12} lg={2}>
+            <div className={styles.social}>
+              <a href={footer.instagramProfileUrl}>Instagram</a>
             </div>
           </Col>
         </Row>

@@ -1,7 +1,6 @@
 {
-  "key": "plugin_content_manager_configuration_components::general.text-and-image",
+  "key": "plugin_content_manager_configuration_components::text.text-and-image",
   "value": {
-    "uid": "general.text-and-image",
     "settings": {
       "bulkable": true,
       "filterable": true,
@@ -91,6 +90,7 @@
         ]
       ]
     },
+    "uid": "text.text-and-image",
     "isComponent": true
   },
   "type": "object",

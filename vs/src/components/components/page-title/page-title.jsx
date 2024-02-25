@@ -1,13 +1,13 @@
-import { Col, Container, Row } from '@/components/layout';
-import React from 'react';
-import styles from './page-title.module.scss';
+import { Col, Container, Row } from "@/components/layout";
+import React from "react";
+import styles from "./page-title.module.scss";
 
 const PageTitle = (props) => {
   return (
-    <section className={styles['page-title']}>
+    <section className={styles["page-title"]}>
       <Container>
         <Row>
-          <Col col={12}>
+          <Col col={12} lg={8} shiftLg={2}>
             <h1>{props.data.content && props.data.content}</h1>
           </Col>
         </Row>

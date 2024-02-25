@@ -1,6 +1,6 @@
 #import '../../strapi/image/image.fragment.gql'
 
-fragment ComponentGeneralTextAndImage on ComponentGeneralTextAndImage {
+fragment ComponentTextAndImage on ComponentTextTextAndImage {
   __typename
   textComponent {
     text

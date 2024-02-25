@@ -12,8 +12,6 @@
 
 .logo {
   @include headline(h6);
-  display: flex;
-  align-items: flex-end;
 
   @include media-breakpoint-max(md) {
     @include headline(h3);
@@ -55,8 +53,6 @@
   }
 
   @include media-breakpoint-min(md) {
-    justify-content: flex-end;
-
     .social,
     .footer-line {
       margin-left: 0;

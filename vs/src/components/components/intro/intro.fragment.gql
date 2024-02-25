@@ -1,6 +1,6 @@
 #import '../../strapi/image/image.fragment.gql'
 
-fragment ComponentGeneralIntro on ComponentGeneralIntro {
+fragment ComponentIntro on ComponentGeneralIntro {
   __typename
   title
   text

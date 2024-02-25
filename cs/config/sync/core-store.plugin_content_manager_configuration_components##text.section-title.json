@@ -1,7 +1,6 @@
 {
-  "key": "plugin_content_manager_configuration_components::general.section-title",
+  "key": "plugin_content_manager_configuration_components::text.section-title",
   "value": {
-    "uid": "general.section-title",
     "settings": {
       "bulkable": true,
       "filterable": true,
@@ -49,6 +48,7 @@
         ]
       ]
     },
+    "uid": "text.section-title",
     "isComponent": true
   },
   "type": "object",

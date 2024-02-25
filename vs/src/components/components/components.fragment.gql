@@ -1,4 +1,5 @@
 #import './accordeon/accordeon.fragment.gql'
+#import './download-overview/download-overview.fragment.gql'
 #import './page-title/page-title.fragment.gql'
 #import './section-title/section-title.fragment.gql'
 #import './text/text.fragment.gql'
@@ -14,25 +15,26 @@
 
 fragment PageComponents on Page {
   components {
-    ...ComponentGeneralAccordeon
-    ...ComponentGeneralPageTitle
-    ...ComponentGeneralSectionTitle
-    ...ComponentGeneralText
-    ...ComponentGeneralImage
-    ...ComponentGeneralIntro
-    ...ComponentGeneralPortfolio
-    ...ComponentGeneralTextAndImage
-    ...ComponentGeneralGallery
-    ...ComponentGeneralHeroText
-    ...ComponentGeneralCta
-    ...ComponentConnectArticleOverview
-    ...ComponentFormsContactForm
+    ...ComponentAccordeon
+    ...ComponentPageTitle
+    ...ComponentSectionTitle
+    ...ComponentText
+    ...ComponentImage
+    ...ComponentIntro
+    ...ComponentPortfolio
+    ...ComponentTextAndImage
+    ...ComponentGallery
+    ...ComponentHeroText
+    ...ComponentCta
+    ...ComponentArticleOverview
+    ...ComponentContactForm
+    ...ComponentDownloadOverview
   }
 }
 
 fragment ArticleComponents on Article {
   components {
-    ...ComponentGeneralText
-    ...ComponentGeneralGallery
+    ...ComponentText
+    ...ComponentGallery
   }
 }

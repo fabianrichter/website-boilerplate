@@ -1,7 +1,6 @@
 {
-  "key": "plugin_content_manager_configuration_components::general.gallery",
+  "key": "plugin_content_manager_configuration_components::text.accordeon",
   "value": {
-    "uid": "general.gallery",
     "settings": {
       "bulkable": true,
       "filterable": true,
@@ -20,16 +19,16 @@
           "sortable": false
         }
       },
-      "gallery": {
+      "items": {
         "edit": {
-          "label": "gallery",
+          "label": "items",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "gallery",
+          "label": "items",
           "searchable": false,
           "sortable": false
         }
@@ -38,17 +37,18 @@
     "layouts": {
       "list": [
         "id",
-        "gallery"
+        "items"
       ],
       "edit": [
         [
           {
-            "name": "gallery",
+            "name": "items",
             "size": 12
           }
         ]
       ]
     },
+    "uid": "text.accordeon",
     "isComponent": true
   },
   "type": "object",

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_general_download_overviews",
+  "info": {
+    "displayName": "Download Overview",
+    "icon": "arrowDown",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.download"
+    }
+  }
+}

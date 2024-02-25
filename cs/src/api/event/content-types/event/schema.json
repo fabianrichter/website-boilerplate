@@ -27,8 +27,8 @@
     "Components": {
       "type": "dynamiczone",
       "components": [
-        "general.accordeon-item",
-        "general.accordeon"
+        "text.accordeon-item",
+        "text.accordeon"
       ]
     }
   }

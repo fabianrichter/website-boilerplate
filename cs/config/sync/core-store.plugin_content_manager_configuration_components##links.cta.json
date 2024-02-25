@@ -1,14 +1,13 @@
 {
-  "key": "plugin_content_manager_configuration_components::general.hero-text",
+  "key": "plugin_content_manager_configuration_components::links.cta",
   "value": {
-    "uid": "general.hero-text",
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "small",
-      "defaultSortBy": "small",
+      "mainField": "label",
+      "defaultSortBy": "label",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -20,77 +19,56 @@
           "sortable": false
         }
       },
-      "text": {
+      "label": {
         "edit": {
-          "label": "Text",
+          "label": "label",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "text",
+          "label": "label",
           "searchable": true,
           "sortable": true
         }
       },
-      "small": {
+      "page": {
         "edit": {
-          "label": "Small Text",
-          "description": "Some optional small headline over the main content to give more context.",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "small",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "cta": {
-        "edit": {
-          "label": "CTA",
+          "label": "page",
           "description": "",
           "placeholder": "",
           "visible": true,
-          "editable": true
+          "editable": true,
+          "mainField": "title"
         },
         "list": {
-          "label": "cta",
-          "searchable": false,
-          "sortable": false
+          "label": "page",
+          "searchable": true,
+          "sortable": true
         }
       }
     },
     "layouts": {
       "list": [
         "id",
-        "text",
-        "small",
-        "cta"
+        "label",
+        "page"
       ],
       "edit": [
         [
           {
-            "name": "small",
+            "name": "label",
             "size": 6
-          }
-        ],
-        [
+          },
           {
-            "name": "text",
-            "size": 12
-          }
-        ],
-        [
-          {
-            "name": "cta",
-            "size": 12
+            "name": "page",
+            "size": 6
           }
         ]
       ]
     },
+    "uid": "links.cta",
     "isComponent": true
   },
   "type": "object",
