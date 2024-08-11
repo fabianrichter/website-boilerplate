@@ -336,6 +336,31 @@ export interface TextHeroText extends Schema.Component {
   };
 }
 
+export interface TextListItem extends Schema.Component {
+  collectionName: 'components_text_list_items';
+  info: {
+    displayName: 'List Item';
+    icon: 'bold';
+    description: '';
+  };
+  attributes: {
+    label: Attribute.String;
+    description: Attribute.String;
+    highlight: Attribute.Boolean;
+  };
+}
+
+export interface TextList extends Schema.Component {
+  collectionName: 'components_text_lists';
+  info: {
+    displayName: 'List';
+    icon: 'bulletList';
+  };
+  attributes: {
+    listItems: Attribute.Component<'text.list-item', true>;
+  };
+}
+
 export interface TextPageTitle extends Schema.Component {
   collectionName: 'components_general_page_titles';
   info: {
@@ -417,6 +442,8 @@ declare module '@strapi/types' {
       'text.accordeon-item': TextAccordeonItem;
       'text.accordeon': TextAccordeon;
       'text.hero-text': TextHeroText;
+      'text.list-item': TextListItem;
+      'text.list': TextList;
       'text.page-title': TextPageTitle;
       'text.section-title': TextSectionTitle;
       'text.text-and-image': TextTextAndImage;

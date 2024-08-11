@@ -122,10 +122,6 @@ body > div {
   min-height: 100svh;
 }
 
-main {
-  margin-top: var(--section-spacing-m);
-}
-
 section {
   margin: var(--section-spacing-s) 0;
 }
@@ -187,7 +183,7 @@ input[type="email"] {
   background-color: transparent;
   outline: none;
   padding: 5px 10px;
-  @include body(normal);
+  @include body(big);
   color: var(--c-text);
 }
 
@@ -201,9 +197,9 @@ textarea {
   background-color: transparent;
   outline: none;
   padding: 5px 10px;
-  @include body(normal);
   color: var(--c-text);
   height: 82px;
+  @include body(big);
 
   &:focus,
   &:focus-visible {

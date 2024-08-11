@@ -17,6 +17,7 @@ import DownloadOverview from "./download-overview/download-overview";
 import ImageTextSlider from "./image-text-slider/image-text-slider";
 import GoogleMaps from "./google-maps/google-maps";
 import ConsentActions from "./consent-actions/consent-actions";
+import List from "./list/list";
 
 const renderComponents = (componentData) => {
   // check for components data typename to render the correct component
@@ -55,6 +56,8 @@ const renderComponents = (componentData) => {
       return <GoogleMaps data={componentData} />;
     case "ComponentGeneralConsentActions":
       return <ConsentActions data={componentData} />;
+    case "ComponentTextList":
+      return <List data={componentData} />;
     default:
       return <div>Module not found.</div>;
   }

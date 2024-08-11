@@ -1295,7 +1295,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'media.image-text-slider',
         'media.google-maps',
         'general.consent-actions',
-        'general.intro'
+        'general.intro',
+        'text.list'
       ]
     > &
       Attribute.SetPluginOptions<{

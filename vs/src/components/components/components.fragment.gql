@@ -15,6 +15,7 @@
 #import './image-text-slider/image-text-slider.fragment.gql'
 #import './google-maps/google-maps.fragment.gql'
 #import './consent-actions/consent-actions.fragment.gql'
+#import './list/list.fragment.gql'
 
 fragment PageComponents on Page {
   components {
@@ -22,6 +23,7 @@ fragment PageComponents on Page {
     ...ComponentSectionTitle
     ...ComponentText
     ...ComponentImage
+    ...ComponentIntro
     ...ComponentPortfolio
     ...ComponentTextAndImage
     ...ComponentGallery
@@ -32,6 +34,7 @@ fragment PageComponents on Page {
     ...ComponentImageTextSlider
     ...ComponentGoogleMaps
     ...ComponentConsentActions
+    ...ComponentList
   }
 }
 

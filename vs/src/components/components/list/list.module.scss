@@ -1,0 +1,39 @@
+@import "@/scss/fonts";
+
+.componentlist {
+  margin-top: var(--section-spacing-l);
+  margin-bottom: var(--section-spacing-l);
+}
+
+.list {
+  display: block;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.item {
+  .label {
+    @include headline(h3);
+    margin-bottom: 0;
+  }
+}
+
+.group {
+  break-inside: avoid;
+
+  &:first-child {
+    h2 {
+      margin-top: 0;
+    }
+  }
+}
+
+.wrapper {
+  column-count: 3;
+}
+
+.highlight {
+  margin-left: .5rem;
+  color: #949494
+}

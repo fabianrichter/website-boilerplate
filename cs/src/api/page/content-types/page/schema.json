@@ -33,7 +33,8 @@
         "media.image-text-slider",
         "media.google-maps",
         "general.consent-actions",
-        "general.intro"
+        "general.intro",
+        "text.list"
       ],
       "pluginOptions": {
         "i18n": {
