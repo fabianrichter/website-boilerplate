@@ -1,0 +1,10 @@
+fragment ComponentList on ComponentTextList {
+  __typename
+  listItems(pagination: { limit: 100 }) {
+    ... on ComponentTextListItem {
+      label
+      description
+      highlight
+    }
+  }
+}

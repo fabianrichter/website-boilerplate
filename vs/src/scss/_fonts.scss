@@ -44,11 +44,11 @@
 
   @if ($h == h1) {
     font-size: rem-calc(42);
+    font-weight: bold;
     text-transform: uppercase;
 
     @include media-breakpoint-min(md) {
-      font-size: rem-calc(57);
-      line-height: rem-calc(64)
+      font-size: rem-calc(100);
     }
   }
 
@@ -57,7 +57,7 @@
     //font-weight: 600;
 
     @include media-breakpoint-min(md) {
-      font-size: rem-calc(32);
+      font-size: rem-calc(48);
       line-height: rem-calc(40);
     }
   }

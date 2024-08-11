@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_text_lists",
+  "info": {
+    "displayName": "List",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "listItems": {
+      "displayName": "List Item",
+      "type": "component",
+      "repeatable": true,
+      "component": "text.list-item"
+    }
+  }
+}

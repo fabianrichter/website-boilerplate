@@ -52,9 +52,11 @@ const Header = (props) => {
         </div>
         <div className={styles["desktop-menu"]}>
           <Menu navigation={props.navigation} />
-          <Link className={styles["button"]} href={"/kontakt"}>
-            Kontakt
-          </Link>
+          <div className={styles["button-wrapper"]}>
+            <Link className={styles["button"]} href={"/kontakt"}>
+              Kontakt
+            </Link>
+          </div>
         </div>
         <div className={styles.toggle} onClick={() => setMenuActive((s) => !s)} role="button">
           Menu
