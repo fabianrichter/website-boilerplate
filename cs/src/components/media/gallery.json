@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_general_galleries",
+  "info": {
+    "displayName": "Gallery",
+    "icon": "dashboard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "gallery": {
+      "type": "component",
+      "repeatable": false,
+      "component": "internal.gallery"
+    }
+  }
+}

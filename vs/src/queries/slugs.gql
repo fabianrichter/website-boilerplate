@@ -1,0 +1,27 @@
+# Get all slugs to request in getStaticPaths.
+
+# get all page slugs
+query PageSlugs {
+  pages(locale: "all") {
+    data {
+      attributes {
+        __typename
+        slug
+        updatedAt
+      }
+    }
+  }
+}
+
+# get all article-slugs
+query ArticleSlugs {
+  articles(locale: "all") {
+    data {
+      attributes {
+        __typename
+        slug
+        updatedAt
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+query BasicContent {
+  articles {
+    data {
+      id
+      attributes {
+        title
+        publishedAt
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+#import '../../strapi/image/image.fragment.gql'
+
+fragment ComponentImage on ComponentMediaImage {
+  __typename
+  position
+  images {
+    ...StrapiImage
+  }
+}

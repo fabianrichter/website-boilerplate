@@ -1,0 +1,10 @@
+#import '../cta/cta.fragment.gql'
+
+fragment ComponentHeroText on ComponentTextHeroText {
+  __typename
+  small
+  text
+  cta {
+    ...ComponentCta
+  }
+}

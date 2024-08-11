@@ -1,0 +1,58 @@
+{
+  "name": "boilerplate",
+  "private": true,
+  "version": "0.2.1",
+  "description": "A Strapi application",
+  "scripts": {
+    "dev": "strapi develop",
+    "develop:live": "ENV_PATH=.env.production strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "cs": "config-sync",
+    "cex": "config-sync export",
+    "cim": "config-sync import",
+    "dockerize": "npx @strapi-community/dockerize new --projectname=boilerplate-cs --dbpassword=StrapiAdmin1 --usecompose=true --env=development"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@_sh/strapi-plugin-ckeditor": "^2.1.0",
+    "@palmabit/strapi-app-version": "^1.2.0",
+    "@strapi-community/dockerize": "^1.16.2",
+    "@strapi/plugin-color-picker": "^4.20.2",
+    "@strapi/plugin-graphql": "4.20.1",
+    "@strapi/plugin-i18n": "4.20.1",
+    "@strapi/plugin-seo": "^1.9.2",
+    "@strapi/plugin-users-permissions": "4.20.1",
+    "@strapi/provider-email-nodemailer": "4.20.1",
+    "@strapi/strapi": "4.20.1",
+    "better-sqlite3": "8.5.0",
+    "graphql-middleware": "^6.1.35",
+    "graphql-rate-limit": "^3.3.0",
+    "pg": "^8.11.3",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^5.2.0",
+    "strapi-location-field-plugin": "^1.2.2",
+    "strapi-plugin-config-sync": "^1.1.3",
+    "strapi-plugin-duplicate-button": "^1.1.14",
+    "strapi-plugin-multi-select": "^1.2.3",
+    "strapi-plugin-navigation": "^2.2.11",
+    "strapi-plugin-oembed": "^1.2.1",
+    "strapi-plugin-placeholder": "^4.4.0",
+    "strapi-plugin-responsive-image": "^1.2.0",
+    "strapi-plugin-slugify": "^2.3.8",
+    "styled-components": "^5.2.1"
+  },
+  "author": {
+    "name": "Fabian Richter"
+  },
+  "strapi": {
+    "uuid": "57c8400a-52a4-40b8-87bb-8af2bf48948f"
+  },
+  "engines": {
+    "node": ">=16.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

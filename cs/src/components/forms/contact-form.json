@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_forms_contact_forms",
+  "info": {
+    "displayName": "Contact Form",
+    "icon": "pencil"
+  },
+  "options": {},
+  "attributes": {
+    "show": {
+      "type": "boolean"
+    }
+  }
+}

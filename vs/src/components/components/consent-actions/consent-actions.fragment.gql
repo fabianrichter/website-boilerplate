@@ -1,0 +1,4 @@
+fragment ComponentConsentActions on ComponentGeneralConsentActions {
+  __typename
+  text
+}

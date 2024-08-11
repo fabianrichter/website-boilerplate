@@ -1,0 +1,7 @@
+#import '../components/footer/config-footer.fragment.gql'
+#import '../components/header/config-header.fragment.gql'
+
+query ConfigQuery {
+  ...ConfigFooter
+  #...ConfigHeader
+}

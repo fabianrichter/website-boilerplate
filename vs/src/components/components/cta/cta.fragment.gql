@@ -1,0 +1,11 @@
+fragment ComponentCta on ComponentLinksCta {
+  __typename
+  label
+  page {
+    data {
+      attributes {
+        slug
+      }
+    }
+  }
+}

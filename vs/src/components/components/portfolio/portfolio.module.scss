@@ -1,0 +1,53 @@
+@import "@/scss/fonts";
+
+.portfolio {
+  padding: var(--section-spacing-m) 0 0 0;
+
+  a {
+    text-decoration: none;
+
+    img {
+      transition: .3s transform;
+    }
+
+    &:hover {
+      .title {
+      }
+
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.description {
+  max-width: 600px;
+  @include body(normal)
+}
+
+.item {
+  margin-bottom: var(--section-spacing-m);
+}
+
+.title {
+  @include headline(h2);
+  display: block;
+  margin-top: var(--section-spacing-xs);
+  background: linear-gradient(0, black 1px, transparent 1px);
+  transition: 0.3s background;
+  flex-grow: 1;
+  padding-bottom: rem-calc(4);
+}
+
+.image {
+  height: 700px !important;
+  max-height: 70svh;
+  object-fit: cover;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}

@@ -1,0 +1,73 @@
+@use "sass:map";
+@use "sass:math";
+@import "config";
+
+@mixin link() {
+  text-decoration: none;
+
+  &::after {
+    content: "↗";
+    font-size: inherit;
+    transform: translate(0);
+    position: relative;
+    display: inline-block;
+    transition: 0.3s ease;
+  }
+
+  &:hover {
+    text-decoration: underline;
+
+    &::after {
+      transform: translate(3px, -3px);
+    }
+  }
+}
+
+@mixin cta() {
+  --c-button: var(--c-black);
+
+  padding: 5px 10px;
+  margin-top: -7px;
+  border: 2px solid var(--c-button);
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--c-button);
+  text-decoration: none;
+  transition: 0.15s all;
+  transform: translate(0, 0);
+  box-shadow: 5px 5px 0px var(--c-button);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  
+  //animation: jitter 6s infinite;
+
+
+  &:hover {
+    transform: translate(5px, 5px);
+    box-shadow: 0px 0px 0px var(--c-button);
+    background-color: transparent;
+    animation: none;
+  }
+}
+
+@mixin media-breakpoint-max($name) {
+  $max: map.get($grid-breakpoints, $name);
+
+  @media (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-min($name) {
+  $min: map.get($grid-breakpoints, $name);
+
+  @media (min-width: $min) {
+    @content;
+  }
+}
+
+@function rem-calc($number) {
+  @return #{math.div($number, 16)}rem;
+}

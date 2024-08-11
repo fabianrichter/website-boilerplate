@@ -1,0 +1,4 @@
+fragment ComponentPageTitle on ComponentTextPageTitle {
+  __typename
+  content
+}

@@ -1,0 +1,4 @@
+fragment ComponentSectionTitle on ComponentTextSectionTitle {
+  __typename
+  content
+}

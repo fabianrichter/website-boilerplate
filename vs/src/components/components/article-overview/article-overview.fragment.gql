@@ -1,0 +1,25 @@
+#import '../../strapi/image/image.fragment.gql'
+
+fragment ComponentArticleOverview on ComponentConnectArticleOverview {
+  __typename
+  mode
+  maxAmount
+  tags {
+    data {
+      id
+    }
+  }
+  manualArticles: articles {
+    data {
+      attributes {
+        title
+        publishedAt
+        slug
+        teaserText
+        teaserImage {
+          ...StrapiImage
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+#import './accordeon/accordeon.fragment.gql'
+#import './download-overview/download-overview.fragment.gql'
+#import './page-title/page-title.fragment.gql'
+#import './section-title/section-title.fragment.gql'
+#import './text/text.fragment.gql'
+#import './image/image.fragment.gql'
+#import './intro/intro.fragment.gql'
+#import './portfolio/portfolio.fragment.gql'
+#import './gallery/gallery.fragment.gql'
+#import './article-overview/article-overview.fragment.gql'
+#import './contact-form/contact-form.fragment.gql'
+#import './text-and-image/text-and-image.fragment.gql'
+#import './hero-text/hero-text.fragment.gql'
+#import './cta/cta.fragment.gql'
+#import './image-text-slider/image-text-slider.fragment.gql'
+#import './google-maps/google-maps.fragment.gql'
+#import './consent-actions/consent-actions.fragment.gql'
+
+fragment PageComponents on Page {
+  components {
+    ...ComponentPageTitle
+    ...ComponentSectionTitle
+    ...ComponentText
+    ...ComponentImage
+    ...ComponentPortfolio
+    ...ComponentTextAndImage
+    ...ComponentGallery
+    ...ComponentHeroText
+    ...ComponentCta
+    ...ComponentContactForm
+    ...ComponentDownloadOverview
+    ...ComponentImageTextSlider
+    ...ComponentGoogleMaps
+    ...ComponentConsentActions
+  }
+}
+
+fragment ArticleComponents on Article {
+  components {
+    ...ComponentText
+    ...ComponentGallery
+  }
+}

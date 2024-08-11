@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_connect_article_overviews",
+  "info": {
+    "displayName": "Article Overview",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    },
+    "mode": {
+      "type": "enumeration",
+      "enum": [
+        "manual",
+        "recent",
+        "tag-based"
+      ]
+    },
+    "maxAmount": {
+      "type": "integer",
+      "default": 6
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+#import '../../strapi/image/image.fragment.gql'
+
+fragment ComponentIntro on ComponentGeneralIntro {
+  __typename
+  title
+  text
+  background {
+    ...StrapiImage
+  }
+}

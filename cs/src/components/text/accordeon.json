@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_accordeon_accordeons",
+  "info": {
+    "displayName": "Accordeon",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "text.accordeon-item"
+    }
+  }
+}

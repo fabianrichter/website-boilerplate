@@ -1,0 +1,28 @@
+#import '../../components/components.fragment.gql'
+#import '../../strapi/seo/seo.fragment.gql'
+#import '../../strapi/image/image.fragment.gql'
+
+fragment ArticleContent on ArticleEntityResponseCollection {
+  data {
+    id
+    attributes {
+      localizations {
+        data {
+          attributes {
+            locale
+            slug
+          }
+        }
+      }
+      title
+      publishedAt
+      teaserImage {
+        ...StrapiImage
+      }
+      seo {
+        ...StrapiSEO
+      }
+      ...ArticleComponents
+    }
+  }
+}

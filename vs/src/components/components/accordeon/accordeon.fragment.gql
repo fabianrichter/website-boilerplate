@@ -1,0 +1,7 @@
+fragment ComponentAccordeon on ComponentTextAccordeon {
+  items {
+    id
+    title
+    body
+  }
+}

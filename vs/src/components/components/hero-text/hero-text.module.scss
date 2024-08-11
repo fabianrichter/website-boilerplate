@@ -1,0 +1,19 @@
+@import '@/scss/fonts';
+@import '@/scss/mixins';
+
+.hero {
+  margin: var(--section-spacing-l) 0;
+  text-align: center;
+}
+
+.big {
+  @include headline(h1);
+}
+
+.cta {
+  @include cta;
+}
+
+.small {
+  @include body(small);
+}

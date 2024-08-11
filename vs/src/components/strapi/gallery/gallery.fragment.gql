@@ -1,0 +1,15 @@
+fragment StrapiGallery on ComponentInternalGallery {
+  images {
+    data {
+      attributes {
+        name
+        alternativeText
+        caption
+        formats
+        url
+        width
+        height
+      }
+    }
+  }
+}

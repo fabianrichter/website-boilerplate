@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_links_consent_actions",
+  "info": {
+    "displayName": "Consent Actions",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  }
+}

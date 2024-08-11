@@ -1,0 +1,98 @@
+@import 'mixins';
+
+@mixin body($type: normal) {
+  font-family: var(--font-family-body);
+  line-height: 1.4;
+
+  @if ($type == small) {
+    font-size: rem-calc(11);
+    font-weight: 600;
+
+    @include media-breakpoint-min(md) {
+      font-size: rem-calc(14);
+      line-height: rem-calc(20);
+    }
+  }
+
+  @if ($type == normal) {
+    font-size: rem-calc(14);
+
+    @include media-breakpoint-min(md) {
+      font-size: rem-calc(16);
+      line-height: rem-calc(24);
+    }
+  }
+
+  @if ($type == big) {
+    font-size: 1.2rem;
+
+    @include media-breakpoint-min(sm) {
+      font-size: 1.4rem;
+    }
+
+    @include media-breakpoint-min(lg) {
+      font-size: 2rem;
+    }
+  }
+}
+
+@mixin headline($h: all) {
+  font-family: var(--font-family-heading);
+  font-weight: normal;
+  line-height: 1.2;
+  word-break: break-word;
+
+  @if ($h == h1) {
+    font-size: rem-calc(42);
+    text-transform: uppercase;
+
+    @include media-breakpoint-min(md) {
+      font-size: rem-calc(57);
+      line-height: rem-calc(64)
+    }
+  }
+
+  @if ($h == h2) {
+    font-size: rem-calc(24);
+    //font-weight: 600;
+
+    @include media-breakpoint-min(md) {
+      font-size: rem-calc(32);
+      line-height: rem-calc(40);
+    }
+  }
+
+  @if ($h == h3) {
+    font-size: rem-calc(20);
+    font-weight: 600;
+
+    @include media-breakpoint-min(md) {
+      font-size: rem-calc(22);
+      line-height: rem-calc(28);
+    }
+  }
+
+  @if ($h == h4) {
+    font-size: 1.2rem;
+
+    @include media-breakpoint-min(sm) {
+      font-size: 1.55rem;
+    }
+
+    @include media-breakpoint-min(lg) {
+      font-size: 1.5rem;
+    }
+  }
+
+  @if ($h == h5) {
+    font-size: 1rem;
+
+    @include media-breakpoint-min(sm) {
+      font-size: 1.25rem;
+    }
+
+    @include media-breakpoint-min(lg) {
+      font-size: 1rem;
+    }
+  }
+}

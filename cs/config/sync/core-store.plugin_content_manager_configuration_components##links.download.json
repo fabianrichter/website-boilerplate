@@ -1,0 +1,78 @@
+{
+  "key": "plugin_content_manager_configuration_components::links.download",
+  "value": {
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "text",
+      "defaultSortBy": "text",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "media": {
+        "edit": {
+          "label": "Media",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "media",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "text": {
+        "edit": {
+          "label": "Text",
+          "description": "Der hier eingegebene Text wird als Link angezeigt. Lassen Sie das Feld leer, um den originalen Dateinamen zu verwenden.",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "text",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "media",
+        "text"
+      ],
+      "edit": [
+        [
+          {
+            "name": "text",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "media",
+            "size": 12
+          }
+        ]
+      ]
+    },
+    "uid": "links.download",
+    "isComponent": true
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

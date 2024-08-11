@@ -1,0 +1,11 @@
+@import "@/scss/fonts.scss";
+
+.section {
+  margin: 0;
+}
+
+.text-wrapper {
+  p {
+    @include body;
+  }
+}

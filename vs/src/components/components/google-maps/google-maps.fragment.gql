@@ -1,0 +1,5 @@
+fragment ComponentGoogleMaps on ComponentMediaGoogleMaps {
+  __typename
+  gmapsEmbed
+  text
+}

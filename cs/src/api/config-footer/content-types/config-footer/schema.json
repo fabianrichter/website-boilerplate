@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "config_footers",
+  "info": {
+    "singularName": "config-footer",
+    "pluralName": "config-footers",
+    "displayName": "Config: Footer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "address": {
+      "type": "text"
+    }
+  }
+}

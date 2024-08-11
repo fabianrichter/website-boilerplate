@@ -1,0 +1,119 @@
+{
+  "key": "plugin_content_manager_configuration_components::connect.article-overview",
+  "value": {
+    "uid": "connect.article-overview",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "mode",
+      "defaultSortBy": "id",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "articles": {
+        "edit": {
+          "label": "Articles",
+          "description": "Manually select articles. Only works if mode is set to \"manual\".",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "title"
+        },
+        "list": {
+          "label": "articles",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "mode": {
+        "edit": {
+          "label": "Mode",
+          "description": "Select the mode of this component.",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "mode",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "maxAmount": {
+        "edit": {
+          "label": "Maximum Amount",
+          "description": "Maximum amount of teasers to display. Only applies to mode \"recent\" and \"tag-based\".",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "maxAmount",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "tags": {
+        "edit": {
+          "label": "Tags",
+          "description": "Set mode to \"tag-based\" to show articles by given tags.",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "tags",
+          "searchable": false,
+          "sortable": false
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "mode",
+        "articles",
+        "maxAmount"
+      ],
+      "edit": [
+        [
+          {
+            "name": "mode",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "articles",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "tags",
+            "size": 6
+          },
+          {
+            "name": "maxAmount",
+            "size": 6
+          }
+        ]
+      ]
+    },
+    "isComponent": true
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

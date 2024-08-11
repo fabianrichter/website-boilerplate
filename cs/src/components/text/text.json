@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_general_texts",
+  "info": {
+    "displayName": "Text",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}

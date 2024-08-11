@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_general_ctas",
+  "info": {
+    "displayName": "CTA",
+    "icon": "cursor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    }
+  }
+}

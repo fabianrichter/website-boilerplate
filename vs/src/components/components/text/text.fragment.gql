@@ -1,0 +1,4 @@
+fragment ComponentText on ComponentTextText {
+  __typename
+  text
+}

@@ -1,0 +1,27 @@
+#import '../../strapi/image/image.fragment.gql'
+
+query RecentArticles($amount: Int = 3, $tags: [ID] = []) {
+  articles(
+    sort: "publishedAt:desc", 
+    pagination: { page: 1, pageSize: $amount }
+    filters: {
+      tags: {
+        id: {
+          in: $tags
+        }
+      }
+    }
+  ) {
+    data {
+      attributes {
+        title
+        publishedAt
+        slug
+        teaserText
+        teaserImage {
+          ... StrapiImage
+        }
+      }
+    }
+  }
+}

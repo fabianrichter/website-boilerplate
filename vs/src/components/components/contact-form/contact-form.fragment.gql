@@ -1,0 +1,3 @@
+fragment ComponentContactForm on ComponentFormsContactForm {
+  __typename
+}

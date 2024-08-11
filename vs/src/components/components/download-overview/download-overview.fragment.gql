@@ -1,0 +1,14 @@
+fragment ComponentDownloadOverview on ComponentLinksDownloadOverview {
+  items {
+    id
+    text
+    media {
+      data {
+        attributes {
+          name
+          url
+        }
+      }
+    }
+  }
+}

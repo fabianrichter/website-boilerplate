@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_general_portfolios",
+  "info": {
+    "displayName": "Portfolio"
+  },
+  "options": {},
+  "attributes": {
+    "portfolioItem": {
+      "displayName": "Portfolio Item",
+      "type": "component",
+      "repeatable": true,
+      "component": "general.portfolio-item"
+    },
+    "title": {
+      "displayName": "Title",
+      "type": "string"
+    }
+  }
+}

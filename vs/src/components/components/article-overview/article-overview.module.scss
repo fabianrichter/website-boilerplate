@@ -1,0 +1,33 @@
+@import '@/scss/fonts.scss';
+
+.title {
+  @include headline(h4);
+}
+
+.date {
+  display: block;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.image-wrapper {
+  display: block;
+  height: 100%;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.figure {
+  margin: 0;
+  height: calc(100% - 150px);
+  display: block;
+}
+
+.figcaption {
+  height: 150px;
+  margin-top: var(--section-spacing-s)
+}

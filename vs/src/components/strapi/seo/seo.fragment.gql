@@ -1,0 +1,22 @@
+fragment StrapiSEO on ComponentSharedSeo {
+  metaTitle
+  metaDescription
+  metaImage {
+    data {
+      attributes {
+        name
+        formats
+      }
+    }
+  }
+  metaSocial {
+    socialNetwork
+    title
+    description
+  }
+  keywords
+  metaRobots
+  structuredData
+  metaViewport
+  canonicalURL
+}
