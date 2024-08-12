@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.photowert.com
+
+# Sitemaps
+Sitemap: https://www.photowert.com/sitemap.xml

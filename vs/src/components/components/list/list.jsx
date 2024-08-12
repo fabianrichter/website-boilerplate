@@ -19,7 +19,7 @@ const List = ({ data }) => {
         <Row>
           <Col className={styles.wrapper}>
             {Object.entries(listItems).map(([letter, items]) => (
-              <div className={styles.group}>
+              <div className={styles.group} key={letter}>
                 <h2>{letter}</h2>
                 <ul className={styles.list}>
                   {items.map((item) => (
