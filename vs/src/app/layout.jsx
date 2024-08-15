@@ -4,6 +4,7 @@ import { Navigation } from "@/queries/navigation.gql";
 import { query } from "@/lib/apollo-client";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import Head from "next/head";
 
 export const metadata = {
   title: "Fabian Richter",
@@ -31,6 +32,13 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <Head>
+        <script
+          defer
+          src="https://umami.serve-ff.de/script.js"
+          data-website-id={process.env.NEXT_PUBLIC_UMAMI_ID}
+        ></script>
+      </Head>
       <body>
         <Header navigation={headerContent} />
         <main>{children}</main>
