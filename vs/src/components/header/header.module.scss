@@ -1,5 +1,12 @@
 @import "@/scss/fonts";
 
+@mixin navlink {
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
 .wrapper {
   display: flex;
   justify-content: center;
@@ -71,8 +78,13 @@
     }
 
     img {
-      height: 64px;
-      width: auto;
+      height: auto;
+      width: 128px;
+
+      @include media-breakpoint-min(md) {
+        height: 64px;
+        width: auto;
+      }
     }
   }
 }
@@ -99,11 +111,7 @@
     }
 
     a {
-      text-decoration: none;
-
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
+      @include navlink;
       &:hover {
         opacity: 1 !important;
       }
@@ -118,7 +126,6 @@
 
 .fullscreen {
   position: fixed;
-  background-color: black;
   left: 0;
   right: 0;
   height: 100svh;
@@ -126,11 +133,39 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: var(--c-background);
+  display: flex;
+  justify-content: center;
+  gap: var(--section-spacing-m);
+  align-items: center;
+
+  nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--section-spacing-m);
+      align-items: center;
+
+      a {
+        @include headline(h4);
+        @include navlink;
+      }
+    }
+  }
+
+  .button {
+    @include headline(h4);
+    @include navlink;
+  }
 }
 
 .toggle {
   cursor: pointer;
   @include headline(h4);
+  @include navlink;
 
   @include media-breakpoint-min(md) {
     display: none;

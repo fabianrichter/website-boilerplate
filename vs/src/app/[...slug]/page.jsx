@@ -5,7 +5,7 @@ import Page from "@/components/content-types/pages/page";
 import { notFound } from "next/navigation";
 
 const SimplePage = async ({ params, searchParams }) => {
-  const publicationState = searchParams.publicationState || "LIVE";
+  const publicationState = searchParams?.publicationState || "LIVE";
 
   const { data } = await query({
     query: ContentQuery,

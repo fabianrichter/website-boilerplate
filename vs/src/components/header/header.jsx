@@ -72,6 +72,12 @@ const Header = (props) => {
             transition={{ duration: 0.5 }}
           >
             <Menu navigation={props.navigation} onClose={() => setMenuActive(false)} />
+
+            <div className={styles["button-wrapper"]}>
+              <Link className={styles["button"]} href={"/kontakt"}>
+                Kontakt
+              </Link>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
