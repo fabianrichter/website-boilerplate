@@ -21,7 +21,12 @@ const Intro = ({ data }) => {
       </div>
       <div className={styles["image-wrapper"]}>
         {data.background && (
-          <StrapiImage data={data.background.image} fill className={styles.image} />
+          <StrapiImage
+            data={data.background.image}
+            fill
+            className={styles.image}
+            outerClassName={styles["image-wrapper"]}
+          />
         )}
       </div>
     </section>
