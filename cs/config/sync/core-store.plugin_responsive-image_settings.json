@@ -4,7 +4,7 @@
     "formats": [
       {
         "name": "large",
-        "width": 1000,
+        "width": 1440,
         "fit": "cover",
         "position": "centre",
         "withoutEnlargement": false,
