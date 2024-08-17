@@ -1,4 +1,4 @@
-const plugins = require("../../plugins");
+/* const plugins = require("../../plugins");
 
 module.exports = ({ env }) => ({
   ...plugins({ env }),
@@ -14,3 +14,4 @@ module.exports = ({ env }) => ({
     },
   },
 });
+ */
