@@ -1,5 +1,5 @@
 module.exports = ({ env }) => {
-  const vsUrl = env("VS_PUBLIC_URL", "http://localhost:3000");
+  const VS_HOST = env("VS_HOST", "http://localhost:3000");
   return {
     // Navigation
     navigation: {
@@ -82,13 +82,13 @@ module.exports = ({ env }) => {
           {
             uid: "api::page.page",
             draft: {
-              url: vsUrl + "/{slug}",
+              url: VS_HOST + "/{slug}",
               query: {
                 publicationState: "PREVIEW",
               },
             },
             published: {
-              url: vsUrl + "/{slug}",
+              url: VS_HOST + "/{slug}",
             },
           },
         ],
