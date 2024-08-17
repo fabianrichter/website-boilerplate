@@ -7,8 +7,8 @@
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "phone",
-      "defaultSortBy": "phone",
+      "mainField": "id",
+      "defaultSortBy": "id",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -16,20 +16,6 @@
         "edit": {},
         "list": {
           "label": "id",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "phone": {
-        "edit": {
-          "label": "Phone Number",
-          "description": "Displays the phone number in the header area.",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "phone",
           "searchable": true,
           "sortable": true
         }
@@ -45,20 +31,6 @@
         },
         "list": {
           "label": "contactPage",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "email": {
-        "edit": {
-          "label": "Email",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "email",
           "searchable": true,
           "sortable": true
         }
@@ -125,21 +97,10 @@
     "layouts": {
       "list": [
         "id",
-        "phone",
         "contactPage",
         "createdAt"
       ],
       "edit": [
-        [
-          {
-            "name": "phone",
-            "size": 6
-          },
-          {
-            "name": "email",
-            "size": 6
-          }
-        ],
         [
           {
             "name": "contactPage",

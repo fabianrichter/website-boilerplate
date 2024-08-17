@@ -77,7 +77,7 @@ const ContactForm = () => {
       <section>
         <Container>
           <Row>
-            <Col col="12">
+            <Col col={12}>
               <p>Submitting...</p>
             </Col>
           </Row>
@@ -92,7 +92,7 @@ const ContactForm = () => {
       <section>
         <Container>
           <Row>
-            <Col col="12">
+            <Col col={12}>
               <p>Submission error! {mutationError.message}</p>
             </Col>
           </Row>
@@ -107,7 +107,7 @@ const ContactForm = () => {
       <section>
         <Container>
           <Row>
-            <Col col="12">
+            <Col col={12}>
               <p>Thanks for your message.</p>
             </Col>
           </Row>
@@ -118,19 +118,19 @@ const ContactForm = () => {
 
   // render form
   return (
-    <section>
+    <section className={styles.contactForm}>
       <Container>
         <form>
           <Row>
-            <Col col="12" lg="8" shiftLg="2">
+            <Col col={12} lg={8} shiftLg={2}>
               <Row>
-                <Col col="6">
+                <Col col={6}>
                   <div className={styles['form-group']}>
                     <label>Name</label>
                     <input type="text" ref={nameInput} placeholder="Name" />
                   </div>
                 </Col>
-                <Col col="6">
+                <Col col={6}>
                   <div className={styles['form-group']}>
                     <label>Email</label>
                     <input type="email" ref={emailInput} placeholder="E-Mail*" />
@@ -143,7 +143,7 @@ const ContactForm = () => {
                 </Col>
               </Row>
               <Row>
-                <Col col="12">
+                <Col col={12}>
                   <div className={styles['form-group']}>
                     <label>Message</label>
                     <textarea
@@ -159,7 +159,7 @@ const ContactForm = () => {
                 </Col>
               </Row>
               <Row>
-                <Col col="12">
+                <Col col={12}>
                   <Button native onClick={submitForm}>Senden</Button>
                 </Col>
               </Row>
@@ -169,7 +169,7 @@ const ContactForm = () => {
         {/* render error, if error was thrown */}
         {error && message && (
           <Row>
-            <Col col="12">
+            <Col col={12}>
               <p>{message}</p>
             </Col>
           </Row>

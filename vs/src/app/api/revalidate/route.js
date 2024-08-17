@@ -3,12 +3,12 @@ import { PageSlugs, ArticleSlugs } from "@/queries/slugs.gql";
 import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 
-export async function GET(request) {
+export async function POST(request) {
   const { searchParams } = new URL(request.url)
   const secret = searchParams.get("secret");
   // Check for secret to confirm this is a valid request
   if (secret !== "Qgf4tXL46N7EHiHbBCRxHTeQJ6mSrEiSixM5rY93") {
-    return res.status(401).json({ message: "Invalid token" });
+    return NextResponse.json({ message: "Invalid token" }, { status: 401 });
   }
 
   try {

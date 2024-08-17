@@ -171,9 +171,7 @@
       "subject": "api::config-header.config-header",
       "properties": {
         "fields": [
-          "phone",
-          "contactPage",
-          "email"
+          "contactPage"
         ]
       },
       "conditions": []
@@ -198,9 +196,7 @@
       "subject": "api::config-header.config-header",
       "properties": {
         "fields": [
-          "phone",
-          "contactPage",
-          "email"
+          "contactPage"
         ]
       },
       "conditions": []
@@ -211,9 +207,7 @@
       "subject": "api::config-header.config-header",
       "properties": {
         "fields": [
-          "phone",
-          "contactPage",
-          "email"
+          "contactPage"
         ]
       },
       "conditions": []
@@ -836,6 +830,13 @@
     },
     {
       "action": "plugin::content-type-builder.read",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-versioning.save",
       "actionParameters": {},
       "subject": null,
       "properties": {},
