@@ -23,13 +23,13 @@ module.exports = ({ env }) => ({
     config: {
       contentTypes: {
         page: {
-          field: 'slug',
-          references: 'title',
+          field: "slug",
+          references: "title",
         },
         article: {
-          field: 'slug',
-          references: 'title'
-        }
+          field: "slug",
+          references: "title",
+        },
       },
     },
   },
@@ -69,6 +69,28 @@ module.exports = ({ env }) => ({
     enabled: true,
     config: {
       size: 10,
+    },
+  },
+  "content-versioning": {
+    enabled: true,
+  },
+  'preview-button': {
+    config: {
+      contentTypes: [
+        {
+          uid: 'api::page.page',
+          draft: {
+            url: 'http://localhost:3000/{slug}',
+            query: {
+              publicationState: 'PREVIEW',
+              vuid: '{vuid}',
+            },
+          },
+          published: {
+            url: 'http://localhost:3000/{slug}',
+          },
+        },
+      ],
     },
   },
 });

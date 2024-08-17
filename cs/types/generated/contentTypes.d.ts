@@ -1277,6 +1277,9 @@ export interface ApiPagePage extends Schema.CollectionType {
     i18n: {
       localized: true;
     };
+    versions: {
+      versioned: true;
+    };
   };
   attributes: {
     components: Attribute.DynamicZone<
@@ -1329,6 +1332,15 @@ export interface ApiPagePage extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    versions: Attribute.Relation<
+      'api::page.page',
+      'manyToMany',
+      'api::page.page'
+    >;
+    vuid: Attribute.String;
+    versionNumber: Attribute.Integer & Attribute.DefaultTo<1>;
+    versionComment: Attribute.String;
+    isVisibleInListView: Attribute.Boolean & Attribute.DefaultTo<true>;
     localizations: Attribute.Relation<
       'api::page.page',
       'oneToMany',
