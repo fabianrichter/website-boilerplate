@@ -1,13 +1,15 @@
 "use client";
 
-import Input from '@/components/forms/input';
-import { Col, Container, Row } from '@/components/layout';
-import { useMutation } from '@apollo/client';
-import React, { useRef, useState } from 'react';
-import { CreateContactSubmission } from './create-contact-submission.gql';
-import styles from './contact-form.module.scss';
-import Button from '@/components/ui/button/button';
-import { apolloClient } from '@/app/apollo-client';
+import Input from "@/components/forms/input";
+import { Col, Container, Row } from "@/components/layout";
+import { useMutation } from "@apollo/client";
+import React, { useRef, useState } from "react";
+import { CreateContactSubmission } from "./create-contact-submission.gql";
+import styles from "./contact-form.module.scss";
+import Button from "@/components/ui/button/button";
+import { apolloClient } from "@/app/apollo-client";
+import Spinner from "./spinner.svg";
+import Image from "next/image";
 
 const ContactForm = () => {
   const nameInput = useRef();
@@ -18,14 +20,14 @@ const ContactForm = () => {
   const [messageError, setMessageError] = useState(false);
 
   const [error, setError] = useState(false);
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
 
   const [
     createSubmission,
     { loading: mutationLoading, error: mutationError, data: mutationResponse },
   ] = useMutation(CreateContactSubmission, {
-    client: apolloClient
+    client: apolloClient,
   });
 
   const validateForm = () => {
@@ -68,8 +70,8 @@ const ContactForm = () => {
   };
 
   const setMessageHeight = () => {
-    messageInput.current.style.height = '';
-    messageInput.current.style.height = messageInput.current.scrollHeight - 4 + 'px';
+    messageInput.current.style.height = "";
+    messageInput.current.style.height = messageInput.current.scrollHeight - 4 + "px";
   };
 
   if (mutationLoading) {
@@ -77,8 +79,11 @@ const ContactForm = () => {
       <section>
         <Container>
           <Row>
-            <Col col={12}>
-              <p>Submitting...</p>
+            <Col col={12} lg={8} shiftLg={2} className={styles.text}>
+              <div className={styles.loading}>
+                <Image src={Spinner} />
+                <p>Wird gesendet...</p>
+              </div>
             </Col>
           </Row>
         </Container>
@@ -87,13 +92,16 @@ const ContactForm = () => {
   }
 
   if (mutationError) {
-    console.log(mutationError);
+    console.error(mutationError);
     return (
       <section>
         <Container>
           <Row>
-            <Col col={12}>
-              <p>Submission error! {mutationError.message}</p>
+            <Col col={12} lg={8} shiftLg={2} className={styles.text}>
+              <p>
+                Die Nachricht konnte nicht abgesendet werden!
+                <details>{mutationError?.message}</details>
+              </p>
             </Col>
           </Row>
         </Container>
@@ -107,8 +115,8 @@ const ContactForm = () => {
       <section>
         <Container>
           <Row>
-            <Col col={12}>
-              <p>Thanks for your message.</p>
+            <Col col={12} lg={8} shiftLg={2} className={styles.text}>
+              <p>Vielen Dank für deine Nachricht.</p>
             </Col>
           </Row>
         </Container>
@@ -124,14 +132,14 @@ const ContactForm = () => {
           <Row>
             <Col col={12} lg={8} shiftLg={2}>
               <Row>
-                <Col col={6}>
-                  <div className={styles['form-group']}>
+                <Col col={12} md={6}>
+                  <div className={styles["form-group"]}>
                     <label>Name</label>
                     <input type="text" ref={nameInput} placeholder="Name" />
                   </div>
                 </Col>
-                <Col col={6}>
-                  <div className={styles['form-group']}>
+                <Col col={12} md={6}>
+                  <div className={styles["form-group"]}>
                     <label>Email</label>
                     <input type="email" ref={emailInput} placeholder="E-Mail*" />
                     {emailError && (
@@ -144,7 +152,7 @@ const ContactForm = () => {
               </Row>
               <Row>
                 <Col col={12}>
-                  <div className={styles['form-group']}>
+                  <div className={styles["form-group"]}>
                     <label>Message</label>
                     <textarea
                       type="text"
@@ -160,7 +168,9 @@ const ContactForm = () => {
               </Row>
               <Row>
                 <Col col={12}>
-                  <Button native onClick={submitForm}>Senden</Button>
+                  <Button native onClick={submitForm}>
+                    Senden
+                  </Button>
                 </Col>
               </Row>
             </Col>

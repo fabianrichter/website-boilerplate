@@ -2,19 +2,19 @@ import classNames from "classnames";
 import React from "react";
 import styles from "./button.module.scss";
 
-const Button = (props) => {
+const Button = ({ className, native, children, ...props }) => {
   const formattedProps = {
     className: classNames({
-      [props.className]: props.className,
+      [className]: className,
       [styles.button]: true,
     }),
     ...props,
   };
 
-  if (props.native) {
-    return <button {...formattedProps}>{props.children}</button>;
+  if (native) {
+    return <button {...formattedProps}>{children}</button>;
   }
-  return <a {...formattedProps}>{props.children}</a>;
+  return <a {...formattedProps}>{children}</a>;
 };
 
 export default Button;
