@@ -4,14 +4,16 @@ import { ContentQuery } from "@/components/content-types/content-query.gql";
 import Page from "@/components/content-types/pages/page";
 import { notFound } from "next/navigation";
 
-const SimplePage = async ({ params }) => {
+const SimplePage = async ({ params, searchParams }) => {
+  const publicationState = searchParams.publicationState || "LIVE";
+
   const { data } = await query({
     query: ContentQuery,
-    variables: { slug: params.slug.join("/") },
+    variables: { slug: params.slug.join("/"), publicationState },
   });
 
   if (data.pages.data.length === 0) {
-    notFound()
+    notFound();
   }
 
   return <Page content={data.pages.data[0]} />;
