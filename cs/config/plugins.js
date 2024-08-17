@@ -1,96 +1,98 @@
-module.exports = ({ env }) => ({
-  // Navigation
-  navigation: {
-    enabled: true,
-    config: {
-      gql: {
-        navigationItemRelated: ["Page", "Article", "Event"],
-      },
-    },
-  },
-  // EZ Forms
-  ezforms: {
-    config: {
-      captchaProvider: {
-        name: "none",
-      },
-      notificationProviders: [],
-    },
-  },
-  // Slugify
-  slugify: {
-    enabled: true,
-    config: {
-      contentTypes: {
-        page: {
-          field: "slug",
-          references: "title",
-        },
-        article: {
-          field: "slug",
-          references: "title",
+module.exports = ({ env }) => {
+  const vsUrl = env("VS_PUBLIC_URL", "http://localhost:3000");
+  return {
+    // Navigation
+    navigation: {
+      enabled: true,
+      config: {
+        gql: {
+          navigationItemRelated: ["Page", "Article", "Event"],
         },
       },
     },
-  },
-  // GraphQL
-  graphql: {
-    config: {
-      endpoint: "/graphql",
-      shadowCRUD: true,
-      playgroundAlways: false,
-      depthLimit: 15,
-      amountLimit: 100,
-      apolloServer: {
-        tracing: false,
+    // EZ Forms
+    ezforms: {
+      config: {
+        captchaProvider: {
+          name: "none",
+        },
+        notificationProviders: [],
       },
     },
-  },
-  // Nodemailer
-  email: {
-    config: {
-      provider: "nodemailer",
-      providerOptions: {
-        host: env("SMTP_HOST", "smtp.migadu.com"),
-        port: env.int("SMTP_PORT", 465),
-        auth: {
-          user: env("EMAIL_USER", undefined),
-          pass: env("EMAIL_PASS", undefined),
+    // Slugify
+    slugify: {
+      enabled: true,
+      config: {
+        contentTypes: {
+          page: {
+            field: "slug",
+            references: "title",
+          },
+          article: {
+            field: "slug",
+            references: "title",
+          },
         },
       },
-      settings: {
-        defaultFrom: env("EMAIL_FROM", undefined),
-        defaultReplyTo: env("EMAIL_REPLY_TO", undefined),
+    },
+    // GraphQL
+    graphql: {
+      config: {
+        endpoint: "/graphql",
+        shadowCRUD: true,
+        playgroundAlways: false,
+        depthLimit: 15,
+        amountLimit: 100,
+        apolloServer: {
+          tracing: false,
+        },
       },
     },
-  },
-  // Placeholder
-  placeholder: {
-    enabled: true,
-    config: {
-      size: 10,
+    // Nodemailer
+    email: {
+      config: {
+        provider: "nodemailer",
+        providerOptions: {
+          host: env("SMTP_HOST", "smtp.migadu.com"),
+          port: env.int("SMTP_PORT", 465),
+          auth: {
+            user: env("EMAIL_USER", undefined),
+            pass: env("EMAIL_PASS", undefined),
+          },
+        },
+        settings: {
+          defaultFrom: env("EMAIL_FROM", undefined),
+          defaultReplyTo: env("EMAIL_REPLY_TO", undefined),
+        },
+      },
     },
-  },
-  "content-versioning": {
-    enabled: true,
-  },
-  'preview-button': {
-    config: {
-      contentTypes: [
-        {
-          uid: 'api::page.page',
-          draft: {
-            url: 'http://localhost:3000/{slug}',
-            query: {
-              publicationState: 'PREVIEW',
-              vuid: '{vuid}',
+    // Placeholder
+    placeholder: {
+      enabled: true,
+      config: {
+        size: 10,
+      },
+    },
+    "content-versioning": {
+      enabled: true,
+    },
+    "preview-button": {
+      config: {
+        contentTypes: [
+          {
+            uid: "api::page.page",
+            draft: {
+              url: vsUrl + "/{slug}",
+              query: {
+                publicationState: "PREVIEW",
+              },
+            },
+            published: {
+              url: vsUrl + "/{slug}",
             },
           },
-          published: {
-            url: 'http://localhost:3000/{slug}',
-          },
-        },
-      ],
+        ],
+      },
     },
-  },
-});
+  };
+};
