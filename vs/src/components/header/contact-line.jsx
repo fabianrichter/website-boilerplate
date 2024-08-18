@@ -16,11 +16,6 @@ const ContactLine = ({ configHeader, className }) => {
           {phone}
         </a>
       )}
-      {contactPage.link && (
-        <Link href={contactPage.link} className={styles["contact-sub"]}>
-          hi@photowert.com
-        </Link>
-      )}
       <LangSwitch />
     </div>
   );
