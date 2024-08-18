@@ -1,7 +1,7 @@
 import "../scss/globals.scss";
 
 import { Navigation } from "@/queries/navigation.gql";
-import { query } from "@/lib/apollo-client";
+import { query } from "@/app/apollo-client";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import Script from "next/script";

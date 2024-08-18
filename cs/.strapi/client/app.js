@@ -19,6 +19,7 @@ import navigation from "strapi-plugin-navigation/strapi-admin";
 import oembed from "strapi-plugin-oembed/strapi-admin";
 import previewButton from "strapi-plugin-preview-button/strapi-admin";
 import responsiveImage from "strapi-plugin-responsive-image/strapi-admin";
+import sitemapFields from "../../src/plugins/sitemap-fields/strapi-admin";
 import { renderAdmin } from "@strapi/strapi/admin";
 
 import customisations from "../../src/admin/app.js";
@@ -44,5 +45,6 @@ renderAdmin(document.getElementById("strapi"), {
     oembed: oembed,
     "preview-button": previewButton,
     "responsive-image": responsiveImage,
+    "sitemap-fields": sitemapFields,
   },
 });

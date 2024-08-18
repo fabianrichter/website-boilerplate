@@ -15,15 +15,4 @@ export const apolloClient = new ApolloClient({
   ]),
 });
 
-export const apolloClientServer = new ApolloClient({
-  uri: graphqlEndpoint,
-  cache: new InMemoryCache(),
-  ssrMode: typeof window === "undefined",
-  connectToDevTools: true,
-  link: ApolloLink.from([
-    onError((error) => {
-      console.log(JSON.stringify(error, null, 2));
-    }),
-    new HttpLink({ uri: graphqlEndpoint }),
-  ]),
-});
+export const query = apolloClient.query;

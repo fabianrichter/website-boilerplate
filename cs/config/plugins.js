@@ -84,7 +84,7 @@ module.exports = ({ env }) => {
             draft: {
               url: VS_HOST + "/{slug}",
               query: {
-                publicationState: "PREVIEW",
+                publicationState: "preview",
               },
             },
             published: {
@@ -94,5 +94,12 @@ module.exports = ({ env }) => {
         ],
       },
     },
+    /* "sitemap-fields": {
+      enabled: true,
+      config: {
+        contentTypes: ["api::page.page", "api::article.article"],
+      },
+      resolve: "./src/plugins/sitemap-fields",
+    }, */
   };
 };
