@@ -73,9 +73,6 @@ module.exports = ({ env }) => {
         size: 10,
       },
     },
-    "content-versioning": {
-      enabled: true,
-    },
     "preview-button": {
       config: {
         contentTypes: [
