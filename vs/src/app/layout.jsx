@@ -37,7 +37,7 @@ export default async function RootLayout({ children }) {
         data-website-id={process.env.NEXT_PUBLIC_UMAMI_ID}
       />
       <body>
-        <Header navigation={headerContent} />
+        <Header navigation={headerContent} legal={footerContent}/>
         <main>{children}</main>
         <Footer legal={footerContent} />
       </body>

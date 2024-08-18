@@ -11,6 +11,8 @@ import classNames from "classnames";
 
 import Logo from "./Logo.svg";
 import Image from "next/image";
+import Footer from "../footer/footer";
+import BodyScrollLock from "./body-scroll-lock";
 
 const Header = (props) => {
   const [menuActive, setMenuActive] = useState(false);
@@ -66,18 +68,24 @@ const Header = (props) => {
         {menuActive && (
           <motion.div
             className={styles.fullscreen}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            initial={{ right: "-101%" }}
+            animate={{ right: "0%" }}
+            exit={{ right: "-101%" }}
+            transition={{ duration: 0.3, type: "just" }}
           >
+            <BodyScrollLock />
             <Menu navigation={props.navigation} onClose={() => setMenuActive(false)} />
 
             <div className={styles["button-wrapper"]}>
-              <Link className={styles["button"]} href={"/kontakt"}>
+              <Link
+                className={styles["button"]}
+                href={"/kontakt"}
+                onClick={() => setMenuActive(false)}
+              >
                 Kontakt
               </Link>
             </div>
+            <Footer legal={props.legal} />
           </motion.div>
         )}
       </AnimatePresence>
