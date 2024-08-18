@@ -215,3 +215,7 @@ hr {
   border-width: 0.5px;
   border-color: var(--c-black);
 }
+
+section:last-child {
+  margin-bottom: var(--section-spacing-l)
+}
