@@ -84,7 +84,7 @@ module.exports = ({ env }) => {
             draft: {
               url: VS_HOST + "/{slug}",
               query: {
-                publicationState: "PREVIEW",
+                publicationState: "preview",
               },
             },
             published: {

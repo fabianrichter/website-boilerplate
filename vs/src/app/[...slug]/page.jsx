@@ -1,5 +1,5 @@
 import React from "react";
-import { query } from "@/lib/apollo-client";
+import { query } from "@/app/apollo-client";
 import { ContentQuery } from "@/components/content-types/content-query.gql";
 import Page from "@/components/content-types/pages/page";
 import { notFound } from "next/navigation";
@@ -7,14 +7,18 @@ import { notFound } from "next/navigation";
 export async function generateMetadata({ params, searchParams }) {
   const { data } = await query({
     query: ContentQuery,
-    variables: { slug: params.slug.join("/") },
+    variables: { slug: params.slug.join("/"), modelName: "page" },
   });
+
+  const content = data.findSlug.data;
   
-  if (data.pages.data.length === 0) {
+  // Page does not exist
+  if (data.findSlug.data === null) {
     return;
   }
-  const seoData = data.pages.data[0]?.attributes?.seo;
+  const seoData = content?.attributes?.seo;
   
+  // Page does not have SEO data set
   if (seoData === null) {
     return;
   }
@@ -29,18 +33,20 @@ export async function generateMetadata({ params, searchParams }) {
 }
 
 const SimplePage = async ({ params, searchParams }) => {
-  const publicationState = searchParams?.publicationState || "LIVE";
+  const publicationState = searchParams?.publicationState || "live";
 
   const { data } = await query({
     query: ContentQuery,
-    variables: { slug: params.slug.join("/"), publicationState },
+    variables: { slug: params.slug.join("/"), publicationState, modelName: "page" },
   });
 
-  if (data.pages.data.length === 0) {
+  const content = data.findSlug.data;
+
+  if (content === null) {
     notFound();
   }
 
-  return <Page content={data.pages.data[0]} />;
+  return <Page content={content} />;
 };
 
 export default SimplePage;
