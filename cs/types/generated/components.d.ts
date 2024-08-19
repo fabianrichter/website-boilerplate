@@ -373,6 +373,47 @@ export interface TextPageTitle extends Schema.Component {
   };
 }
 
+export interface TextPricingItem extends Schema.Component {
+  collectionName: 'components_text_pricing_items';
+  info: {
+    displayName: 'Pricing Item';
+    icon: 'crown';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    price: Attribute.Integer;
+    body: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'custom';
+        }
+      >;
+    recommended: Attribute.Boolean;
+  };
+}
+
+export interface TextPricing extends Schema.Component {
+  collectionName: 'components_text_pricings';
+  info: {
+    displayName: 'Pricing';
+    icon: 'database';
+    description: '';
+  };
+  attributes: {
+    pricingItems: Attribute.Component<'text.pricing-item', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 2;
+          max: 3;
+        },
+        number
+      >;
+  };
+}
+
 export interface TextSectionTitle extends Schema.Component {
   collectionName: 'components_general_section_titles';
   info: {
@@ -445,6 +486,8 @@ declare module '@strapi/types' {
       'text.list-item': TextListItem;
       'text.list': TextList;
       'text.page-title': TextPageTitle;
+      'text.pricing-item': TextPricingItem;
+      'text.pricing': TextPricing;
       'text.section-title': TextSectionTitle;
       'text.text-and-image': TextTextAndImage;
       'text.text': TextText;

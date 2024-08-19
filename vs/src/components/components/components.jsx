@@ -18,6 +18,7 @@ import ImageTextSlider from "./image-text-slider/image-text-slider";
 import GoogleMaps from "./google-maps/google-maps";
 import ConsentActions from "./consent-actions/consent-actions";
 import List from "./list/list";
+import Pricing from "./pricing/pricing";
 
 const renderComponents = (componentData) => {
   // check for components data typename to render the correct component
@@ -58,6 +59,8 @@ const renderComponents = (componentData) => {
       return <ConsentActions data={componentData} />;
     case "ComponentTextList":
       return <List data={componentData} />;
+    case "ComponentTextPricing":
+      return <Pricing data={componentData} />;
     default:
       return <div>Module not found.</div>;
   }

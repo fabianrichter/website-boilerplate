@@ -3,7 +3,6 @@
  * Any modifications made will be discarded.
  */
 import ckeditor5 from "@_sh/strapi-plugin-ckeditor/strapi-admin";
-import contentVersioning from "@notum-cz/strapi-plugin-content-versioning/strapi-admin";
 import strapiAppVersion from "@palmabit/strapi-app-version/strapi-admin";
 import colorPicker from "@strapi/plugin-color-picker/strapi-admin";
 import graphql from "@strapi/plugin-graphql/strapi-admin";
@@ -19,7 +18,6 @@ import navigation from "strapi-plugin-navigation/strapi-admin";
 import oembed from "strapi-plugin-oembed/strapi-admin";
 import previewButton from "strapi-plugin-preview-button/strapi-admin";
 import responsiveImage from "strapi-plugin-responsive-image/strapi-admin";
-import sitemapFields from "../../src/plugins/sitemap-fields/strapi-admin";
 import { renderAdmin } from "@strapi/strapi/admin";
 
 import customisations from "../../src/admin/app.js";
@@ -29,7 +27,6 @@ renderAdmin(document.getElementById("strapi"), {
 
   plugins: {
     ckeditor5: ckeditor5,
-    "content-versioning": contentVersioning,
     "strapi-app-version": strapiAppVersion,
     "color-picker": colorPicker,
     graphql: graphql,
@@ -45,6 +42,5 @@ renderAdmin(document.getElementById("strapi"), {
     oembed: oembed,
     "preview-button": previewButton,
     "responsive-image": responsiveImage,
-    "sitemap-fields": sitemapFields,
   },
 });
