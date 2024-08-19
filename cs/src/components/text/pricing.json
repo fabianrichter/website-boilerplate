@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_text_pricings",
+  "info": {
+    "displayName": "Pricing",
+    "icon": "database",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "pricingItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "text.pricing-item",
+      "min": 2,
+      "max": 3,
+      "required": true
+    }
+  }
+}

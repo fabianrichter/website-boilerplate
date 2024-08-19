@@ -37,7 +37,8 @@
         "media.google-maps",
         "general.consent-actions",
         "general.intro",
-        "text.list"
+        "text.list",
+        "text.pricing"
       ],
       "pluginOptions": {
         "i18n": {

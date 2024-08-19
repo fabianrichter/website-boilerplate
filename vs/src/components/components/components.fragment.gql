@@ -16,6 +16,7 @@
 #import './google-maps/google-maps.fragment.gql'
 #import './consent-actions/consent-actions.fragment.gql'
 #import './list/list.fragment.gql'
+#import './pricing/pricing.fragment.gql'
 
 fragment PageComponents on Page {
   components {
@@ -35,6 +36,7 @@ fragment PageComponents on Page {
     ...ComponentGoogleMaps
     ...ComponentConsentActions
     ...ComponentList
+    ...ComponentPricing
   }
 }
 
