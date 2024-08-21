@@ -12,16 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "phone": {
-      "type": "string"
-    },
     "contactPage": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::page.page"
-    },
-    "email": {
-      "type": "email"
     }
   }
 }

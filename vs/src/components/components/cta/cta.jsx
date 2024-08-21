@@ -1,7 +1,9 @@
-import { Col, Container, Row } from '@/components/layout';
-import Link from 'next/link';
-import React from 'react';
-import PropTypes from 'prop-types';
+import { Col, Container, Row } from "@/components/layout";
+import Link from "next/link";
+import React from "react";
+import PropTypes from "prop-types";
+import Button from "@/components/ui/button/button";
+import styles from "./cta.module.scss";
 
 const CTA = ({ data }) => {
   if (!data.page || !data.label) return;
@@ -10,10 +12,13 @@ const CTA = ({ data }) => {
     <section>
       <Container>
         <Row>
-          <Col col={12}>
-            <Link scroll={false} href={'/' + data.page.data.attributes.slug}>
+          <Col col={12} lg={6} shiftLg={2}>
+            <Button
+              href={"/" + data.page.data.attributes.slug}
+              className={styles.button}
+            >
               {data.label}
-            </Link>
+            </Button>
           </Col>
         </Row>
       </Container>

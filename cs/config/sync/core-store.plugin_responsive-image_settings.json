@@ -4,7 +4,7 @@
     "formats": [
       {
         "name": "large",
-        "width": 1000,
+        "width": 1440,
         "fit": "cover",
         "position": "centre",
         "withoutEnlargement": false,
@@ -27,8 +27,9 @@
         "convertToFormat": ""
       }
     ],
-    "quality": 87,
-    "progressive": true
+    "quality": 95,
+    "progressive": true,
+    "responsiveDimensions": true
   },
   "type": "object",
   "environment": null,

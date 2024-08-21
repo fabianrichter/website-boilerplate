@@ -1,9 +1,9 @@
-let next_public_strapi_url = false;
-if (process.env.NEXT_PUBLIC_STRAPI_HOST && process.env.NEXT_PUBLIC_STRAPI_PORT) {
-  next_public_strapi_url = `${process.env.NEXT_PUBLIC_STRAPI_HOST}:${process.env.NEXT_PUBLIC_STRAPI_PORT}`;
-}
+const protocol = process.env.NEXT_PUBLIC_STRAPI_PROTOCOL || "http";
+const host = process.env.NEXT_PUBLIC_STRAPI_HOST || "localhost";
+const port = process.env.NEXT_PUBLIC_STRAPI_PORT || "1337";
 
-const strapiUrl = next_public_strapi_url || "http://127.0.0.1:1337",
-  graphqlEndpoint = strapiUrl + "/graphql";
+const strapiUrl = `${protocol}://${host}:${port}`;
+const graphqlEndpoint = strapiUrl + "/graphql";
+const publicUrl = process.env.NEXT_PUBLIC_URL || "http://localhost:3000";
 
-export { strapiUrl, graphqlEndpoint };
+export { strapiUrl, graphqlEndpoint, publicUrl };

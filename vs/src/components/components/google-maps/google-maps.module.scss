@@ -1,0 +1,32 @@
+.previewWrap {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+}
+
+.gmaps {
+  iframe {
+    width: 100%;
+    aspect-ratio: 70/54;
+    min-height: 250px;
+  }
+}
+
+.consentInner1 {
+  position: absolute;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--section-spacing-xs);
+  text-align: center;
+  top: 0;
+
+  p {
+    padding: var(--section-spacing-xs);
+  }
+}

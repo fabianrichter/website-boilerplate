@@ -1,38 +1,65 @@
-import React, { useContext, useState } from 'react';
-import Menu from './menu';
+"use client";
 
-import styles from './header.module.scss';
-import Link from 'next/link';
+import React, { useEffect, useState } from "react";
+import Menu from "./menu";
 
-import { AnimatePresence, motion } from 'framer-motion';
-import { Configs } from '@/store/configs';
-import ContactLine from './contact-line';
+import styles from "./header.module.scss";
+import Link from "next/link";
+
+import { AnimatePresence, motion } from "framer-motion";
+import classNames from "classnames";
+
+import Logo from "./Logo.svg";
+import Image from "next/image";
+import Footer from "../footer/footer";
+import BodyScrollLock from "./body-scroll-lock";
 
 const Header = (props) => {
   const [menuActive, setMenuActive] = useState(false);
 
-  const { configHeader, configFooter } = useContext(Configs);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [isTop, setIsTop] = useState(true);
+  const [isScrollingDown, setIsScrollingDown] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const footerLine = configFooter && [
-    {
-      label: 'Impressum',
-      link: configFooter?.data.attributes?.imprintAlias,
-    },
-    {
-      label: 'Datenschutz',
-      link: configFooter?.data.attributes?.privacyAlias,
-    },
-  ];
+  useEffect(() => {
+    setScrollPosition(window.scrollY);
+    document.addEventListener("scroll", (e) => {
+      setScrollPosition((prev) => {
+        prev < window.scrollY ? setIsScrollingDown(true) : setIsScrollingDown(false);
+        return window.scrollY;
+      });
+    });
+  }, []);
+
+  useEffect(() => {
+    scrollPosition >= 250 ? setIsTop(false) : setIsTop(true);
+    scrollPosition > 0 ? setIsScrolled(true) : setIsScrolled(false);
+  }, [scrollPosition]);
+
+  const headerClassNames = classNames({
+    [styles.down]: isScrollingDown,
+    [styles.top]: isTop,
+    [styles.scrolled]: isScrolled,
+    [styles.wrapper]: true,
+  });
 
   return (
-    <header className={styles['header-wrapper']}>
+    <header className={headerClassNames}>
       <div className={styles.header}>
         <div className={styles.logo}>
           <Link scroll={false} href="/">
-            Website Boilerplate
+            <Image src={Logo} />
           </Link>
         </div>
-        <ContactLine configHeader={configHeader} className={styles['contact-desktop']} />
+        <div className={styles["desktop-menu"]}>
+          <Menu navigation={props.navigation} />
+          <div className={styles["button-wrapper"]}>
+            <Link className={styles["button"]} href={"/kontakt"}>
+              Kontakt
+            </Link>
+          </div>
+        </div>
         <div className={styles.toggle} onClick={() => setMenuActive((s) => !s)} role="button">
           Menu
         </div>
@@ -41,24 +68,24 @@ const Header = (props) => {
         {menuActive && (
           <motion.div
             className={styles.fullscreen}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            initial={{ right: "-101%" }}
+            animate={{ right: "0%" }}
+            exit={{ right: "-101%" }}
+            transition={{ duration: 0.3, type: "just" }}
           >
+            <BodyScrollLock />
             <Menu navigation={props.navigation} onClose={() => setMenuActive(false)} />
-            <ContactLine configHeader={configHeader} className={styles['contact-mobile']} />
-            {footerLine && (
-              <nav className={styles.footer}>
-                <ul>
-                  {footerLine.map((item, i) => (
-                    <li key={i}>
-                      <Link href={item.link}>{item.label}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            )}
+
+            <div className={styles["button-wrapper"]}>
+              <Link
+                className={styles["button"]}
+                href={"/kontakt"}
+                onClick={() => setMenuActive(false)}
+              >
+                Kontakt
+              </Link>
+            </div>
+            <Footer legal={props.legal} />
           </motion.div>
         )}
       </AnimatePresence>

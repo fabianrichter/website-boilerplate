@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_text_pricing_items",
+  "info": {
+    "displayName": "Pricing Item",
+    "icon": "crown",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "body": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "recommended": {
+      "type": "boolean"
+    }
+  }
+}

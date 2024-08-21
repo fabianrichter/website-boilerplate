@@ -1,0 +1,20 @@
+#import '../../strapi/image/image.fragment.gql'
+
+fragment ComponentImageTextSlider on ComponentMediaImageTextSlider {
+  slides {
+    text
+    image {
+      data {
+        attributes {
+          name
+          alternativeText
+          caption
+          url
+          width
+          height
+          formats
+        }
+      }
+    }
+  }
+}

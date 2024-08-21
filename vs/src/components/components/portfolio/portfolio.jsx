@@ -1,3 +1,5 @@
+"use client";
+
 import { Col, Container, Row } from "@/components/layout";
 import StrapiImage from "@/components/strapi/image/image";
 import React, { useEffect, useRef } from "react";
@@ -29,21 +31,21 @@ const Portfolio = ({ data }) => {
         {data.title && (
           <Row>
             <Col col={12}>
-              <h2 className={styles.headline}>{data.title}</h2>
+              <h3 className={styles.headline}>{data.title}</h3>
             </Col>
           </Row>
         )}
         <Row ref={itemsContainerRef}>
           {data.portfolioItem.map((item, i) => (
-            <Col key={i} col={12} md={6} className={styles.item}>
+            <Col key={i} col={12} md={4} className={styles.item}>
               <Link
                 scroll={false}
                 href={item.link.data?.attributes.slug || "/"}
                 ref={(ref) => (itemsRef.current[i] = ref)}
+                className={styles.link}
               >
                 <StrapiImage data={item.teaserImage.image} fill className={styles.image} />
-                <h3 className={styles.title}>{item.title}</h3>
-                {item.description && <p className={styles.description}>{item.description}</p>}
+                <div className={styles["title"]}>{item.title}</div>
               </Link>
             </Col>
           ))}

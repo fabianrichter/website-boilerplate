@@ -12,14 +12,8 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "instagramProfileUrl": {
-      "type": "string"
-    },
-    "imprintAlias": {
-      "type": "string"
-    },
-    "privacyAlias": {
-      "type": "string"
+    "address": {
+      "type": "text"
     }
   }
 }

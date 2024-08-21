@@ -7,7 +7,7 @@ const Text = (props) => {
     <section className={styles.section}>
       <Container>
         <Row>
-          <Col xs="12" lg="8" shiftLg={2}>
+          <Col xs="12" lg="6" shiftLg="2">
             <div className={styles["text-wrapper"]}>
               <div dangerouslySetInnerHTML={{ __html: props.data.text }} />
             </div>

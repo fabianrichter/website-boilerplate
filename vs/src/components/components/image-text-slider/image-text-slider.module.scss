@@ -1,0 +1,26 @@
+@import "@/scss/fonts";
+
+.wrapper {
+  background-color: var(--c-white);
+}
+
+.textwrapper {
+  padding: var(--section-spacing-m);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.text {
+  @include headline(h2);
+  margin: 0;
+}
+
+.imagewrapper {
+  height: 100%;
+  min-height: rem-calc(250);
+
+  img {
+    object-fit: cover;
+  }
+}

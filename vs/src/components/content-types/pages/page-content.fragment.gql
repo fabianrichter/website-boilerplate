@@ -1,18 +1,10 @@
 #import '../../components/components.fragment.gql'
 #import '../../strapi/seo/seo.fragment.gql'
 
-fragment PageContent on PageEntityResponseCollection {
+fragment PageContent on PageEntityResponse {
   data {
     id
     attributes {
-      localizations {
-        data {
-          attributes {
-            locale
-            slug
-          }
-        }
-      }
       seo {
         ...StrapiSEO
       }

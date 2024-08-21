@@ -13,6 +13,9 @@
   "pluginOptions": {
     "i18n": {
       "localized": true
+    },
+    "versions": {
+      "versioned": true
     }
   },
   "attributes": {
@@ -23,16 +26,19 @@
         "text.section-title",
         "text.text",
         "media.image",
-        "connect.article-overview",
         "forms.contact-form",
         "text.text-and-image",
         "media.gallery",
-        "general.intro",
         "general.portfolio",
         "text.hero-text",
         "links.cta",
         "links.download-overview",
-        "text.accordeon"
+        "media.image-text-slider",
+        "media.google-maps",
+        "general.consent-actions",
+        "general.intro",
+        "text.list",
+        "text.pricing"
       ],
       "pluginOptions": {
         "i18n": {
