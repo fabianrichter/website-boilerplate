@@ -21,7 +21,7 @@ const NavigationTree = ({ items, level, onClick }) => {
 
 const Menu = (props) => {
   return (
-    <nav className={styles.mainNav}>
+    <nav className={styles["main-nav"]}>
       <NavigationTree onClick={props.onClose} items={props.navigation.renderNavigation} level={0} />
     </nav>
   );

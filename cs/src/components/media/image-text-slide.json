@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_media_image_text_slides",
+  "info": {
+    "displayName": "Image Text Slide",
+    "icon": "landscape",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

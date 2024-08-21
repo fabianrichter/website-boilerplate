@@ -1,0 +1,77 @@
+@import "@/scss/fonts";
+
+.pricing {
+  margin-top: var(--section-spacing-m);
+}
+.col {
+  margin-bottom: var(--section-spacing-m);
+  height: 100%;
+
+  @include media-breakpoint-max(md) {
+    order: 2;
+
+    &.recommendedBox {
+      order: 1;
+    }
+  }
+}
+
+.box {
+  border: 2px solid var(--c-black);
+  border-radius: 5px;
+  box-shadow: 5px 5px 0 var(--c-black);
+  padding: var(--section-spacing-s);
+  height: 100%;
+  position: relative;
+}
+
+.title {
+  text-align: center;
+  @include headline(h3);
+  font-weight: bold;
+}
+
+.body {
+  margin-bottom: var(--section-spacing-s);
+}
+
+.priceWrapper {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  justify-content: center;
+
+  .from {
+    line-height: 1.5;
+    @include media-breakpoint-min(md) {
+      line-height: 1.1;
+    }
+  }
+
+  .price {
+    @include headline(h2);
+    font-weight: bold;
+  }
+}
+
+.recommended {
+  border: 2px solid var(--c-black);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  padding: 5px var(--section-spacing-xs);
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--c-background);
+
+  .recommendedLabel {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13x;
+    letter-spacing: 0.3px;
+  }
+}

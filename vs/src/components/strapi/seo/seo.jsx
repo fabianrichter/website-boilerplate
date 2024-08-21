@@ -6,10 +6,18 @@ import React from "react";
  * Generates valid html meta tags from Shared SEO component in Strapi
  */
 const StrapiSEO = ({ data }) => {
+  return {
+    title: `${data.metaTitle} | Fabian Richter`,
+    description: data.metaDescription,
+    keywords: data.keywords,
+    robots: data.metaRobots,
+    image: data.metaImage?.data.attributes.formats.medium.url,
+  }
+
   return (
     <Head>
       {/* Basic meta tags */}
-      <title>Website Boilerplate | {data.metaTitle}</title>
+      <title>Fabian Richter | {data.metaTitle}</title>
       <meta property="og:title" content={data.metaTitle} key="title" />
       <meta name="description" content={data.metaDescription} key="desc" />
       <meta name="keywords" content={data.keywords} key="keywords" />

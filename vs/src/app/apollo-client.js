@@ -11,19 +11,8 @@ export const apolloClient = new ApolloClient({
     onError((error) => {
       console.log(JSON.stringify(error, null, 2));
     }),
-    new HttpLink({ uri: "http://localhost:1337/graphql" }),
+    new HttpLink({ uri: graphqlEndpoint }),
   ]),
 });
 
-export const apolloClientServer = new ApolloClient({
-  uri: graphqlEndpoint,
-  cache: new InMemoryCache(),
-  ssrMode: typeof window === "undefined",
-  connectToDevTools: true,
-  link: ApolloLink.from([
-    onError((error) => {
-      console.log(JSON.stringify(error, null, 2));
-    }),
-    new HttpLink({ uri: "http://localhost:1337/graphql" }),
-  ]),
-});
+export const query = apolloClient.query;

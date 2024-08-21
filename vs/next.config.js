@@ -26,7 +26,7 @@ const nextConfig = {
           options: {
             importLoaders: 1,
             modules: {
-              localIdentName: "_[hash:base64:5]",
+              localIdentName: "_[hash:base64:8]",
             },
           },
         },
@@ -41,7 +41,7 @@ const nextConfig = {
     return [
       {
         source: "/",
-        destination: "/start",
+        destination: "/home",
       },
     ];
   },

@@ -7,7 +7,7 @@ const PageTitle = (props) => {
     <section className={styles["page-title"]}>
       <Container>
         <Row>
-          <Col col={12} lg={8} shiftLg={2}>
+          <Col col={12} lg={8}>
             <h1>{props.data.content && props.data.content}</h1>
           </Col>
         </Row>

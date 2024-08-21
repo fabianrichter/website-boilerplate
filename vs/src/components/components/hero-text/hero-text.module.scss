@@ -2,7 +2,8 @@
 @import '@/scss/mixins';
 
 .hero {
-  margin: var(--section-spacing-l) 0;
+  margin: var(--section-spacing-m) 0;
+  text-align: left;
 }
 
 .big {

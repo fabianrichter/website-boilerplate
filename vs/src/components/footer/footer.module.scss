@@ -1,23 +1,19 @@
 @import "@/scss/fonts.scss";
 
 .footer {
-  background-color: #babbbf;
-  padding: 50px 0;
+  padding: 10px 0;
   margin-top: 50px;
   display: flex;
   width: 100%;
   justify-content: space-between;
   margin-top: auto;
+  color: var(--c-white);
+  background-color: var(--c-black);
 }
 
-.logo {
-  @include headline(h6);
-
-  @include media-breakpoint-max(md) {
-    @include headline(h3);
-    margin-top: 50px;
-    order: 2;
-  }
+.footerline {
+  display: flex;
+  justify-content: space-between;
 }
 
 .copyright {
@@ -34,39 +30,26 @@
   }
 }
 
-.links {
+.legal {
+  list-style: none;
+  padding: 0;
   display: flex;
-  gap: 20px;
-
-  @include media-breakpoint-max(md) {
-    flex-direction: column;
-  }
+  flex-direction: row;
+  align-items: end;
+  justify-content: flex-end;
+  height: 100%;
+  margin: 0;
+  gap: rem-calc(16);
 
   a {
     text-decoration: none;
   }
+}
 
-  .social,
-  .footer-line {
-    display: flex;
-    flex-direction: column;
-  }
+.address p {
+  margin-bottom: 0;
+}
 
-  @include media-breakpoint-min(md) {
-    .social,
-    .footer-line {
-      margin-left: 0;
-    }
-  }
-
-  @include media-breakpoint-max(md) {
-    margin-top: 20px;
-
-    .social,
-    .footer-line {
-      margin-left: 0;
-      flex-direction: row;
-      gap: 20px;
-    }
-  }
+.sitename {
+  margin: 0;
 }

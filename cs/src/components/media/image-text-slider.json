@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_media_image_text_sliders",
+  "info": {
+    "displayName": "Image Text Slider",
+    "icon": "arrowRight"
+  },
+  "options": {},
+  "attributes": {
+    "slides": {
+      "displayName": "Image Text Slide",
+      "type": "component",
+      "repeatable": true,
+      "component": "media.image-text-slide"
+    }
+  }
+}

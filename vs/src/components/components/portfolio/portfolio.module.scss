@@ -1,13 +1,7 @@
 @import "@/scss/fonts";
 
 .portfolio {
-  background-color: black;
-  color: white;
-  padding: var(--section-spacing-l) 0 0 0;
-
-  .headline {
-    margin-bottom: 100px;
-  }
+  padding: var(--section-spacing-m) 0 0 0;
 
   a {
     text-decoration: none;
@@ -17,8 +11,7 @@
     }
 
     &:hover {
-      .title::after {
-        transform: translate(10px, -10px);
+      .title {
       }
 
       img {
@@ -34,26 +27,27 @@
 }
 
 .item {
-  margin-bottom: var(--section-spacing-l);
+  margin-bottom: var(--section-spacing-m);
 }
 
 .title {
-  transition: 0.3s ease;
-  word-break: break-all;
-  margin-bottom: 0;
-
-  &::after {
-    content: '↗';
-    font-family: 'Inter', sans-serif;
-    font-weight: 900;
-    margin-left: 10px;
-    position: relative;
-    transition: .3s transform;
-  }
+  @include headline(h2);
+  display: block;
+  margin-top: var(--section-spacing-xs);
+  background: linear-gradient(0, black 1px, transparent 1px);
+  transition: 0.3s background;
+  flex-grow: 1;
+  padding-bottom: rem-calc(4);
 }
 
 .image {
   height: 700px !important;
   max-height: 70svh;
   object-fit: cover;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }

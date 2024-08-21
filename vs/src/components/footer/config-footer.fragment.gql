@@ -2,9 +2,7 @@ fragment ConfigFooter on Query {
   configFooter {
     data {
       attributes {
-        instagramProfileUrl
-        privacyAlias
-        imprintAlias
+        address
       }
     }
   }

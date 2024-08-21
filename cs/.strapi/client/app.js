@@ -10,11 +10,14 @@ import i18N from "@strapi/plugin-i18n/strapi-admin";
 import seo from "@strapi/plugin-seo/strapi-admin";
 import usersPermissions from "@strapi/plugin-users-permissions/strapi-admin";
 import locationField from "strapi-location-field-plugin/strapi-admin";
+import componentpreview from "strapi-plugin-component-preview/strapi-admin";
 import configSync from "strapi-plugin-config-sync/strapi-admin";
 import duplicateButton from "strapi-plugin-duplicate-button/strapi-admin";
 import multiSelect from "strapi-plugin-multi-select/strapi-admin";
 import navigation from "strapi-plugin-navigation/strapi-admin";
 import oembed from "strapi-plugin-oembed/strapi-admin";
+import previewButton from "strapi-plugin-preview-button/strapi-admin";
+import responsiveImage from "strapi-plugin-responsive-image/strapi-admin";
 import { renderAdmin } from "@strapi/strapi/admin";
 
 import customisations from "../../src/admin/app.js";
@@ -31,10 +34,13 @@ renderAdmin(document.getElementById("strapi"), {
     seo: seo,
     "users-permissions": usersPermissions,
     "location-field": locationField,
+    componentpreview: componentpreview,
     "config-sync": configSync,
     "duplicate-button": duplicateButton,
     "multi-select": multiSelect,
     navigation: navigation,
     oembed: oembed,
+    "preview-button": previewButton,
+    "responsive-image": responsiveImage,
   },
 });

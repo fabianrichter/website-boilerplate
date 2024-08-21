@@ -2,7 +2,6 @@ fragment ConfigHeader on Query {
   configHeader {
     data {
       attributes {
-        phone
         contactPage {
           data {
             attributes {

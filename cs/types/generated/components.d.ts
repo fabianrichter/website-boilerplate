@@ -33,6 +33,17 @@ export interface FormsContactForm extends Schema.Component {
   };
 }
 
+export interface GeneralConsentActions extends Schema.Component {
+  collectionName: 'components_general_consent_actions';
+  info: {
+    displayName: 'Consent Actions';
+    icon: 'check';
+  };
+  attributes: {
+    text: Attribute.String;
+  };
+}
+
 export interface GeneralIntro extends Schema.Component {
   collectionName: 'components_general_intros';
   info: {
@@ -111,6 +122,17 @@ export interface InternalVideo extends Schema.Component {
   };
 }
 
+export interface LinksConsentActions extends Schema.Component {
+  collectionName: 'components_links_consent_actions';
+  info: {
+    displayName: 'Consent Actions';
+    icon: 'check';
+  };
+  attributes: {
+    text: Attribute.String;
+  };
+}
+
 export interface LinksCta extends Schema.Component {
   collectionName: 'components_general_ctas';
   info: {
@@ -158,6 +180,49 @@ export interface MediaGallery extends Schema.Component {
   };
   attributes: {
     gallery: Attribute.Component<'internal.gallery'>;
+  };
+}
+
+export interface MediaGoogleMaps extends Schema.Component {
+  collectionName: 'components_media_google_maps';
+  info: {
+    displayName: 'Google Maps';
+    icon: 'pinMap';
+    description: '';
+  };
+  attributes: {
+    gmapsEmbed: Attribute.Text;
+    text: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'custom';
+        }
+      >;
+  };
+}
+
+export interface MediaImageTextSlide extends Schema.Component {
+  collectionName: 'components_media_image_text_slides';
+  info: {
+    displayName: 'Image Text Slide';
+    icon: 'landscape';
+    description: '';
+  };
+  attributes: {
+    text: Attribute.Text;
+    image: Attribute.Media;
+  };
+}
+
+export interface MediaImageTextSlider extends Schema.Component {
+  collectionName: 'components_media_image_text_sliders';
+  info: {
+    displayName: 'Image Text Slider';
+    icon: 'arrowRight';
+  };
+  attributes: {
+    slides: Attribute.Component<'media.image-text-slide', true>;
   };
 }
 
@@ -271,6 +336,31 @@ export interface TextHeroText extends Schema.Component {
   };
 }
 
+export interface TextListItem extends Schema.Component {
+  collectionName: 'components_text_list_items';
+  info: {
+    displayName: 'List Item';
+    icon: 'bold';
+    description: '';
+  };
+  attributes: {
+    label: Attribute.String;
+    description: Attribute.String;
+    highlight: Attribute.Boolean;
+  };
+}
+
+export interface TextList extends Schema.Component {
+  collectionName: 'components_text_lists';
+  info: {
+    displayName: 'List';
+    icon: 'bulletList';
+  };
+  attributes: {
+    listItems: Attribute.Component<'text.list-item', true>;
+  };
+}
+
 export interface TextPageTitle extends Schema.Component {
   collectionName: 'components_general_page_titles';
   info: {
@@ -280,6 +370,47 @@ export interface TextPageTitle extends Schema.Component {
   };
   attributes: {
     content: Attribute.String;
+  };
+}
+
+export interface TextPricingItem extends Schema.Component {
+  collectionName: 'components_text_pricing_items';
+  info: {
+    displayName: 'Pricing Item';
+    icon: 'crown';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    price: Attribute.Integer;
+    body: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'custom';
+        }
+      >;
+    recommended: Attribute.Boolean;
+  };
+}
+
+export interface TextPricing extends Schema.Component {
+  collectionName: 'components_text_pricings';
+  info: {
+    displayName: 'Pricing';
+    icon: 'database';
+    description: '';
+  };
+  attributes: {
+    pricingItems: Attribute.Component<'text.pricing-item', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 2;
+          max: 3;
+        },
+        number
+      >;
   };
 }
 
@@ -331,23 +462,32 @@ declare module '@strapi/types' {
     export interface Components {
       'connect.article-overview': ConnectArticleOverview;
       'forms.contact-form': FormsContactForm;
+      'general.consent-actions': GeneralConsentActions;
       'general.intro': GeneralIntro;
       'general.portfolio-item': GeneralPortfolioItem;
       'general.portfolio': GeneralPortfolio;
       'internal.gallery': InternalGallery;
       'internal.image': InternalImage;
       'internal.video': InternalVideo;
+      'links.consent-actions': LinksConsentActions;
       'links.cta': LinksCta;
       'links.download-overview': LinksDownloadOverview;
       'links.download': LinksDownload;
       'media.gallery': MediaGallery;
+      'media.google-maps': MediaGoogleMaps;
+      'media.image-text-slide': MediaImageTextSlide;
+      'media.image-text-slider': MediaImageTextSlider;
       'media.image': MediaImage;
       'shared.meta-social': SharedMetaSocial;
       'shared.seo': SharedSeo;
       'text.accordeon-item': TextAccordeonItem;
       'text.accordeon': TextAccordeon;
       'text.hero-text': TextHeroText;
+      'text.list-item': TextListItem;
+      'text.list': TextList;
       'text.page-title': TextPageTitle;
+      'text.pricing-item': TextPricingItem;
+      'text.pricing': TextPricing;
       'text.section-title': TextSectionTitle;
       'text.text-and-image': TextTextAndImage;
       'text.text': TextText;

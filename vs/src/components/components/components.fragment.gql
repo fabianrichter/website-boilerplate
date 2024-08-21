@@ -12,10 +12,14 @@
 #import './text-and-image/text-and-image.fragment.gql'
 #import './hero-text/hero-text.fragment.gql'
 #import './cta/cta.fragment.gql'
+#import './image-text-slider/image-text-slider.fragment.gql'
+#import './google-maps/google-maps.fragment.gql'
+#import './consent-actions/consent-actions.fragment.gql'
+#import './list/list.fragment.gql'
+#import './pricing/pricing.fragment.gql'
 
 fragment PageComponents on Page {
   components {
-    ...ComponentAccordeon
     ...ComponentPageTitle
     ...ComponentSectionTitle
     ...ComponentText
@@ -26,9 +30,13 @@ fragment PageComponents on Page {
     ...ComponentGallery
     ...ComponentHeroText
     ...ComponentCta
-    ...ComponentArticleOverview
     ...ComponentContactForm
     ...ComponentDownloadOverview
+    ...ComponentImageTextSlider
+    ...ComponentGoogleMaps
+    ...ComponentConsentActions
+    ...ComponentList
+    ...ComponentPricing
   }
 }
 

@@ -1,5 +1,7 @@
 @import "@/scss/mixins";
+@import "@/scss/fonts";
 
 .button {
-    @include cta();
+  @include cta();
+  @include body(big);
 }

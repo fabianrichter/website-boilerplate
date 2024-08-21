@@ -7,8 +7,8 @@
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "instagramProfileUrl",
-      "defaultSortBy": "instagramProfileUrl",
+      "mainField": "id",
+      "defaultSortBy": "id",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -20,44 +20,16 @@
           "sortable": true
         }
       },
-      "instagramProfileUrl": {
+      "address": {
         "edit": {
-          "label": "Instagram Profile URL",
-          "description": "Link to your instagram account.",
+          "label": "address",
+          "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "instagramProfileUrl",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "imprintAlias": {
-        "edit": {
-          "label": "Imprint Alias",
-          "description": "Link to Imprint.",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "imprintAlias",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "privacyAlias": {
-        "edit": {
-          "label": "Privacy Alias",
-          "description": "Link to privacy policy.",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "privacyAlias",
+          "label": "address",
           "searchable": true,
           "sortable": true
         }
@@ -124,25 +96,15 @@
     "layouts": {
       "list": [
         "id",
-        "instagramProfileUrl",
         "createdAt",
-        "updatedAt"
+        "updatedAt",
+        "address"
       ],
       "edit": [
         [
           {
-            "name": "instagramProfileUrl",
-            "size": 4
-          }
-        ],
-        [
-          {
-            "name": "privacyAlias",
-            "size": 4
-          },
-          {
-            "name": "imprintAlias",
-            "size": 4
+            "name": "address",
+            "size": 6
           }
         ]
       ]

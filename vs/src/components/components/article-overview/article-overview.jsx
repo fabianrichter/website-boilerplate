@@ -1,3 +1,5 @@
+"use client";
+
 import { useQuery } from "@apollo/client";
 import React, { useEffect, useState } from "react";
 import { RecentArticles } from "./recent-articles.gql";

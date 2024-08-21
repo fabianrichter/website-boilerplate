@@ -1137,9 +1137,7 @@ export interface ApiConfigFooterConfigFooter extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    instagramProfileUrl: Attribute.String;
-    imprintAlias: Attribute.String;
-    privacyAlias: Attribute.String;
+    address: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1170,13 +1168,11 @@ export interface ApiConfigHeaderConfigHeader extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    phone: Attribute.String;
     contactPage: Attribute.Relation<
       'api::config-header.config-header',
       'oneToOne',
       'api::page.page'
     >;
-    email: Attribute.Email;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1281,6 +1277,9 @@ export interface ApiPagePage extends Schema.CollectionType {
     i18n: {
       localized: true;
     };
+    versions: {
+      versioned: true;
+    };
   };
   attributes: {
     components: Attribute.DynamicZone<
@@ -1289,16 +1288,19 @@ export interface ApiPagePage extends Schema.CollectionType {
         'text.section-title',
         'text.text',
         'media.image',
-        'connect.article-overview',
         'forms.contact-form',
         'text.text-and-image',
         'media.gallery',
-        'general.intro',
         'general.portfolio',
         'text.hero-text',
         'links.cta',
         'links.download-overview',
-        'text.accordeon'
+        'media.image-text-slider',
+        'media.google-maps',
+        'general.consent-actions',
+        'general.intro',
+        'text.list',
+        'text.pricing'
       ]
     > &
       Attribute.SetPluginOptions<{

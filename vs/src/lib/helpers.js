@@ -11,4 +11,6 @@ const getAbsoluteImagePath = (path) => {
   return "http://localhost:1337" + path;
 };
 
+
+
 export { getAbsoluteImagePath }
