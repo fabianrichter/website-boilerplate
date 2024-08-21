@@ -1,4 +1,4 @@
-smodule.exports = ({ env }) => {
+module.exports = ({ env }) => {
   const VS_HOST = env("VS_HOST", "http://localhost:3000");
   return {
     // Navigation

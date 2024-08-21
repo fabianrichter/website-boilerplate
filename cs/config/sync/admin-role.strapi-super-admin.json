@@ -836,13 +836,6 @@
       "conditions": []
     },
     {
-      "action": "plugin::content-versioning.save",
-      "actionParameters": {},
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
       "action": "plugin::email.settings.read",
       "actionParameters": {},
       "subject": null,

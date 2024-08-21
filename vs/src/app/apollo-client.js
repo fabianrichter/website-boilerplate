@@ -9,7 +9,7 @@ export const apolloClient = new ApolloClient({
   connectToDevTools: true,
   link: ApolloLink.from([
     onError((error) => {
-      console.log(JSON.stringify(error, null, 2));
+      console.error(JSON.stringify(error?.graphQLErrors || error, null, 2));
     }),
     new HttpLink({ uri: graphqlEndpoint }),
   ]),
