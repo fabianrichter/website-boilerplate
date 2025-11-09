@@ -1,30 +1,12 @@
 @font-face {
-  font-family: "Assistant";
-  src: url("@/assets/fonts/Assistant-Regular.ttf") format("truetype");
+  font-family: "Source Sans 3";
+  src: url("@/assets/fonts//SourceSans3-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Assistant";
-  font-weight: 500;
-  src: url("@/assets/fonts/Assistant-Medium.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Assistant";
-  font-weight: 600;
-  src: url("@/assets/fonts/Assistant-SemiBold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Assistant";
-  font-weight: 700;
-  src: url("@/assets/fonts/Assistant-Bold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Assistant";
-  font-weight: 800;
-  src: url("@/assets/fonts/Assistant-ExtraBold.ttf") format("truetype");
+  font-family: "Source Sans 3";
+  font-style: italic;
+  src: url("@/assets/fonts/SourceSans3-Italic-VariableFont_wght.ttf") format("truetype");
 }
 
 @import "@/scss/functions";
@@ -45,8 +27,8 @@
 
   --c-error: #eb1d1d;
 
-  --font-family-heading: "Assistant", sans-serif;
-  --font-family-body: "Assistant", sans-serif;
+  --font-family-heading: "Source Sans 3", sans-serif;
+  --font-family-body: "Source Sans 3", sans-serif;
 
   --section-spacing-xs: 1rem;
   --section-spacing-s: 1rem;
@@ -101,6 +83,13 @@ body {
   max-width: 100svw;
   margin: 0;
   min-height: 100svh;
+}
+pre {
+  text-align: left;
+  font-size: 0.875rem;
+  padding: 20px;
+  background-color: black;
+  color: white;
 }
 
 body {
@@ -217,5 +206,5 @@ hr {
 }
 
 section:last-child {
-  margin-bottom: var(--section-spacing-l)
+  margin-bottom: var(--section-spacing-l);
 }

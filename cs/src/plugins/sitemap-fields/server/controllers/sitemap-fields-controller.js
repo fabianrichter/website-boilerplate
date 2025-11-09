@@ -1,10 +1,14 @@
-'use strict';
+"use strict";
 
 module.exports = ({ strapi }) => ({
-  index(ctx) {
-    ctx.body = strapi
-      .plugin('sitemap-fields')
-      .service('myService')
-      .getWelcomeMessage();
+  async index(ctx) {
+    const id = ctx.params?.id;
+
+    if (!id) {
+      return ctx.badRequest("id is required");
+    }
+
+    const entity = await strapi.entityService.findOne("api::page.page", id);
+    ctx.body = entity;
   },
 });

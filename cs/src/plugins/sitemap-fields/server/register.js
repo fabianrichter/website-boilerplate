@@ -1,22 +1,63 @@
 "use strict";
 
-module.exports = ({ strapi }) => {
-  const extensionService = strapi.plugin("graphql").service("extension");
+const sitemapContent = require("./components/sitemap.json");
 
-  extensionService.use(({ nexus }) => ({
-    types: [
-      nexus.extendType({
-        type: 'Article',
-        definition(t) {
-          t.field('priority', { type: 'Float' });
+/* module.exports = ({ strapi }) => {
+  if (!strapi.components["shared.sitemap"]) {
+    strapi.components["shared.sitemap"] = sitemapContent;
+  }
+
+  const contentTypePage = strapi.contentType("api::page.page");
+
+  if (!contentTypePage) {
+    throw new Error("Content-Type 'api::page.page' not found");
+  }
+
+  if (!contentTypePage.attributes) {
+    throw new Error("Attributes for 'api::page.page' not found");
+  }
+
+  if (!contentTypePage.attributes.sitemap) {
+    contentTypePage.attributes = {
+      sitemap: {
+        type: "component",
+        repeatable: false,
+        component: "shared.sitemap",
+        configurable: false,
+      },
+    };
+  }
+}; */
+
+module.exports = async ({ strapi }) => {
+  const components = strapi.components;
+  if (!components["shared.sitemap"]) {
+    strapi.reload.isWatching = false;
+
+    await strapi
+      .plugin("content-type-builder")
+      .services.components.createComponent({
+        component: {
+          category: "shared",
+          displayName: "Sitemap",
+          attributes: sitemapContent.attributes,
         },
-      }),
-      nexus.extendType({
-        type: 'Page',
-        definition(t) {
-          t.field('priority', { type: 'Float' });
-        },
-      }),
-    ],
-  }));
+      });
+
+    strapi.reload();
+  }
+
+  const contentTypePage = strapi.contentType("api::page.page");
+
+  if (!contentTypePage.attributes.sitemap) {
+    contentTypePage.attributes = {
+      ...contentTypePage.attributes,
+      sitemap: {
+        type: "component",
+        repeatable: false,
+        component: "shared.sitemap",
+        configurable: false,
+      },
+    };
+  }
 };

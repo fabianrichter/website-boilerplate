@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "website_settings",
+  "info": {
+    "singularName": "website-setting",
+    "pluralName": "website-settings",
+    "displayName": "Website Settings",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "maintenanceMode": {
+      "type": "boolean"
+    },
+    "maintenanceModeText": {
+      "type": "text"
+    }
+  }
+}

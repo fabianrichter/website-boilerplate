@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import {
   Box,
@@ -8,8 +8,19 @@ import {
   NumberInput,
   TextInput,
 } from "@strapi/design-system";
+import axios from "axios";
+import requests from "../../utils/requests";
+import { useCMEditViewDataManager } from "@strapi/helper-plugin";
 
 export const SitemapFields = ({ onChange, value }) => {
+  const { initialData } = useCMEditViewDataManager();
+
+  useEffect(() => {
+    requests.get(initialData.id).then(({ data }) => {
+      console.log(data);
+    })
+  }, [requests]);
+
   return (
     <Box
       background="neutral0"

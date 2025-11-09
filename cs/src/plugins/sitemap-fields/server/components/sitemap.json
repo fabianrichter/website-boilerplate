@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sitemaps",
+  "displayName": "Sitemap",
+  "info": {
+    "name": "sitemap",
+    "icon": "map"
+  },
+  "options": {},
+  "attributes": {
+    "priority": {
+      "type": "float",
+      "default": 0.5
+    },
+    "changefreq": {
+      "type": "enumeration",
+      "enum": [
+        "daily",
+        "weekly"
+      ]
+    }
+  }
+}

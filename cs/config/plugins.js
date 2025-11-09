@@ -91,12 +91,16 @@ module.exports = ({ env }) => {
         ],
       },
     },
-    /* "sitemap-fields": {
+    /* "website-settings": {
+      enabled: true,
+      resolve: "./src/plugins/website-settings",
+    }, */
+    "sitemap-fields": {
       enabled: true,
       config: {
         contentTypes: ["api::page.page", "api::article.article"],
       },
       resolve: "./src/plugins/sitemap-fields",
-    }, */
+    },
   };
 };

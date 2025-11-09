@@ -29,6 +29,7 @@
           "tags"
         ],
         "locales": [
+          "en",
           "de"
         ]
       },
@@ -40,6 +41,7 @@
       "subject": "api::article.article",
       "properties": {
         "locales": [
+          "en",
           "de"
         ]
       },
@@ -51,6 +53,7 @@
       "subject": "api::article.article",
       "properties": {
         "locales": [
+          "en",
           "de"
         ]
       },
@@ -58,37 +61,6 @@
     },
     {
       "action": "plugin::content-manager.explorer.read",
-      "actionParameters": {},
-      "subject": "api::article.article",
-      "properties": {
-        "fields": [
-          "title",
-          "seo.metaTitle",
-          "seo.metaDescription",
-          "seo.metaImage",
-          "seo.metaSocial.socialNetwork",
-          "seo.metaSocial.title",
-          "seo.metaSocial.description",
-          "seo.metaSocial.image",
-          "seo.keywords",
-          "seo.metaRobots",
-          "seo.structuredData",
-          "seo.metaViewport",
-          "seo.canonicalURL",
-          "slug",
-          "teaserImage.image",
-          "components",
-          "teaserText",
-          "tags"
-        ],
-        "locales": [
-          "de"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
       "actionParameters": {},
       "subject": "api::article.article",
       "properties": {
@@ -113,6 +85,39 @@
           "tags"
         ],
         "locales": [
+          "en",
+          "de"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::article.article",
+      "properties": {
+        "fields": [
+          "title",
+          "seo.metaTitle",
+          "seo.metaDescription",
+          "seo.metaImage",
+          "seo.metaSocial.socialNetwork",
+          "seo.metaSocial.title",
+          "seo.metaSocial.description",
+          "seo.metaSocial.image",
+          "seo.keywords",
+          "seo.metaRobots",
+          "seo.structuredData",
+          "seo.metaViewport",
+          "seo.canonicalURL",
+          "slug",
+          "teaserImage.image",
+          "components",
+          "teaserText",
+          "tags"
+        ],
+        "locales": [
+          "en",
           "de"
         ]
       },
@@ -347,6 +352,7 @@
           "seo.canonicalURL"
         ],
         "locales": [
+          "en",
           "de"
         ]
       },
@@ -358,6 +364,7 @@
       "subject": "api::page.page",
       "properties": {
         "locales": [
+          "en",
           "de"
         ]
       },
@@ -369,6 +376,7 @@
       "subject": "api::page.page",
       "properties": {
         "locales": [
+          "en",
           "de"
         ]
       },
@@ -397,6 +405,7 @@
           "seo.canonicalURL"
         ],
         "locales": [
+          "en",
           "de"
         ]
       },
@@ -425,6 +434,7 @@
           "seo.canonicalURL"
         ],
         "locales": [
+          "en",
           "de"
         ]
       },
@@ -440,6 +450,7 @@
           "articles"
         ],
         "locales": [
+          "en",
           "de"
         ]
       },
@@ -451,6 +462,7 @@
       "subject": "api::tag.tag",
       "properties": {
         "locales": [
+          "en",
           "de"
         ]
       },
@@ -462,6 +474,7 @@
       "subject": "api::tag.tag",
       "properties": {
         "locales": [
+          "en",
           "de"
         ]
       },
@@ -477,6 +490,7 @@
           "articles"
         ],
         "locales": [
+          "en",
           "de"
         ]
       },
@@ -492,6 +506,7 @@
           "articles"
         ],
         "locales": [
+          "en",
           "de"
         ]
       },

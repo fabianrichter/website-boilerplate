@@ -1,9 +1,18 @@
-'use strict';
+"use strict";
 
 module.exports = async ({ strapi }) => {
-  strapi.customFields.register({
-    name: 'priority',
-    plugin: 'plugin-name',
-    type: 'decimal',
+  const pages = await strapi.entityService.findMany("api::page.page");
+
+  pages.forEach(async (page) => {
+    if (!!page.sitemap) return;
+
+    await strapi.entityService.update("api::page.page", page.id, {
+      data: {
+        sitemap: {
+          changeFreq: "weekly",
+          priority: 0.5,
+        },
+      },
+    });
   });
 };

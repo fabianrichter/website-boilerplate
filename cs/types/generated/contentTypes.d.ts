@@ -1333,6 +1333,7 @@ export interface ApiPagePage extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    sitemap: Attribute.Component<'shared.sitemap'>;
     localizations: Attribute.Relation<
       'api::page.page',
       'oneToMany',

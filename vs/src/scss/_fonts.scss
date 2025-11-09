@@ -43,7 +43,7 @@
 
 @mixin headline($h: all) {
   font-family: var(--font-family-heading);
-  font-weight: normal;
+  font-weight: 900;
   line-height: 1.2;
   font-feature-settings: 'ss02' on;
   word-break: break-word;

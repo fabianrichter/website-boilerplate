@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "website_settings",
+  "info": {
+    "singularName": "website-setting",
+    "pluralName": "website-settings",
+    "displayName": "Website Settings"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": "",
+    "content-manager.visible": false,
+    "content-type-builder.visible": true
+  },
+  "attributes": {
+    "maintenanceMode": {
+      "type": "boolean"
+    },
+    "maintenanceModeText": {
+      "type": "text"
+    }
+  }
+}

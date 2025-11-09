@@ -57,6 +57,7 @@ export default async function RootLayout({ children }) {
                 <br />
                 Oh and check out your RootLayout in app/layout.jsx to get started.
               </p>
+              <div><details><pre>{JSON.stringify(err, null, 2)}</pre></details></div>
             </div>
           </Container>
         </body>

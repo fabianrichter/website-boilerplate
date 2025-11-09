@@ -1,7 +1,7 @@
 'use strict';
 
-const myController = require('./sitemap-fields-controller');
+const sitemapFieldsController = require('./sitemap-fields-controller');
 
 module.exports = {
-  myController,
+  sitemapFieldsController,
 };

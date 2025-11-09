@@ -293,6 +293,17 @@ export interface SharedSeo extends Schema.Component {
   };
 }
 
+export interface SharedSitemap extends Schema.Component {
+  collectionName: 'components_shared_sitemaps';
+  info: {
+    displayName: 'Sitemap';
+  };
+  attributes: {
+    priority: Attribute.Float & Attribute.DefaultTo<0.5>;
+    changefreq: Attribute.Enumeration<['daily', 'weekly']>;
+  };
+}
+
 export interface TextAccordeonItem extends Schema.Component {
   collectionName: 'components_accordeon_accordeon_items';
   info: {
@@ -480,6 +491,7 @@ declare module '@strapi/types' {
       'media.image': MediaImage;
       'shared.meta-social': SharedMetaSocial;
       'shared.seo': SharedSeo;
+      'shared.sitemap': SharedSitemap;
       'text.accordeon-item': TextAccordeonItem;
       'text.accordeon': TextAccordeon;
       'text.hero-text': TextHeroText;
